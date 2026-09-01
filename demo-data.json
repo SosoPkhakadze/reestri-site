@@ -1,0 +1,427 @@
+{
+ "retrievedAt": "2026-09-01T00:22:12.488Z",
+ "note": "Real records from live runs; snapshot for the demo search.",
+ "records": [
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს სილკნეტი",
+   "nameLatin": "shps silkneti",
+   "companyNumber": "204952685",
+   "legalForm": "LLC",
+   "status": "active",
+   "statusLocal": "აქტიური",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=Silknet",
+    "retrievedAt": "2026-09-01T00:16:01.132Z",
+    "sha256": "a7084373aa295132c8661083bc62e5b370a32f271443662ce0f52b8cec452550"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს Global Georgian Airways",
+   "nameLatin": "shps Global Georgian Airways",
+   "companyNumber": "206161375",
+   "legalForm": "LLC",
+   "status": "suspended",
+   "statusLocal": "რეგისტრაცია შეჩერებულია კანონის 254-ე მუხლის საფუძველზე",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=Georgian%20Airways",
+    "retrievedAt": "2026-09-01T00:16:29.856Z",
+    "sha256": "8aba3095b12e8b11dcbd41406ea4a1cb027c64b9aab1180e9afa98595a9585ff"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს კომპანია \"კაზინო აჭარაბეთი\" \"Casino Adjarabet\"",
+   "nameLatin": "shps kompania \"kazino acharabeti\" \"Casino Adjarabet\"",
+   "companyNumber": "245624999",
+   "legalForm": "LLC",
+   "status": "suspended",
+   "statusLocal": "რეგისტრაცია შეჩერებულია კანონის 254-ე მუხლის საფუძველზე",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=Adjarabet",
+    "retrievedAt": "2026-09-01T00:16:33.915Z",
+    "sha256": "355b4da5faad3c1634cd0a067186b1b5f80dd7b989f3f959a26ff21581469b6f"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს ნიკორა 2022",
+   "nameLatin": "shps nikora 2022",
+   "companyNumber": "421281035",
+   "legalForm": "LLC",
+   "status": "active",
+   "statusLocal": "აქტიური",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=Nikora",
+    "retrievedAt": "2026-09-01T00:16:38.017Z",
+    "sha256": "56f07d363146052477890e5cbbde5fd94555f4f90598c476281f6aab0973778d"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "AM",
+   "nameLocal": "\"UCOM\" CJSC",
+   "nameLatin": "\"UCOM\" CJSC",
+   "companyNumber": "37191802",
+   "taxId": "00024873",
+   "status": "active",
+   "statusLocal": "There is no information recorded in the unified state register regarding being in the process of liquidation or the termination of activity (existence).",
+   "registeredAt": "2020-01-15",
+   "address": "ՄԱՆԱՆԴՅԱՆ Փ., 33/8, ՇԵՆՔ, ԵՐԵՎԱՆ, 0046, ԵՐԵՎԱՆ, RA",
+   "people": [
+    {
+     "nameLatin": "Անհայտ կազմակերպություն",
+     "role": "beneficial_owner",
+     "since": "2021-10-28"
+    },
+    {
+     "nameLatin": "Artyom Khachatryan",
+     "role": "beneficial_owner",
+     "since": "2021-10-28"
+    },
+    {
+     "nameLatin": "Gurgen Khachatryan",
+     "role": "beneficial_owner",
+     "since": "2021-10-28"
+    },
+    {
+     "nameLatin": "Անհայտ կազմակերպություն",
+     "role": "beneficial_owner",
+     "since": "2023-02-17"
+    }
+   ],
+   "evidence": {
+    "sourceUrl": "https://e-register.moj.am/en/companies/37191802",
+    "retrievedAt": "2026-09-01T00:16:44.401Z",
+    "sha256": "ec0d86a6819fccb1aaae20e569931a404f696deb5c373d9fa54412d404db3f08"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "AM",
+   "nameLocal": "AMERIABANK PBE TU",
+   "nameLatin": "AMERIABANK PBE TU",
+   "companyNumber": "39014171",
+   "taxId": "02560453",
+   "status": "active",
+   "statusLocal": "There is no information recorded in the unified state register regarding being in the process of liquidation or the termination of activity (existence).",
+   "registeredAt": "2001-11-20",
+   "address": "Վ.ՍԱՐԳՍՅԱՆԻ 3, ՉԿԱ, ԵՐԵՎԱՆ, 0010, ԵՐԵՎԱՆ, RA",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://e-register.moj.am/en/companies/39014171",
+    "retrievedAt": "2026-09-01T00:16:56.698Z",
+    "sha256": "26135f87182d315bbc09b45b2e4141206e067f4aa10c417ccfcbe19ceb64e76e"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "AM",
+   "nameLocal": "\"ZANGEZUR COPPER MOLYBDENUM COMBINE\" CHARITY FOUNDATION Fund",
+   "nameLatin": "\"ZANGEZUR COPPER MOLYBDENUM COMBINE\" CHARITY FOUNDATION Fund",
+   "companyNumber": "49337571",
+   "taxId": "09424487",
+   "status": "active",
+   "statusLocal": "There is no information recorded in the unified state register regarding being in the process of liquidation or the termination of activity (existence).",
+   "registeredAt": "2015-02-19",
+   "address": "ԼԵՌՆԱԳՈՐԾՆԵՐԻ, 18, ՇԵՆՔ, ՔԱՋԱՐԱՆ, 3309, ՍՅՈՒՆԻՔ, RA",
+   "people": [
+    {
+     "nameLatin": "Armen Stepanyan",
+     "role": "beneficial_owner",
+     "since": "2023-02-13"
+    },
+    {
+     "nameLatin": "Armen Stepanyan",
+     "role": "beneficial_owner",
+     "since": "2024-02-13"
+    },
+    {
+     "nameLatin": "Armen Stepanyan",
+     "role": "beneficial_owner",
+     "since": "2025-01-31"
+    },
+    {
+     "nameLatin": "Armen Stepanyan",
+     "role": "beneficial_owner",
+     "since": "2026-01-22"
+    }
+   ],
+   "evidence": {
+    "sourceUrl": "https://e-register.moj.am/en/companies/49337571",
+    "retrievedAt": "2026-09-01T00:17:02.872Z",
+    "sha256": "2a200be8220ece1549612021a6d128e279b4322158d7e5700a53fa2769d29c5b"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "\"მაგთიკომი\"",
+   "nameLatin": "\"magtikomi\"",
+   "companyNumber": "245435373",
+   "legalForm": "LLC",
+   "status": "suspended",
+   "statusLocal": "რეგისტრაცია შეჩერებულია კანონის 254-ე მუხლის საფუძველზე",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%9B%E1%83%90%E1%83%92%E1%83%97%E1%83%98%E1%83%99%E1%83%9D%E1%83%9B%E1%83%98",
+    "retrievedAt": "2026-09-01T00:17:38.730Z",
+    "sha256": "8fb3a89c77f7bfbe95ae255d070e3550a2100924139d903cd28694e5ae742932"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "სს თიბისი ბანკის ქვემო ქართლის რეგიონალური ფილიალი",
+   "nameLatin": "ss tibisi bankis kvemo kartlis regionaluri piliali",
+   "companyNumber": "216346700",
+   "status": "liquidated",
+   "statusLocal": "ლიკვიდირებულია",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%97%E1%83%98%E1%83%91%E1%83%98%E1%83%A1%E1%83%98%20%E1%83%91%E1%83%90%E1%83%9C%E1%83%99%E1%83%98",
+    "retrievedAt": "2026-09-01T00:17:43.050Z",
+    "sha256": "50c6db53389a123b9ca8765b105c964ba55cd69413bd0994bc9afaad28fa9a19"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს ვისოლ პეტროლიუმ ჯორჯია - ისანი",
+   "nameLatin": "shps visol petrolium jorjia - isani",
+   "companyNumber": "406031075",
+   "legalForm": "LLC",
+   "status": "reorganizing",
+   "statusLocal": "რეორგანიზებულია",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%95%E1%83%98%E1%83%A1%E1%83%9D%E1%83%9A%20%E1%83%9E%E1%83%94%E1%83%A2%E1%83%A0%E1%83%9D%E1%83%9A%E1%83%98%E1%83%A3%E1%83%9B%20%E1%83%AF%E1%83%9D%E1%83%A0%E1%83%AF%E1%83%98%E1%83%90",
+    "retrievedAt": "2026-09-01T00:17:46.769Z",
+    "sha256": "0393c4a870a1918a3b5deed1e352ad1cc42bea2c77af746987d5f41b96629901"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "AM",
+   "nameLocal": "«ԷՎՈԿԱԲԱՆԿ» ԲԲԸ OJSC",
+   "nameLatin": "«ԷՎՈԿԱԲԱՆԿ» ԲԲԸ OJSC",
+   "companyNumber": "56668509",
+   "taxId": "00001182",
+   "status": "active",
+   "statusLocal": "There is no information recorded in the unified state register regarding being in the process of liquidation or the termination of activity (existence).",
+   "registeredAt": "1991-10-02",
+   "address": "ՀՀ, Ք.ԵՐԵՎԱՆ, ՀԱՆՐԱՊԵՏՈՒԹՅԱՆ 44/2, ԵՐԵՎԱՆ, ԵՐԵՎԱՆ, RA",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://e-register.moj.am/en/companies/56668509",
+    "retrievedAt": "2026-09-01T00:17:52.735Z",
+    "sha256": "635d0a4b347339cc326fb4bdd9db91cdab44ac8c2bd808497d77a9c5c67c92be"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს საქართველოს რკინიგზა 2",
+   "nameLatin": "shps sakartvelos rkinigza 2",
+   "companyNumber": "439419130",
+   "legalForm": "LLC",
+   "status": "suspended",
+   "statusLocal": "რეგისტრაცია შეჩერებულია კანონის 254-ე მუხლის საფუძველზე",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%A1%E1%83%90%E1%83%A5%E1%83%90%E1%83%A0%E1%83%97%E1%83%95%E1%83%94%E1%83%9A%E1%83%9D%E1%83%A1%20%E1%83%A0%E1%83%99%E1%83%98%E1%83%9C%E1%83%98%E1%83%92%E1%83%96%E1%83%90",
+    "retrievedAt": "2026-09-01T00:21:01.511Z",
+    "sha256": "a3abb2cef88c8577725fdaa963f800da6aeba41636e18ed2dfcbabe2549fb606"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "სს თელასი",
+   "nameLatin": "ss telasi",
+   "companyNumber": "202052580",
+   "legalForm": "JSC",
+   "status": "active",
+   "statusLocal": "აქტიური",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%97%E1%83%94%E1%83%9A%E1%83%90%E1%83%A1%E1%83%98",
+    "retrievedAt": "2026-09-01T00:21:07.375Z",
+    "sha256": "676facb8f5414fc7b3de3992bad20979745bd905d772023c286699f08308ea49"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "სს საკონტინენტთაშორისო კომერციული ბანკი ლიბერტი",
+   "nameLatin": "ss sakontinenttashoriso komertsiuli banki liberti",
+   "companyNumber": "245424866",
+   "legalForm": "JSC",
+   "status": "liquidated",
+   "statusLocal": "ლიკვიდირებულია",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%9A%E1%83%98%E1%83%91%E1%83%94%E1%83%A0%E1%83%97%E1%83%98%20%E1%83%91%E1%83%90%E1%83%9C%E1%83%99%E1%83%98",
+    "retrievedAt": "2026-09-01T00:21:12.797Z",
+    "sha256": "b290942ab5b29b853f598e37febb90972e76262db35a68bd009da4f40a7d8cc3"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს ჯორჯიან უოთერ კომპანი",
+   "nameLatin": "shps jorjian uoter kompani",
+   "companyNumber": "405279906",
+   "legalForm": "LLC",
+   "status": "suspended",
+   "statusLocal": "რეგისტრაცია შეჩერებულია კანონის 254-ე მუხლის საფუძველზე",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%AF%E1%83%9D%E1%83%A0%E1%83%AF%E1%83%98%E1%83%90%E1%83%9C%20%E1%83%A3%E1%83%9D%E1%83%97%E1%83%94%E1%83%A0",
+    "retrievedAt": "2026-09-01T00:21:16.632Z",
+    "sha256": "0e8192f78c2a056fa0c17341016142180b1d1851bcc8b3dd25aaabf5cd7687c0"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს ჯმჯ ბორჯომი",
+   "nameLatin": "shps jmj borjomi",
+   "companyNumber": "426141329",
+   "legalForm": "LLC",
+   "status": "active",
+   "statusLocal": "აქტიური",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%91%E1%83%9D%E1%83%A0%E1%83%AF%E1%83%9D%E1%83%9B%E1%83%98",
+    "retrievedAt": "2026-09-01T00:21:21.358Z",
+    "sha256": "4e152fa154ce44d04d9ee636d2a618b98f6d1eebb344911472aecc134481da48"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს ნატახტარი 2026",
+   "nameLatin": "shps natakhtari 2026",
+   "companyNumber": "417909008",
+   "legalForm": "LLC",
+   "status": "active",
+   "statusLocal": "აქტიური",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%9C%E1%83%90%E1%83%A2%E1%83%90%E1%83%AE%E1%83%A2%E1%83%90%E1%83%A0%E1%83%98",
+    "retrievedAt": "2026-09-01T00:21:25.024Z",
+    "sha256": "0ca2968ac8610e294f1d2870f4b7d6cad337c09180a71f7c228da0713d9d78a8"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "საქართველო-გალფის ასოციაცია",
+   "nameLatin": "sakartvelo-galpis asotsiatsia",
+   "companyNumber": "402358293",
+   "legalForm": "Non-profit legal entity",
+   "status": "active",
+   "statusLocal": "აქტიური",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%92%E1%83%90%E1%83%9A%E1%83%A4",
+    "retrievedAt": "2026-09-01T00:21:28.985Z",
+    "sha256": "1b09e77ea86246b453cd2960546c22ba57592b9663534cc0a5201deb553aa606"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს სოკარ ინვესტმენტ ჯორჯია",
+   "nameLatin": "shps sokar investment jorjia",
+   "companyNumber": "406140572",
+   "legalForm": "LLC",
+   "status": "suspended",
+   "statusLocal": "რეგისტრაცია შეჩერებულია კანონის 254-ე მუხლის საფუძველზე",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%A1%E1%83%9D%E1%83%99%E1%83%90%E1%83%A0%20%E1%83%AF%E1%83%9D%E1%83%A0%E1%83%AF%E1%83%98%E1%83%90",
+    "retrievedAt": "2026-09-01T00:21:32.994Z",
+    "sha256": "9fc9895c7981f6b5a160e609b123b7edd847a790cd2b7e2e457e0319a4a39b7e"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "შპს ენავერსი",
+   "nameLatin": "shps enaversi",
+   "companyNumber": "402372188",
+   "legalForm": "LLC",
+   "status": "active",
+   "statusLocal": "აქტიური",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%90%E1%83%95%E1%83%94%E1%83%A0%E1%83%A1%E1%83%98",
+    "retrievedAt": "2026-09-01T00:21:37.250Z",
+    "sha256": "ca840c01dca01f35a4b13eee8ae23f65d295ac90dbccb59a248f13456438302a"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "GE",
+   "nameLocal": "ინდივიდუალური მეწარმე ტატიანა პრამ",
+   "nameLatin": "individualuri metsarme tatiana pram",
+   "companyNumber": "306569059",
+   "legalForm": "Individual Entrepreneur",
+   "status": "active",
+   "statusLocal": "აქტიური",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://enreg.reestri.gov.ge/main.php?c=search&m=find_legal_persons&name=%E1%83%A4%E1%83%A1%E1%83%A4",
+    "retrievedAt": "2026-09-01T00:21:40.975Z",
+    "sha256": "d0f95760ad346fde2d5ec4a223d64831b7dd79af8ff4f0b1949a9745f0bce983"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "AM",
+   "nameLocal": "«ԻՆԵԿՈԲԱՆԿ» ՓԲԸ",
+   "nameLatin": "«ԻՆԵԿՈԲԱՆԿ» ՓԲԸ",
+   "companyNumber": "56913769",
+   "taxId": "02518512",
+   "status": "active",
+   "statusLocal": "There is no information recorded in the unified state register regarding being in the process of liquidation or the termination of activity (existence).",
+   "registeredAt": "1996-02-07",
+   "address": "Թումանյան 17, ԵՐԵՎԱՆ, ԵՐԵՎԱՆ, RA",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://e-register.moj.am/en/companies/56913769",
+    "retrievedAt": "2026-09-01T00:21:49.448Z",
+    "sha256": "c76c85289a9a4e7ece9c48579745a21364b5cbe691e53d07a524fcf7cf0677a1"
+   }
+  },
+  {
+   "resultType": "company",
+   "country": "AM",
+   "nameLocal": "ԱՐԱՐԱՏԲԱՆԿ ԲԲԸ OJSC",
+   "nameLatin": "ԱՐԱՐԱՏԲԱՆԿ ԲԲԸ OJSC",
+   "companyNumber": "56724836",
+   "taxId": "02500518",
+   "status": "active",
+   "statusLocal": "There is no information recorded in the unified state register regarding being in the process of liquidation or the termination of activity (existence).",
+   "registeredAt": "1991-09-20",
+   "address": "ԲՅՈՒԶԱՆԴԻ ՓՈՂՈՑ 87 ՇԵՆՔ, 85 ՏԱՐԱԾՔ, ԵՐԵՎԱՆ, ԵՐԵՎԱՆ, RA",
+   "people": [],
+   "evidence": {
+    "sourceUrl": "https://e-register.moj.am/en/companies/56724836",
+    "retrievedAt": "2026-09-01T00:21:56.667Z",
+    "sha256": "7151bf927874b8bdb78c6873b2350d708b3b333eb9ccfe79a9d9cf0245e0b85d"
+   }
+  }
+ ]
+}
