@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reestri: company registers of Georgia, Armenia and Moldova, as data</title>
+<meta name="description" content="Structured lookups over the official company registers of Georgia (country), Armenia and Moldova: status, beneficial owners, public contracts. Pay per lookup on Apify; callable by AI agents via MCP.">
+<link rel="canonical" href="https://reestri.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Georgian:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: oklch(16% 0.02 265);
+    --ink-2: oklch(22% 0.025 265);
+    --paper: oklch(96.5% 0.007 90);
+    --paper-2: oklch(93.5% 0.009 90);
+    --line: oklch(84% 0.012 90);
+    --body: oklch(30% 0.015 265);
+    --muted: oklch(48% 0.015 265);
+    --ge: oklch(52% 0.19 25);
+    --am: oklch(66% 0.13 70);
+    --md: oklch(50% 0.16 262);
+    --mint: oklch(87% 0.13 160);
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Archivo", system-ui, sans-serif;
+    --geo: "Noto Sans Georgian", "Archivo", sans-serif;
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:inherit}
+  ::selection{background:var(--mint);color:var(--ink)}
+
+  /* ---------- masthead ---------- */
+  .mast{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .mast-inner{max-width:1100px;margin:0 auto;padding:56px 24px 72px;position:relative;z-index:1}
+  .ghost{position:absolute;right:-40px;top:-30px;font-family:var(--geo);font-weight:700;font-size:clamp(160px,28vw,340px);line-height:.9;color:oklch(24% 0.03 265);user-select:none;pointer-events:none;letter-spacing:-.04em}
+  .brandline{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .wordmark{font-weight:800;font-size:28px;letter-spacing:-.01em;color:var(--paper)}
+  .wordmark u{text-decoration:none;border-bottom:5px solid var(--mint);padding-bottom:2px}
+  .geo-name{font-family:var(--geo);color:oklch(62% 0.02 265);font-size:17px}
+  .mast h1{font-weight:800;letter-spacing:-.025em;font-size:clamp(30px,5vw,54px);line-height:1.06;max-width:17ch;margin-top:34px;color:oklch(93% 0.008 90)}
+  .mast h1 .c-ge{color:oklch(72% 0.15 25)}
+  .mast h1 .c-am{color:oklch(78% 0.13 75)}
+  .mast h1 .c-md{color:oklch(72% 0.12 262)}
+  .mast p.sub{margin-top:20px;max-width:58ch;color:oklch(74% 0.014 265);font-size:17px}
+  .mast-cta{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-block;font-weight:600;font-size:15px;text-decoration:none;padding:12px 22px;border-radius:3px}
+  .btn-solid{background:var(--mint);color:var(--ink)}
+  .btn-solid:hover{background:oklch(91% 0.11 160)}
+  .btn-ghost{color:var(--paper);border:1px solid oklch(40% 0.02 265)}
+  .btn-ghost:hover{border-color:oklch(60% 0.02 265)}
+  .mast-note{font-family:var(--mono);font-size:12.5px;color:oklch(58% 0.015 265);margin-top:26px}
+
+  /* ---------- section scaffolding ---------- */
+  section{max-width:1100px;margin:0 auto;padding:72px 24px 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  h2{font-weight:800;letter-spacing:-.02em;font-size:clamp(24px,3.2vw,34px);color:var(--ink);margin-top:10px}
+  .lede{max-width:62ch;margin-top:14px}
+
+  /* ---------- ledger + record viewer ---------- */
+  .ledger-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 48px;margin-top:36px;align-items:start}
+  .ledger{border-top:2px solid var(--ink)}
+  .row{width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:20px 8px 20px 0;cursor:pointer;font:inherit;color:inherit;display:block}
+  .row:hover,.row[aria-selected="true"]{background:var(--paper-2)}
+  .row[aria-selected="true"] .t-name::after{content:"→";margin-left:10px;color:var(--muted)}
+  .t-top{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+  .t-name{font-weight:700;color:var(--ink);font-size:17px;letter-spacing:-.01em}
+  .t-price{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
+  .t-flag{display:inline-block;width:9px;height:9px;border-radius:1px;margin-right:9px;vertical-align:1px}
+  .f-ge{background:var(--ge)} .f-am{background:var(--am)} .f-md{background:var(--md)}
+  .t-desc{margin-top:6px;font-size:14.5px;max-width:52ch}
+  .t-src{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:7px}
+  .ledger-foot{font-size:13.5px;color:var(--muted);padding:16px 0;max-width:52ch}
+
+  .viewer{position:sticky;top:20px}
+  .viewer-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:10px}
+  .viewer-head .vh-l{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .viewer-head .vh-r{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .record{background:var(--ink);color:oklch(86% 0.01 120);border-radius:4px;padding:22px 22px 18px;font-family:var(--mono);font-size:12.8px;line-height:1.62;overflow-x:auto;min-height:430px}
+  .record .cmd{color:oklch(70% 0.02 265);display:block;margin-bottom:14px}
+  .record .cmd b{color:var(--mint);font-weight:600}
+  .record .k{color:oklch(62% 0.02 265)}
+  .record .s{color:oklch(88% 0.06 120)}
+  .record .n{color:oklch(80% 0.1 75)}
+  .record .hl{color:var(--mint)}
+  .record .dim{color:oklch(52% 0.015 265)}
+  .rec-pane{display:none;animation:in .18s cubic-bezier(.22,1,.36,1)}
+  .rec-pane.on{display:block}
+  @keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .viewer-note{font-size:13px;color:var(--muted);margin-top:12px;max-width:56ch}
+
+  /* ---------- agents ---------- */
+  .agents{background:var(--paper-2);margin-top:72px;padding-bottom:64px}
+  .agents-inner{max-width:1100px;margin:0 auto;padding:64px 24px 0}
+  .agents-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:44px;margin-top:30px;align-items:start}
+  .snippet{background:var(--ink);color:oklch(86% 0.01 120);border-radius:4px;padding:20px 22px;font-family:var(--mono);font-size:13px;line-height:1.7;overflow-x:auto}
+  .snippet .dim{color:oklch(52% 0.015 265)}
+  .snippet .hl{color:var(--mint)}
+  .where{border-top:2px solid var(--ink)}
+  .where li{list-style:none;border-bottom:1px solid var(--line);padding:13px 4px;display:flex;justify-content:space-between;gap:16px;font-size:14.5px}
+  .where li b{font-weight:600;color:var(--ink)}
+  .where li span{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right}
+
+  /* ---------- findings ---------- */
+  .find{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px;margin-top:32px}
+  .find article{border-top:2px solid var(--ink);padding-top:18px}
+  .find .num{font-weight:800;font-size:clamp(34px,4.5vw,52px);letter-spacing:-.03em;color:var(--ink);line-height:1}
+  .find .num em{font-style:normal;color:var(--am)}
+  .find p{margin-top:12px;font-size:15px;max-width:48ch}
+  .find a{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+
+  /* ---------- rules ---------- */
+  .rules{margin-top:8px}
+  .rules ul{margin-top:26px;border-top:2px solid var(--ink)}
+  .rules li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px;font-size:15px}
+  .rules li b{font-weight:700;color:var(--ink)}
+  @media (max-width:700px){.rules li{grid-template-columns:1fr;gap:4px}}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink);color:oklch(70% 0.014 265);margin-top:88px}
+  .foot-inner{max-width:1100px;margin:0 auto;padding:44px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+  footer a{color:oklch(85% 0.01 90);text-decoration:none;border-bottom:1px solid oklch(40% 0.02 265)}
+  footer a:hover{border-color:var(--mint)}
+  .foot-geo{font-family:var(--geo);color:oklch(46% 0.02 265)}
+
+  @media (max-width:900px){
+    .ledger-wrap{grid-template-columns:1fr}
+    .viewer{position:static;margin-top:28px}
+    .agents-grid{grid-template-columns:1fr}
+    .find{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="ghost" aria-hidden="true">რეესტრი</div>
+  <div class="mast-inner">
+    <div class="brandline">
+      <span class="wordmark"><u>Reestri</u></span>
+      <span class="geo-name">რეესტრი, Georgian for “registry”</span>
+    </div>
+    <h1>The company registers of <span class="c-ge">Georgia</span>, <span class="c-am">Armenia</span> and <span class="c-md">Moldova</span>, as data you can cite.</h1>
+    <p class="sub">Five maintained lookup tools over the official registers. Status, legal form, beneficial owners, public contracts. Every record carries its source URL, retrieval time and content hash. Pay per lookup; no subscription; callable by AI agents.</p>
+    <div class="mast-cta">
+      <a class="btn btn-solid" href="https://apify.com/reestri">Run a lookup on Apify</a>
+      <a class="btn btn-ghost" href="#agents">Connect an AI agent</a>
+    </div>
+    <p class="mast-note">from $0.05 per search · first lookups covered by Apify’s free credit · built in Kutaisi, Georgia</p>
+  </div>
+</header>
+
+<section id="tools">
+  <p class="kicker">The ledger</p>
+  <h2>Five tools, three registers, one record shape</h2>
+  <p class="lede">Both registers publish in non‑Latin scripts through card‑by‑card portals. Reestri reads the open surfaces and returns normalised English JSON. Select a row to see a real record, fetched live from the register.</p>
+
+  <div class="ledger-wrap">
+    <div class="ledger" role="tablist" aria-label="Tools">
+      <button class="row" role="tab" data-pane="ge" aria-selected="true">
+        <span class="t-top"><span class="t-name"><span class="t-flag f-ge"></span>Georgia company lookup</span><span class="t-price">$0.05 + $0.25 / record</span></span>
+        <span class="t-desc">By name or 9‑digit ID code: legal form, status, address, registration date.</span>
+        <span class="t-src">NAPR · enreg.reestri.gov.ge · live</span>
+      </button>
+      <button class="row" role="tab" data-pane="pers" aria-selected="false">
+        <span class="t-top"><span class="t-name"><span class="t-flag f-ge"></span>Georgia person → companies</span><span class="t-price">$0.05 + $0.10 / row</span></span>
+        <span class="t-desc">Every company a person or organisation is a partner, director or founder of.</span>
+        <span class="t-src">NAPR participant search · live</span>
+      </button>
+      <button class="row" role="tab" data-pane="am" aria-selected="false">
+        <span class="t-top"><span class="t-name"><span class="t-flag f-am"></span>Armenia company + owners</span><span class="t-price">$0.05 + $0.50 / record</span></span>
+        <span class="t-desc">Register card plus the official beneficial‑ownership declarations, parsed from BODS.</span>
+        <span class="t-src">e‑register.moj.am · live</span>
+      </button>
+      <button class="row" role="tab" data-pane="con" aria-selected="false">
+        <span class="t-top"><span class="t-name"><span class="t-flag f-am"></span>Armenia supplier contracts</span><span class="t-price">$0.05 + $0.10 / record</span></span>
+        <span class="t-desc">Every public contract a supplier has won: buyers, values, single‑source awards, appeals.</span>
+        <span class="t-src">PPCM procurement registry · weekly index, 236,159 contracts</span>
+      </button>
+      <button class="row" role="tab" data-pane="scr" aria-selected="false">
+        <span class="t-top"><span class="t-name"><span class="t-flag f-ge"></span><span class="t-flag f-am"></span><span class="t-flag f-md"></span>Company screen</span><span class="t-price">$0.50 + $0.10 / match</span></span>
+        <span class="t-desc">One name across all registers in one call: matches, statuses, owners, contract exposure, verdict.</span>
+        <span class="t-src">GE + AM live · MD opt‑in, weekly index of 302,232 companies</span>
+      </button>
+      <p class="ledger-foot">Moldova ships as an opt‑in inside the screen while the register’s re‑use terms are confirmed in writing with ASP. Kazakhstan and Azerbaijan are researched and parked; their portals block programmatic access.</p>
+    </div>
+
+    <div class="viewer">
+      <div class="viewer-head"><span class="vh-l">Real record</span><span class="vh-r" id="vh-time">retrieved 2026‑09‑01</span></div>
+      <div class="record" id="record">
+        <div class="rec-pane on" data-pane="ge"><span class="cmd">$ reestri/ge-company-lookup <b>--query "Silknet"</b></span>{
+  <span class="k">"resultType"</span>: <span class="s">"company"</span>,
+  <span class="k">"country"</span>: <span class="s">"GE"</span>,
+  <span class="k">"nameLocal"</span>: <span class="s">"შპს სილკნეტი"</span>,
+  <span class="k">"nameLatin"</span>: <span class="s">"shps silkneti"</span>,
+  <span class="k">"companyNumber"</span>: <span class="s">"204952685"</span>,
+  <span class="k">"legalForm"</span>: <span class="s">"LLC"</span>,
+  <span class="k">"status"</span>: <span class="hl">"active"</span>,
+  <span class="k">"statusLocal"</span>: <span class="s">"აქტიური"</span>,
+  <span class="k">"match"</span>: { <span class="k">"score"</span>: <span class="n">0.85</span>, <span class="k">"candidates"</span>: <span class="n">1</span>, <span class="k">"ambiguous"</span>: <span class="n">false</span> },
+  <span class="k">"evidence"</span>: {
+    <span class="k">"sourceUrl"</span>: <span class="s">"https://enreg.reestri.gov.ge/…find_legal_persons"</span>,
+    <span class="k">"retrievedAt"</span>: <span class="s">"2026-09-01T00:06:05Z"</span>,
+    <span class="k">"sha256"</span>: <span class="hl">"a7084373aa29…cec452550"</span>
+  }
+}</div>
+        <div class="rec-pane" data-pane="pers"><span class="cmd">$ reestri/ge-person-search <b>--firstName "..." --lastName "..."</b></span>{
+  <span class="k">"resultType"</span>: <span class="s">"participation"</span>,
+  <span class="k">"participantName"</span>: <span class="s">"…"</span>,
+  <span class="k">"role"</span>: <span class="hl">"director"</span>,
+  <span class="k">"companyNumber"</span>: <span class="s">"20…"</span>,
+  <span class="k">"companyNameLocal"</span>: <span class="s">"შპს …"</span>,
+  <span class="k">"companyStatus"</span>: <span class="s">"active"</span>,
+  <span class="k">"evidence"</span>: { <span class="k">"sourceUrl"</span>: <span class="s">"…find_participations2"</span>, <span class="dim">…</span> }
+}
+<span class="dim">// one row per company the person participates in;
+// names withheld here, the register itself is public</span></div>
+        <div class="rec-pane" data-pane="am"><span class="cmd">$ reestri/am-company-lookup <b>--query "Ucom"</b></span>{
+  <span class="k">"nameLatin"</span>: <span class="s">"\"UCOM\" CJSC"</span>,
+  <span class="k">"country"</span>: <span class="s">"AM"</span>,
+  <span class="k">"taxId"</span>: <span class="s">"00024873"</span>,
+  <span class="k">"status"</span>: <span class="hl">"active"</span>,
+  <span class="k">"people"</span>: [
+    { <span class="k">"nameLatin"</span>: <span class="s">"Artyom Khachatryan"</span>,
+      <span class="k">"role"</span>: <span class="hl">"beneficial_owner"</span>,
+      <span class="k">"interestTypes"</span>: [<span class="s">"shareholding"</span>], <span class="k">"since"</span>: <span class="s">"2021-10-28"</span> },
+    { <span class="k">"nameLatin"</span>: <span class="s">"Gurgen Khachatryan"</span>,
+      <span class="k">"role"</span>: <span class="hl">"beneficial_owner"</span>, <span class="dim">…</span> }
+  ],
+  <span class="k">"evidence"</span>: { <span class="k">"sourceUrl"</span>: <span class="s">"https://e-register.moj.am/en/companies/37191802"</span>, <span class="dim">…</span> }
+}</div>
+        <div class="rec-pane" data-pane="con"><span class="cmd">$ reestri/am-supplier-contracts <b>--query "Electric Networks of Armenia"</b></span>{
+  <span class="k">"resultType"</span>: <span class="s">"contract"</span>,
+  <span class="k">"supplierTaxId"</span>: <span class="s">"…"</span>,
+  <span class="k">"buyer"</span>: <span class="s">"…"</span>,
+  <span class="k">"valueAMD"</span>: <span class="n">…</span>,
+  <span class="k">"procedure"</span>: <span class="hl">"single source (ՄԱ)"</span>,
+  <span class="k">"signedAt"</span>: <span class="s">"…"</span>,
+  <span class="k">"evidence"</span>: { <span class="k">"registryAsOf"</span>: <span class="s">"2026-08-29"</span>, <span class="dim">…</span> }
+}
+<span class="dim">// index: 236,159 contracts, 21,781 suppliers,
+// refreshed every Sunday from armeps.am</span></div>
+        <div class="rec-pane" data-pane="scr"><span class="cmd">$ reestri/company-screen <b>--query "Silknet" --countries GE,AM</b></span>{
+  <span class="k">"resultType"</span>: <span class="s">"screen"</span>,
+  <span class="k">"summary"</span>: {
+    <span class="k">"matchedCompanies"</span>: <span class="n">1</span>,
+    <span class="k">"byCountry"</span>: { <span class="k">"GE"</span>: <span class="n">1</span>, <span class="k">"AM"</span>: <span class="n">0</span> },
+    <span class="k">"byStatus"</span>: { <span class="k">"active"</span>: <span class="n">1</span> },
+    <span class="k">"beneficialOwnersFound"</span>: <span class="n">0</span>,
+    <span class="k">"armenianPublicContracts"</span>: { <span class="k">"count"</span>: <span class="n">0</span> },
+    <span class="k">"sourcesUnavailable"</span>: [],
+    <span class="k">"verdict"</span>: <span class="hl">"1 match(es); review status, owners and contract exposure"</span>
+  },
+  <span class="k">"sources"</span>: { <span class="k">"GE"</span>: {<span class="k">"status"</span>:<span class="s">"ok"</span>}, <span class="k">"AM"</span>: {<span class="k">"status"</span>:<span class="s">"ok"</span>} }
+}</div>
+      </div>
+      <p class="viewer-note">A register that cannot be read is returned as an explicit <span style="font-family:var(--mono);font-size:12px">unavailable</span> record, never as a silent no‑match. Not‑found is charged; it is an answer.</p>
+    </div>
+  </div>
+</section>
+
+<div class="agents" id="agents">
+  <div class="agents-inner">
+    <p class="kicker">For AI agents</p>
+    <h2>Seven MCP tools, one endpoint</h2>
+    <p class="lede">Every tool is exposed over the Model Context Protocol. An agent screens a counterparty with one call and gets evidence it can quote. Billing runs through the caller’s own Apify account.</p>
+    <div class="agents-grid">
+      <div>
+        <div class="snippet"><span class="dim"># Claude Code</span>
+claude mcp add --transport http reestri \
+  <span class="hl">"https://mcp.apify.com/?tools=reestri/company-screen"</span>
+
+<span class="dim"># or install the plugin</span>
+claude plugin marketplace add SosoPkhakadze/reestri-claude-plugin
+claude plugin install reestri@reestri</div>
+        <p class="viewer-note">Header: <span style="font-family:var(--mono);font-size:12px">Authorization: Bearer &lt;your Apify token&gt;</span>. Tools: lookup_company_by_number, search_companies_by_name, find_companies_by_person, find_companies_by_organisation, lookup_armenian_company, search_armenian_companies, screen_company.</p>
+      </div>
+      <ul class="where">
+        <li><b>Apify MCP hub</b><span>mcp.apify.com/?tools=reestri/…</span></li>
+        <li><b>Official MCP Registry</b><span>io.github.SosoPkhakadze/reestri-*</span></li>
+        <li><b>Smithery</b><span>smithery.ai/servers/reestri</span></li>
+        <li><b>Glama</b><span>auto‑indexed from the registry</span></li>
+        <li><b>Claude plugin</b><span>github.com/SosoPkhakadze/reestri-claude-plugin</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section id="findings">
+  <p class="kicker">From the data</p>
+  <h2>We publish what the registers show</h2>
+  <p class="lede">Open, reproducible analyses from the same indexes the tools serve. Aggregate only; companies, never private individuals.</p>
+  <div class="find">
+    <article>
+      <div class="num">52% <span style="color:var(--muted);font-weight:600;font-size:.55em">→</span> <em>7%</em></div>
+      <p>Armenia’s single‑source public contracts fell from 52 percent of spend in 2018 to 7 percent in 2024. By count, four in ten procedures are still awarded without competition. 236,159 contracts analysed.</p>
+      <a href="https://github.com/SosoPkhakadze/reestri-data/tree/main/am-contracts">reestri-data / am-contracts →</a>
+    </article>
+    <article>
+      <div class="num"><em>1,080</em> firms</div>
+      <p>get over 90 percent of their public revenue from a single state buyer; 618 have exactly one buyer. The dependence map, by tax ID, is a free CSV.</p>
+      <a href="https://github.com/SosoPkhakadze/reestri-data">all datasets and methods →</a>
+    </article>
+  </div>
+</section>
+
+<section class="rules" id="method">
+  <p class="kicker">Method</p>
+  <h2>Rules the tools never break</h2>
+  <ul>
+    <li><b>Official sources only</b><span>NAPR, e‑register.moj.am, armeps.am, dataset.gov.md. Open surfaces; no captcha bypass, no login walls, no robots‑excluded paths. Georgia’s gated ownership extracts stay gated; we say so instead of pretending.</span></li>
+    <li><b>Evidence on every record</b><span>Source URL, retrieval timestamp and SHA‑256 of the fetched content, so a compliance file or an article can cite and re‑verify the exact observation.</span></li>
+    <li><b>No personal identifiers</b><span>Beneficial owners are named as the state publishes them; personal ID numbers and home addresses are never returned.</span></li>
+    <li><b>Honest failure</b><span>Registry down or changed? The run fails loudly and the record says unavailable. Daily green‑run checks keep the public success stats real.</span></li>
+  </ul>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div style="color:var(--paper);font-weight:700">Reestri <span class="foot-geo">· რეესტრი</span></div>
+      <div style="margin-top:6px">Built and run by Soso Pkhakadze, Kutaisi, Georgia.</div>
+    </div>
+    <div style="text-align:right">
+      <div><a href="https://apify.com/reestri">apify.com/reestri</a> · <a href="https://github.com/SosoPkhakadze/reestri-data">data</a> · <a href="mailto:soso@reestri.io">soso@reestri.io</a></div>
+      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells these tools. Registry data belongs to its registries.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const rows=[...document.querySelectorAll('.row')],panes=[...document.querySelectorAll('.rec-pane')];
+  function pick(id){
+    rows.forEach(r=>r.setAttribute('aria-selected',String(r.dataset.pane===id)));
+    panes.forEach(p=>p.classList.toggle('on',p.dataset.pane===id));
+  }
+  rows.forEach(r=>{r.addEventListener('click',()=>pick(r.dataset.pane));r.addEventListener('mouseenter',()=>pick(r.dataset.pane));});
+</script>
+</body>
+</html>
