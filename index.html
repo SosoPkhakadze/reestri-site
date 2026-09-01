@@ -38,10 +38,13 @@
   :lang(ka){font-family:var(--geo)} :lang(hy){font-family:var(--arm)}
   .num{font-variant-numeric:tabular-nums}
 
-  /* reveal */
-  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
+  /* motion system */
+  :root{--ease:cubic-bezier(.22,1,.36,1)}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
   .rv.in{opacity:1;transform:none}
-  .no-motion .rv{opacity:1;transform:none;transition:none}
+  .no-motion *{transition-duration:0s !important;animation:none !important}
+  .no-motion .rv{opacity:1;transform:none}
+  button,a{transition:color .18s var(--ease),background-color .18s var(--ease),border-color .18s var(--ease)}
 
   /* ---------- nav ---------- */
   .nav{position:sticky;top:0;z-index:10;background:oklch(16% 0.02 265 / .92);backdrop-filter:blur(8px);color:var(--paper);border-bottom:1px solid oklch(28% 0.02 265)}
@@ -79,8 +82,14 @@
   .chips{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
   .chips button{background:none;border:1px solid oklch(34% 0.02 265);color:oklch(72% 0.015 265);font:500 12.5px var(--sans);padding:5px 11px;border-radius:99px;cursor:pointer}
   .chips button:hover{border-color:var(--mint);color:var(--paper)}
-  .hits{margin-top:14px;overflow-y:auto;flex:1;max-height:270px}
-  .hit{border-top:1px solid oklch(27% 0.02 265);padding:11px 4px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 14px;cursor:default}
+  .hits{margin-top:14px;overflow-y:auto;flex:1;max-height:270px;scrollbar-width:thin;scrollbar-color:oklch(34% 0.02 265) transparent;mask-image:linear-gradient(to bottom,#000 calc(100% - 26px),transparent);-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 26px),transparent);padding-bottom:18px}
+  .hits::-webkit-scrollbar{width:7px}
+  .hits::-webkit-scrollbar-track{background:transparent}
+  .hits::-webkit-scrollbar-thumb{background:oklch(32% 0.02 265);border-radius:99px}
+  .hits::-webkit-scrollbar-thumb:hover{background:oklch(40% 0.02 265)}
+  .hit{border-top:1px solid oklch(27% 0.02 265);padding:11px 6px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 14px;cursor:default;border-radius:3px;transition:background-color .18s var(--ease);animation:hit-in .28s var(--ease) both}
+  .hit:hover{background:oklch(22% 0.022 265)}
+  @keyframes hit-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
   .hit .h-names b{color:var(--paper);font-weight:600;font-size:14.5px}
   .hit .h-names span{display:block;font-size:13px;color:oklch(64% 0.015 265)}
   .hit .h-st{font-family:var(--mono);font-size:11.5px;text-align:right;align-self:start;padding-top:2px}
@@ -98,27 +107,34 @@
 
   /* code tabs */
   .tabsbar{display:flex;gap:2px;margin-top:26px}
-  .tabsbar button{font:600 13px var(--mono);background:var(--paper-2);border:1px solid var(--line);border-bottom:0;color:var(--muted);padding:8px 16px;cursor:pointer;border-radius:5px 5px 0 0}
+  .tabsbar button{font:600 13px var(--mono);background:var(--paper-2);border:1px solid var(--line);border-bottom:0;color:var(--muted);padding:8px 16px;cursor:pointer;border-radius:5px 5px 0 0;transition:background-color .22s var(--ease),color .22s var(--ease),border-color .22s var(--ease)}
+  .tabsbar button:hover{color:var(--ink)}
   .tabsbar button.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
   .codebox{position:relative;background:var(--ink);border-radius:0 6px 6px 6px;padding:20px 22px;font-family:var(--mono);font-size:13px;line-height:1.7;color:oklch(86% 0.01 120);overflow-x:auto}
   .codebox pre{display:none;white-space:pre;font:inherit}
-  .codebox pre.on{display:block}
+  .codebox pre.on{display:block;animation:pane-in .26s var(--ease)}
+  @keyframes pane-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
   .codebox .dim{color:oklch(52% 0.015 265)} .codebox .hl{color:var(--mint)} .codebox .s{color:oklch(88% 0.06 120)}
   .copy{position:absolute;top:12px;right:12px;background:oklch(26% 0.02 265);border:0;color:oklch(78% 0.015 265);font:600 11.5px var(--mono);padding:6px 11px;border-radius:3px;cursor:pointer}
   .copy:hover{background:oklch(32% 0.02 265)}
   .resp{margin-top:0;border-left:0}
   .resp-cap{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
 
-  /* ledger */
+  /* ledger accordion */
   .ledger{border-top:2px solid var(--ink);margin-top:34px}
-  details.row{border-bottom:1px solid var(--line)}
-  details.row summary{list-style:none;cursor:pointer;padding:19px 8px 19px 0;display:block}
-  details.row summary::-webkit-details-marker{display:none}
-  details.row summary:hover{background:var(--paper-2)}
+  .acc{border-bottom:1px solid var(--line)}
+  .acc-head{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:19px 8px 19px 0;display:block;font:inherit;color:inherit;border-radius:3px}
+  .acc-head:hover{background:var(--paper-2)}
+  .acc.open .acc-head{background:var(--paper-2)}
+  .acc-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s var(--ease)}
+  .acc-panel>div{overflow:hidden;min-height:0}
+  .acc.open .acc-panel{grid-template-rows:1fr}
+  .acc-panel .t-body{opacity:0;transform:translateY(-4px);transition:opacity .3s var(--ease) .08s,transform .3s var(--ease) .08s}
+  .acc.open .acc-panel .t-body{opacity:1;transform:none}
   .t-top{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
   .t-name{font-weight:700;color:var(--ink);font-size:17px;letter-spacing:-.01em}
-  .t-name .tw{display:inline-block;transition:transform .25s cubic-bezier(.22,1,.36,1);margin-right:10px;font-weight:600;color:var(--muted)}
-  details[open] .t-name .tw{transform:rotate(90deg)}
+  .t-name .tw{display:inline-block;transition:transform .3s var(--ease);margin-right:10px;font-weight:600;color:var(--muted)}
+  .acc.open .t-name .tw{transform:rotate(90deg)}
   .t-price{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
   .t-flag{display:inline-block;width:9px;height:9px;border-radius:1px;margin-right:8px;vertical-align:1px}
   .f-ge{background:var(--ge)} .f-am{background:var(--am)} .f-md{background:var(--md)}
@@ -135,9 +151,9 @@
   .ba-head button{flex:1;font:600 13.5px var(--sans);background:none;border:0;padding:12px;cursor:pointer;color:var(--muted)}
   .ba-head button.on{background:var(--paper);color:var(--ink);box-shadow:inset 0 -2px 0 var(--ink)}
   .ba-pane{display:none;padding:26px}
-  .ba-pane.on{display:block;animation:in .18s cubic-bezier(.22,1,.36,1)}
+  .ba-pane.on{display:block;animation:in .3s var(--ease)}
   .no-motion .ba-pane.on{animation:none}
-  @keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
   .portal{font-size:14px;max-width:70ch}
   .portal .prow{display:grid;grid-template-columns:180px 1fr;border-bottom:1px dotted var(--line);padding:8px 0}
   .portal .prow b{font-weight:600;color:var(--ink);font-size:13px}
@@ -167,7 +183,8 @@
 
   /* walkthrough */
   .walk{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:40px;margin-top:32px;align-items:start}
-  .steps button{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:15px 6px;cursor:pointer;font:inherit;color:var(--muted)}
+  .steps button{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:15px 8px;cursor:pointer;font:inherit;color:var(--muted);border-radius:3px}
+  .steps button:hover{background:var(--paper-2)}
   .steps button:first-child{border-top:2px solid var(--ink)}
   .steps button.on{color:var(--ink)}
   .steps button.on b{color:var(--ink)}
@@ -248,7 +265,7 @@
       <div class="demo-cap"><span>Try it: real records</span><span class="live" id="demo-count">11 companies</span></div>
       <input id="q" type="search" placeholder="Type a company name: Silknet, Ucom, მაგთიკომი…" autocomplete="off" aria-label="Search demo records">
       <div class="chips" id="chips">
-        <button>Silknet</button><button>Ucom</button><button lang="ka">მაგთიკომი</button><button lang="hy">ԷՎՈԿԱԲԱՆԿ</button><button>204952685</button>
+        <button>Silknet</button><button>Ucom</button><button>Evocabank</button><button>204952685</button><button lang="ka">მაგთიკომი</button>
       </div>
       <div class="hits" id="hits" aria-live="polite"></div>
       <p class="demo-foot">A snapshot demo: these records were fetched from the registers on 1&nbsp;Sep&nbsp;2026. Live lookups, including owners and contracts, run <a href="https://apify.com/reestri">on Apify</a>. Big brand names often surface branches and namesakes; the ID code is the exact key.</p>
@@ -316,66 +333,51 @@ claude plugin install reestri@reestri</pre>
   <p class="lede rv">The registers publish in three non‑Latin scripts through card‑by‑card portals. Reestri reads the open surfaces and returns normalised English JSON. Open a row for the tool's real output.</p>
 
   <div class="ledger rv">
-    <details class="row">
-      <summary>
+    <div class="row acc"><button class="acc-head" aria-expanded="false">
         <span class="t-top"><span class="t-name"><span class="tw">›</span><span class="t-flag f-ge"></span>Georgia company lookup</span><span class="t-price">$0.05 + $0.25 / record</span></span>
         <span class="t-desc">By name or 9‑digit ID code: legal form, status, address, registration date.</span>
         <span class="t-src">NAPR · enreg.reestri.gov.ge · live</span>
-      </summary>
-      <div class="t-body"><div class="codebox"><pre class="on">{ "nameLocal": <span class="s">"შპს სილკნეტი"</span>, "companyNumber": <span class="s">"204952685"</span>,
+      </button><div class="acc-panel"><div><div class="t-body"><div class="codebox"><pre class="on">{ "nameLocal": <span class="s">"შპს სილკნეტი"</span>, "companyNumber": <span class="s">"204952685"</span>,
   "legalForm": <span class="s">"LLC"</span>, "status": <span class="hl">"active"</span>, "statusLocal": <span class="s">"აქტიური"</span>,
   "evidence": { "sourceUrl": <span class="s">"enreg.reestri.gov.ge/…"</span>, "sha256": <span class="hl">"a708…2550"</span> } }</pre></div>
-      <p class="t-links"><a href="https://apify.com/reestri/ge-company-lookup">docs and live runs →</a></p></div>
-    </details>
-    <details class="row">
-      <summary>
+      <p class="t-links"><a href="https://apify.com/reestri/ge-company-lookup">docs and live runs →</a></p></div></div></div></div>
+    <div class="row acc"><button class="acc-head" aria-expanded="false">
         <span class="t-top"><span class="t-name"><span class="tw">›</span><span class="t-flag f-ge"></span>Georgia person → companies</span><span class="t-price">$0.05 + $0.10 / row</span></span>
         <span class="t-desc">Every company a person or organisation is a partner, director or founder of.</span>
         <span class="t-src">NAPR participant search · live</span>
-      </summary>
-      <div class="t-body"><div class="codebox"><pre class="on">{ "resultType": <span class="s">"participation"</span>, "role": <span class="hl">"director"</span>,
+      </button><div class="acc-panel"><div><div class="t-body"><div class="codebox"><pre class="on">{ "resultType": <span class="s">"participation"</span>, "role": <span class="hl">"director"</span>,
   "companyNameLocal": <span class="s">"შპს …"</span>, "companyStatus": <span class="s">"active"</span>,
   "evidence": { "sourceUrl": <span class="s">"…find_participations2"</span> } }
 <span class="dim">// one row per company; the register itself is public</span></pre></div>
-      <p class="t-links"><a href="https://apify.com/reestri/ge-person-search">docs and live runs →</a></p></div>
-    </details>
-    <details class="row">
-      <summary>
+      <p class="t-links"><a href="https://apify.com/reestri/ge-person-search">docs and live runs →</a></p></div></div></div></div>
+    <div class="row acc"><button class="acc-head" aria-expanded="false">
         <span class="t-top"><span class="t-name"><span class="tw">›</span><span class="t-flag f-am"></span>Armenia company + owners</span><span class="t-price">$0.05 + $0.50 / record</span></span>
         <span class="t-desc">Register card plus the official beneficial‑ownership declarations, parsed from BODS.</span>
         <span class="t-src">e‑register.moj.am · live</span>
-      </summary>
-      <div class="t-body"><div class="codebox"><pre class="on">{ "nameLatin": <span class="s">"\"UCOM\" CJSC"</span>, "taxId": <span class="s">"00024873"</span>, "status": <span class="hl">"active"</span>,
+      </button><div class="acc-panel"><div><div class="t-body"><div class="codebox"><pre class="on">{ "nameLatin": <span class="s">"\"UCOM\" CJSC"</span>, "taxId": <span class="s">"00024873"</span>, "status": <span class="hl">"active"</span>,
   "people": [
     { "nameLatin": <span class="s">"Artyom Khachatryan"</span>, "role": <span class="hl">"beneficial_owner"</span>,
       "interestTypes": [<span class="s">"shareholding"</span>], "since": <span class="s">"2021-10-28"</span> }, <span class="dim">… 15 declared owners</span> ],
   "evidence": { "sourceUrl": <span class="s">"e-register.moj.am/en/companies/37191802"</span> } }</pre></div>
-      <p class="t-links"><a href="https://apify.com/reestri/am-company-lookup">docs and live runs →</a></p></div>
-    </details>
-    <details class="row">
-      <summary>
+      <p class="t-links"><a href="https://apify.com/reestri/am-company-lookup">docs and live runs →</a></p></div></div></div></div>
+    <div class="row acc"><button class="acc-head" aria-expanded="false">
         <span class="t-top"><span class="t-name"><span class="tw">›</span><span class="t-flag f-am"></span>Armenia supplier contracts</span><span class="t-price">$0.05 + $0.10 / record</span></span>
         <span class="t-desc">Every public contract a supplier has won: buyers, values, single‑source awards, appeals.</span>
         <span class="t-src">PPCM procurement registry · weekly index, 236,159 contracts</span>
-      </summary>
-      <div class="t-body"><div class="codebox"><pre class="on">{ "resultType": <span class="s">"contract"</span>, "buyer": <span class="s">"…"</span>, "valueAMD": <span class="s">…</span>,
+      </button><div class="acc-panel"><div><div class="t-body"><div class="codebox"><pre class="on">{ "resultType": <span class="s">"contract"</span>, "buyer": <span class="s">"…"</span>, "valueAMD": <span class="s">…</span>,
   "procedure": <span class="hl">"single source (ՄԱ)"</span>, "signedAt": <span class="s">"…"</span>,
   "evidence": { "registryAsOf": <span class="s">"2026-08-29"</span> } }
 <span class="dim">// 21,781 suppliers, refreshed every Sunday from armeps.am</span></pre></div>
-      <p class="t-links"><a href="https://apify.com/reestri/am-supplier-contracts">docs and live runs →</a></p></div>
-    </details>
-    <details class="row">
-      <summary>
+      <p class="t-links"><a href="https://apify.com/reestri/am-supplier-contracts">docs and live runs →</a></p></div></div></div></div>
+    <div class="row acc"><button class="acc-head" aria-expanded="false">
         <span class="t-top"><span class="t-name"><span class="tw">›</span><span class="t-flag f-ge"></span><span class="t-flag f-am"></span><span class="t-flag f-md"></span>Company screen</span><span class="t-price">$0.50 + $0.10 / match</span></span>
         <span class="t-desc">One name across all registers in one call: matches, statuses, owners, contract exposure, verdict.</span>
         <span class="t-src">GE + AM live · MD opt‑in, weekly index of 302,232 companies</span>
-      </summary>
-      <div class="t-body"><div class="codebox"><pre class="on">{ "resultType": <span class="s">"screen"</span>,
+      </button><div class="acc-panel"><div><div class="t-body"><div class="codebox"><pre class="on">{ "resultType": <span class="s">"screen"</span>,
   "summary": { "matchedCompanies": <span class="s">1</span>, "byCountry": { "GE": <span class="s">1</span>, "AM": <span class="s">0</span> },
     "byStatus": { "active": <span class="s">1</span> }, "sourcesUnavailable": [],
     "verdict": <span class="hl">"1 match(es); review status, owners and contract exposure"</span> } }</pre></div>
-      <p class="t-links"><a href="https://apify.com/reestri/company-screen">docs and live runs →</a></p></div>
-    </details>
+      <p class="t-links"><a href="https://apify.com/reestri/company-screen">docs and live runs →</a></p></div></div></div></div>
   </div>
 
   <div class="ba rv" id="ba">
@@ -602,6 +604,15 @@ KV  md-registry           <span class="dim">skipped (opt-in)</span></pre>
     navigator.clipboard.writeText(pre.textContent).then(()=>{btn.textContent='copied';setTimeout(()=>btn.textContent='copy',1400);});
   }));
 
+  /* ledger accordion */
+  document.querySelectorAll('.acc').forEach(acc=>{
+    const head=acc.querySelector('.acc-head');
+    head.addEventListener('click',()=>{
+      const open=acc.classList.toggle('open');
+      head.setAttribute('aria-expanded',String(open));
+    });
+  });
+
   /* before/after */
   const ba=document.getElementById('ba');
   ba.querySelectorAll('.ba-head button').forEach(b=>b.addEventListener('click',()=>{
@@ -633,14 +644,16 @@ KV  md-registry           <span class="dim">skipped (opt-in)</span></pre>
       hits.innerHTML=list.slice(0,6).map(c=>{
         const own=c.people&&c.people.length?'<span class="own">'+c.people.length+' declared owner'+(c.people.length>1?'s':'')+'</span> · ':'';
         const lang=c.country==='GE'?'ka':(c.country==='AM'?'hy':'');
-        return '<div class="hit"><div class="h-names"><b '+(lang?'lang="'+lang+'"':'')+'>'+(c.nameLocal||c.nameLatin)+'</b><span>'+(c.nameLatin&&c.nameLatin!==c.nameLocal?c.nameLatin:'')+'</span></div>'+
+        const primary=c.nameLatin||c.nameLocal, secondary=(c.nameLocal&&c.nameLocal!==primary)?c.nameLocal:'';
+        return '<div class="hit"><div class="h-names"><b>'+primary+'</b><span '+(lang?'lang="'+lang+'"':'')+'>'+secondary+'</span></div>'+
         '<div class="h-st st-'+c.status+'">'+c.status+'</div>'+
         '<div class="h-meta">'+c.country+' · '+(c.companyNumber||c.taxId||'')+' · '+(c.legalForm||'')+' · '+own+'sha256 '+((c.evidence&&c.evidence.sha256)||'').slice(0,8)+'…</div></div>';
-      }).join('')||'<div class="hit"><div class="h-names"><b>No match in the demo set</b><span>the live tools search the full registers</span></div></div>';
+      }).map((h,i)=>h.replace('class="hit"','class="hit" style="animation-delay:'+(i*45)+'ms"')).join('')||'<div class="hit"><div class="h-names"><b>No match in the demo set</b><span>the live tools search the full registers</span></div></div>';
     }
     function search(v){
       const n=norm(v);
-      render(!n?records:records.filter(c=>[c.nameLocal,c.nameLatin,c.companyNumber,c.taxId].some(f=>norm(f).includes(n))));
+      const fold=x=>norm(x).replace(/[^a-z0-9Ⴀ-ჿ԰-֏]/g,'');
+      render(!n?records:records.filter(c=>[c.nameLocal,c.nameLatin,c.companyNumber,c.taxId].some(f=>norm(f).includes(n)||fold(f).includes(fold(n)))));
     }
     q.addEventListener('input',()=>search(q.value));
     document.querySelectorAll('#chips button').forEach(b=>b.addEventListener('click',()=>{q.value=b.textContent;search(q.value);q.focus();}));
