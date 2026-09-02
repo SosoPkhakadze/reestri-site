@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Single source contracts in Armenia, 2018 to 2026: 52 to 7 percent of spend | Reestri</title>
+<meta name="description" content="Armenia cut single source awards from 52.04 to 6.83 percent of public contract value, while roughly four procedures in ten still skip competition. Analysis of 236,159 contracts from PPCM, Armenia's public procurement registry, with free CSVs.">
+<link rel="canonical" href="https://reestri.io/data/armenia-single-source/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Georgian:wght@400;700&family=Noto+Sans+Armenian:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"Single source contracts in Armenia fell from 52 percent of spend to 7. The habit stayed.",
+ "description":"Analysis of 236,159 signed contracts in PPCM, Armenia's public procurement registry, 2018 to 2026.",
+ "author":{"@type":"Person","name":"Soso Pkhakadze"},
+ "publisher":{"@type":"Organization","name":"Reestri","url":"https://reestri.io/"},
+ "datePublished":"2026-09-02","dateModified":"2026-09-02",
+ "mainEntityOfPage":"https://reestri.io/data/armenia-single-source/"}
+</script>
+<style>
+  :root{
+    --ink: oklch(16% 0.02 265);
+    --paper: oklch(96.5% 0.007 90);
+    --paper-2: oklch(93.5% 0.009 90);
+    --line: oklch(85% 0.012 90);
+    --body: oklch(30% 0.015 265);
+    --muted: oklch(47% 0.015 265);
+    --am: oklch(63% 0.13 70);
+    --mint: oklch(87% 0.13 160);
+    --mint-ink: oklch(40% 0.09 160);
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Archivo", system-ui, sans-serif;
+    --geo: "Noto Sans Georgian", "Archivo", sans-serif;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:inherit}
+  ::selection{background:var(--mint);color:var(--ink)}
+  :lang(hy){font-family:"Noto Sans Armenian","Archivo",sans-serif}
+  .num{font-variant-numeric:tabular-nums}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .no-motion *{transition-duration:0s !important;animation:none !important}
+  .no-motion .rv{opacity:1;transform:none}
+  button,a{transition:color .18s var(--ease),background-color .18s var(--ease),border-color .18s var(--ease)}
+
+  .nav{position:sticky;top:0;z-index:10;background:oklch(16% 0.02 265 / .92);backdrop-filter:blur(8px);color:var(--paper);border-bottom:1px solid oklch(28% 0.02 265)}
+  .nav-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:26px;height:52px;overflow-x:auto}
+  .nav b{font-weight:800;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
+  .nav b a{text-decoration:none;border-bottom:3px solid var(--mint)}
+  .nav a{font-size:13.5px;font-weight:500;text-decoration:none;color:oklch(70% 0.015 265);white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+  .nav b a{color:var(--paper);font-size:16px}
+  .nav a:hover{color:var(--paper)}
+  .nav a.on{color:var(--paper);border-color:var(--mint)}
+  .nav .sp{flex:1}
+  .nav .run{background:var(--mint);color:var(--ink);font-weight:700;font-size:13px;padding:7px 14px;border-radius:3px;border:0}
+  .nav .run:hover{background:oklch(91% 0.11 160)}
+
+  .mast{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .ghost{position:absolute;right:-50px;top:-36px;font-family:var(--geo);font-weight:700;font-size:clamp(150px,26vw,320px);line-height:.9;color:oklch(23.5% 0.028 265);user-select:none;pointer-events:none;letter-spacing:-.04em}
+  .mast-in{max-width:1140px;margin:0 auto;padding:56px 24px 54px;position:relative;z-index:1}
+  .kicker{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .mast .kicker{color:oklch(62% 0.015 265)}
+  .mast h1{font-weight:800;letter-spacing:-.025em;font-size:clamp(28px,4.2vw,46px);line-height:1.08;max-width:24ch;color:oklch(93% 0.008 90);margin-top:14px}
+  .mast h1 em{font-style:normal;color:oklch(78% 0.13 75)}
+  .mast p.stand{margin-top:18px;max-width:62ch;color:oklch(74% 0.014 265);font-size:16.5px}
+  .byline{font-family:var(--mono);font-size:12.5px;color:oklch(58% 0.015 265);margin-top:24px}
+  .byline b{color:oklch(80% 0.014 265);font-weight:600}
+
+  section{max-width:1140px;margin:0 auto;padding:64px 24px 0}
+  h2{font-weight:800;letter-spacing:-.02em;font-size:clamp(22px,3vw,30px);color:var(--ink);margin-top:10px}
+  .lede{max-width:64ch;margin-top:14px}
+  .prose{max-width:70ch}
+  .prose p{margin-top:14px;font-size:15.5px}
+  .prose p b{color:var(--ink);font-weight:700}
+
+  .chartwrap{margin-top:34px;border-top:2px solid var(--ink);padding-top:22px}
+  .chartwrap figcaption{font-size:13.5px;color:var(--muted);margin-top:10px;max-width:70ch}
+  .legend{display:flex;gap:22px;font:500 12.5px var(--mono);color:var(--muted);margin-bottom:8px}
+  .legend i{display:inline-block;width:16px;height:3px;vertical-align:3px;margin-right:7px}
+
+  .covwrap{overflow-x:auto;margin-top:26px}
+  table.cov{border-collapse:collapse;width:100%;font-size:14px}
+  .cov caption{text-align:left;font-weight:700;color:var(--ink);font-size:15.5px;padding-bottom:10px;letter-spacing:-.01em}
+  .cov th{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 14px 10px 0;border-bottom:2px solid var(--ink)}
+  .cov td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .cov th.r,.cov td.r{text-align:right;padding-right:0;padding-left:14px}
+  .cov td.rname{font-weight:600;color:var(--ink)}
+  .cov td.mono,.cov .mono{font-family:var(--mono);font-size:12.5px}
+  .cov .hi{color:var(--am);font-weight:700}
+  .fn{font-size:12.5px;color:var(--muted);margin-top:12px;max-width:75ch}
+
+  .rules ul{margin-top:26px;border-top:2px solid var(--ink)}
+  .rules li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;font-size:15px}
+  .rules li b{font-weight:700;color:var(--ink)}
+  @media (max-width:700px){.rules li{grid-template-columns:1fr;gap:4px}}
+
+  .vlinks{border-top:2px solid var(--ink);margin-top:26px;max-width:720px}
+  .vlinks li{list-style:none;border-bottom:1px solid var(--line);padding:12px 4px;font-size:14px;display:flex;justify-content:space-between;gap:14px}
+  .vlinks li a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none}
+  .vlinks li a:hover{color:var(--ink)}
+
+  .next{margin-top:30px;border-top:2px solid var(--ink);padding-top:18px;max-width:720px}
+  .next a{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--mint)}
+  .next p{margin-top:8px;font-size:14.5px;max-width:60ch}
+
+  footer{background:var(--ink);color:oklch(70% 0.014 265);margin-top:92px}
+  .foot-in{max-width:1140px;margin:0 auto;padding:44px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+  footer a{color:oklch(85% 0.01 90);text-decoration:none;border-bottom:1px solid oklch(40% 0.02 265)}
+  footer a:hover{border-color:var(--mint)}
+  .foot-geo{font-family:var(--geo);color:oklch(46% 0.02 265)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <b><a href="/">Reestri</a></b>
+    <a href="/#tools">Tools</a><a href="/#coverage">Coverage</a><a href="/#agents">Agents</a><a href="/#pricing">Pricing</a><a class="on" href="/data/">Data</a><a href="/#method">Method</a><a href="/#about">About</a>
+    <span class="sp"></span>
+    <a class="run" style="text-decoration:none" href="https://apify.com/reestri">Run on Apify</a>
+  </div>
+</nav>
+
+<header class="mast">
+  <div class="ghost" aria-hidden="true">რეესტრი</div>
+  <div class="mast-in">
+    <p class="kicker">From the data · story 1</p>
+    <h1>Armenia cut single-source contracts from <em>52 percent</em> of spend to 7. The habit stayed.</h1>
+    <p class="stand">We indexed 236,159 signed contracts from PPCM, the public contracts module of Armenia's procurement portal armeps.am, and classified every award by its legal procedure form. By value, non-competitive awards collapsed. By count, roughly four procedures in ten are still awarded without competition.</p>
+    <p class="byline">By <b>Soso Pkhakadze</b> · published 2 Sep 2026 · registry index of 29 Aug 2026 · aggregate only, companies only</p>
+  </div>
+</header>
+
+<section>
+  <p class="kicker rv">The headline</p>
+  <h2 class="rv">The money moved to tenders. The count did not follow.</h2>
+  <figure class="chartwrap rv">
+    <div class="legend"><span><i style="background:var(--am)"></i>share of contract value</span><span><i style="background:var(--line)"></i>share of procedure count</span></div>
+    <svg viewBox="0 0 720 260" role="img" aria-label="Single-source share of Armenian public procurement, 2018 to 2026: value share falls from 52 to 7 percent by 2024; count share stays near a third" style="width:100%;height:auto;font-family:var(--mono)">
+      <g stroke="oklch(88% 0.01 90)" stroke-width="1">
+        <line x1="46" y1="20" x2="700" y2="20"/><line x1="46" y1="90" x2="700" y2="90"/><line x1="46" y1="160" x2="700" y2="160"/><line x1="46" y1="230" x2="700" y2="230"/>
+      </g>
+      <g fill="oklch(47% 0.015 265)" font-size="11" text-anchor="end">
+        <text x="38" y="24">60%</text><text x="38" y="94">40%</text><text x="38" y="164">20%</text><text x="38" y="234">0%</text>
+      </g>
+      <polyline fill="none" stroke="oklch(85% 0.012 90)" stroke-width="2.5" stroke-linejoin="round"
+        points="60,83.7 140,94.8 220,77.5 300,123.3 380,116.6 460,107.8 540,138.8 620,129.3 695,124.1"/>
+      <polyline fill="none" stroke="oklch(63% 0.13 70)" stroke-width="3" stroke-linejoin="round"
+        points="60,47.9 140,58.5 220,65.0 300,156.5 380,139.9 460,155.1 540,206.1 620,197.8 695,186.1"/>
+      <g fill="oklch(63% 0.13 70)"><circle cx="60" cy="47.9" r="4"/><circle cx="540" cy="206.1" r="4"/></g>
+      <g font-size="12" fill="oklch(30% 0.015 265)" font-weight="600">
+        <text x="70" y="42">52.0%</text><text x="548" y="200">6.8%</text>
+      </g>
+      <g fill="oklch(47% 0.015 265)" font-size="11" text-anchor="middle">
+        <text x="60" y="252">2018</text><text x="220" y="252">2020</text><text x="380" y="252">2022</text><text x="540" y="252">2024</text><text x="695" y="252">2026</text>
+      </g>
+    </svg>
+    <figcaption>Single-source awards in Armenian public procurement, share of all PPCM contracts. 2026 covers signatures to 29 Aug. Table 1 in the repo gives both denominators; restricted to procurement procedures only, the count share is 42.75 percent in 2018 and 40.56 percent in 2026.</figcaption>
+  </figure>
+
+  <div class="prose rv">
+    <p>Between 2018 and August 2026 the registry records 214,244 contracts worth 4,547,341,742,554 AMD. Of that, 70,606 contracts (32.96 percent) worth 980,736,051,708 AMD (21.57 percent) were awarded under PPCM's two single-source procedure forms, ՄԱ and ՀՄԱ. The value share fell from <b>52.04 percent in 2018 to 6.83 percent in 2024</b>, then ticked back up to 12.54 percent in 2026 to date.</p>
+    <p><b>One buyer signs almost half of all single-source money.</b> The Ministry of Health awarded 486,685,298,874 AMD without competition across 6,788 contracts: 70.04 percent of everything it spent through PPCM and 47.12 percent of all single-source value in the registry. The top 5 buyers hold 72.11 percent of it, the top 30 hold 95.02 percent.</p>
+    <p><b>The biggest single-source suppliers are the state's own companies and hospitals.</b> Public Television of Armenia, Electric Networks of Armenia, HayPost and Gazprom Armenia lead the list; 11 of the top 30 are hospitals or medical institutions paid by the Ministry of Health. The top 30 together account for 44.74 percent of all single-source value.</p>
+    <p><b>1,080 companies live on one state buyer.</b> Among companies with at least 10 contracts, 1,080 get more than 90 percent of their public revenue from a single buyer, 1,675,307,582,513 AMD in total; 618 of them have exactly one buyer ever. 430 depend on the Ministry of Health, 19 road and construction contractors on the Ministry of Territorial Administration and Infrastructure. Dependence is not the same as favoritism: 268 of the 1,080 won all of it competitively, while 224 got at least 90 percent of it single-source.</p>
+    <p><b>Appeals are almost extinct in the record.</b> 651 of 214,244 contracts (0.30 percent) carry an appeal narrative: 142 in 2018, 24 in 2023, 18 in the first eight months of 2026.</p>
+  </div>
+</section>
+
+<section>
+  <p class="kicker rv">The tables</p>
+  <h2 class="rv">Year by year, buyer by buyer</h2>
+
+  <div class="covwrap rv">
+    <table class="cov num">
+      <caption>Single-source share of Armenian public contracts by year</caption>
+      <thead><tr><th>Year</th><th class="r">Share of value</th><th class="r">Share of count</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">2018</td><td class="r hi">52.04%</td><td class="r">41.81%</td></tr>
+        <tr><td class="mono">2019</td><td class="r">49.00%</td><td class="r">38.64%</td></tr>
+        <tr><td class="mono">2020</td><td class="r">47.13%</td><td class="r">43.58%</td></tr>
+        <tr><td class="mono">2021</td><td class="r">21.00%</td><td class="r">30.48%</td></tr>
+        <tr><td class="mono">2022</td><td class="r">25.74%</td><td class="r">32.39%</td></tr>
+        <tr><td class="mono">2023</td><td class="r">21.41%</td><td class="r">34.91%</td></tr>
+        <tr><td class="mono">2024</td><td class="r hi">6.83%</td><td class="r">26.07%</td></tr>
+        <tr><td class="mono">2025</td><td class="r">9.21%</td><td class="r">28.78%</td></tr>
+        <tr><td class="mono">2026*</td><td class="r">12.54%</td><td class="r">30.27%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">* to 29 Aug. Denominator: all PPCM contracts. Excluding non-procurement expenses and grant competitions, single-source is 41.83 percent of procedures and 24.54 percent of value over the whole window. Full table with both denominators: <a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/1-single-source-by-year.csv">1-single-source-by-year.csv</a>.</p>
+
+  <div class="covwrap rv">
+    <table class="cov num">
+      <caption>Top 10 buyers by single-source value, 2018 to 2026</caption>
+      <thead><tr><th>Buyer</th><th class="r">Single-source AMD</th><th class="r">Share of own spend</th></tr></thead>
+      <tbody>
+        <tr><td class="rname">Ministry of Health</td><td class="r mono">486,685,298,874</td><td class="r hi">70.04%</td></tr>
+        <tr><td class="rname">Ministry of Territorial Administration and Infrastructure</td><td class="r mono">84,279,806,235</td><td class="r">11.75%</td></tr>
+        <tr><td class="rname">Administration of the Council of Public Broadcaster</td><td class="r mono">61,824,011,075</td><td class="r hi">97.13%</td></tr>
+        <tr><td class="rname">Ministry of Defense</td><td class="r mono">60,121,566,353</td><td class="r">20.47%</td></tr>
+        <tr><td class="rname">Ministry of Internal Affairs</td><td class="r mono">51,906,541,081</td><td class="r">31.70%</td></tr>
+        <tr><td class="rname">Yerevan Municipality</td><td class="r mono">21,892,054,730</td><td class="r">8.22%</td></tr>
+        <tr><td class="rname">Urban Development Committee</td><td class="r mono">17,221,781,051</td><td class="r">3.66%</td></tr>
+        <tr><td class="rname">Armenian Nuclear Power Plant</td><td class="r mono">17,076,141,750</td><td class="r">18.14%</td></tr>
+        <tr><td class="rname">State Revenue Committee</td><td class="r mono">14,838,050,009</td><td class="r">11.58%</td></tr>
+        <tr><td class="rname">Ministry of High-Tech Industry</td><td class="r mono">14,746,677,776</td><td class="r">12.91%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">Top 30 with tax IDs: <a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/3-top30-buyers-single-source.csv">3-top30-buyers-single-source.csv</a>.</p>
+
+  <div class="covwrap rv">
+    <table class="cov num">
+      <caption>Top 10 suppliers by single-source value, companies only</caption>
+      <thead><tr><th>Supplier</th><th class="r">Single-source AMD</th></tr></thead>
+      <tbody>
+        <tr><td class="rname">Public Television of Armenia</td><td class="r mono">52,880,444,997</td></tr>
+        <tr><td class="rname">Electric Networks of Armenia</td><td class="r mono">45,357,101,423</td></tr>
+        <tr><td class="rname">HayPost</td><td class="r mono">29,289,653,502</td></tr>
+        <tr><td class="rname">Erebuni Medical Center</td><td class="r mono">24,980,777,925</td></tr>
+        <tr><td class="rname">Gazprom Armenia</td><td class="r mono">24,215,228,500</td></tr>
+        <tr><td class="rname">Arabkir Medical Complex</td><td class="r mono">19,848,223,700</td></tr>
+        <tr><td class="rname">Karavan-11 LLC</td><td class="r mono">18,175,162,169</td></tr>
+        <tr><td class="rname">Natali Pharm</td><td class="r mono">18,165,117,283</td></tr>
+        <tr><td class="rname">St. Gregory the Illuminator Medical Center</td><td class="r mono">16,966,790,715</td></tr>
+        <tr><td class="rname">A.A.B. Project LLC</td><td class="r mono">15,246,606,537</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">Electric Networks of Armenia sold single-source to 78 different buyers, HayPost to 80: utilities every state body buys from without a tender. Full list of 30 with tax IDs, buyer counts and date ranges: <a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/2-top30-suppliers-single-source.csv">2-top30-suppliers-single-source.csv</a>.</p>
+
+  <div class="covwrap rv">
+    <table class="cov num">
+      <caption>Contracts carrying an appeal narrative</caption>
+      <thead><tr><th></th><th class="r">2018</th><th class="r">2019</th><th class="r">2020</th><th class="r">2021</th><th class="r">2022</th><th class="r">2023</th><th class="r">2024</th><th class="r">2025</th><th class="r">2026*</th></tr></thead>
+      <tbody>
+        <tr><td class="rname">Appeals</td><td class="r mono">142</td><td class="r mono">114</td><td class="r mono">103</td><td class="r mono">78</td><td class="r mono">74</td><td class="r mono">24</td><td class="r mono">47</td><td class="r mono">51</td><td class="r mono">18</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">0.95 percent of 2018 contracts, 0.08 percent in 2023 and in 2026 to date. The appeal field is free text typed by the buyer, so this count is a floor; the classification rule is in the method notes below and in <a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/5-appeals-by-year.csv">5-appeals-by-year.csv</a>.</p>
+</section>
+
+<section class="rules">
+  <p class="kicker rv">Method and caveats</p>
+  <h2 class="rv">What was counted, and what the data cannot say</h2>
+  <ul class="rv">
+    <li><b>What counts as single-source</b><span>PPCM's own procedure labels ՄԱ (single source) and ՀՄԱ (urgent single source). This is a legal procedure type under Armenia's Law on Procurement, not a judgement about whether competition was possible. Negotiated procedures without notice (ԲԸԱՀ, a label that disappears after 2017) are reported separately. The full procedure vocabulary with counts is in the repo.</span></li>
+    <li><b>Unit and value</b><span>One PPCM contract record; year of signature; stated total value in AMD. Six records carry keyed-in totals up to 1.66 quadrillion AMD while their current value is under 1.5 billion; records above 50 billion AMD are dropped from value sums and kept in counts; summary.json lists all six.</span></li>
+    <li><b>The health-ministry caveat</b><span>Ministry of Health figures include payments to public hospitals under state-order medical services, which PPCM records as single-source contracts. That is the single largest driver of the 2018 to 2020 value shares.</span></li>
+    <li><b>What PPCM does not publish</b><span>The legal ground for each single-source award, unit prices, amendment history, payments, subcontractors, supplier ownership. A falling share can reflect both policy and how buyers route spending through PPCM.</span></li>
+    <li><b>Dates and coverage</b><span>2018 to 2026; coverage before 2018 is thin. 62 contracts with impossible years and 3 without a date are excluded. 2026 covers signatures to 29 Aug. Nothing here was reviewed by a lawyer or by PPCM; rerun the script against the next weekly index and the figures update.</span></li>
+    <li><b>Privacy</b><span>Aggregate only. Supplier names and tax IDs appear only for legal entities; individual entrepreneurs are counted in totals but never listed. The index strips emails, bank details and staff names at ingest.</span></li>
+  </ul>
+</section>
+
+<section>
+  <p class="kicker rv">Reproduce it</p>
+  <h2 class="rv">The data and the pipeline are open</h2>
+  <p class="lede rv">Five CSV tables, the run metadata and the one-file pipeline. <span class="mono" style="font-family:var(--mono);font-size:13px">node analyze.mjs</span> streams the weekly index and rebuilds every number on this page.</p>
+  <ul class="vlinks rv">
+    <li><span>All tables, method, pipeline</span><a href="https://github.com/SosoPkhakadze/reestri-data/tree/main/am-contracts">reestri-data/am-contracts</a></li>
+    <li><span>Supplier dependence map, 1,080 rows</span><a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/4-supplier-dependence.csv">4-supplier-dependence.csv</a></li>
+    <li><span>Query any supplier by tax ID or name, weekly refresh</span><a href="https://apify.com/reestri/am-supplier-contracts">apify.com/reestri/am-supplier-contracts</a></li>
+  </ul>
+  <div class="next rv">
+    <a href="/data/armenia-money-moved/">Story 2: where the single-source money went →</a>
+    <p>The Ministry of Health's share fell from 95.70 to 5.98 percent of its own spend. The follow-up traces the money to the Public Broadcaster, Yerevan Municipality, the High-Tech Industry Ministry and the Probation Service, and watches the supplier base grow 2.5 times.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div style="color:var(--paper);font-weight:700">Reestri <span class="foot-geo">· რეესტრი</span></div>
+      <div style="margin-top:6px">Georgian for "registry". Built in Kutaisi.</div>
+    </div>
+    <div style="text-align:right">
+      <div><a href="https://apify.com/reestri">apify.com/reestri</a> · <a href="https://github.com/SosoPkhakadze/reestri-data">data</a> · <a href="mailto:soso@reestri.io">soso@reestri.io</a></div>
+      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells the tools behind this data. Registry data belongs to its registries. Published 2026-09-02.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)document.documentElement.classList.add('no-motion');
+  if(!reduce&&'IntersectionObserver'in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  }else{document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
+})();
+</script>
+</body>
+</html>
