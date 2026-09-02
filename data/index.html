@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From the data: Armenia public procurement analyses | Reestri</title>
+<meta name="description" content="Open, reproducible analyses of Armenian public procurement built from the registers Reestri indexes: single source contracts, buyer concentration, supplier dependence. Aggregate only, with free CSVs and the pipeline on GitHub.">
+<link rel="canonical" href="https://reestri.io/data/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Georgian:wght@400;700&family=Noto+Sans+Armenian:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: oklch(16% 0.02 265);
+    --paper: oklch(96.5% 0.007 90);
+    --paper-2: oklch(93.5% 0.009 90);
+    --line: oklch(85% 0.012 90);
+    --body: oklch(30% 0.015 265);
+    --muted: oklch(47% 0.015 265);
+    --am: oklch(63% 0.13 70);
+    --mint: oklch(87% 0.13 160);
+    --mint-ink: oklch(40% 0.09 160);
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Archivo", system-ui, sans-serif;
+    --geo: "Noto Sans Georgian", "Archivo", sans-serif;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:inherit}
+  ::selection{background:var(--mint);color:var(--ink)}
+  .num{font-variant-numeric:tabular-nums}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .no-motion *{transition-duration:0s !important;animation:none !important}
+  .no-motion .rv{opacity:1;transform:none}
+  button,a{transition:color .18s var(--ease),background-color .18s var(--ease),border-color .18s var(--ease)}
+
+  .nav{position:sticky;top:0;z-index:10;background:oklch(16% 0.02 265 / .92);backdrop-filter:blur(8px);color:var(--paper);border-bottom:1px solid oklch(28% 0.02 265)}
+  .nav-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:26px;height:52px;overflow-x:auto}
+  .nav b{font-weight:800;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
+  .nav b a{text-decoration:none;border-bottom:3px solid var(--mint);color:var(--paper);font-size:16px}
+  .nav a{font-size:13.5px;font-weight:500;text-decoration:none;color:oklch(70% 0.015 265);white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+  .nav a:hover{color:var(--paper)}
+  .nav a.on{color:var(--paper);border-color:var(--mint)}
+  .nav .sp{flex:1}
+  .nav .run{background:var(--mint);color:var(--ink);font-weight:700;font-size:13px;padding:7px 14px;border-radius:3px;border:0}
+  .nav .run:hover{background:oklch(91% 0.11 160)}
+
+  .mast{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .ghost{position:absolute;right:-50px;top:-36px;font-family:var(--geo);font-weight:700;font-size:clamp(150px,26vw,320px);line-height:.9;color:oklch(23.5% 0.028 265);user-select:none;pointer-events:none;letter-spacing:-.04em}
+  .mast-in{max-width:1140px;margin:0 auto;padding:56px 24px 54px;position:relative;z-index:1}
+  .kicker{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .mast .kicker{color:oklch(62% 0.015 265)}
+  .mast h1{font-weight:800;letter-spacing:-.025em;font-size:clamp(28px,4.2vw,46px);line-height:1.08;max-width:22ch;color:oklch(93% 0.008 90);margin-top:14px}
+  .mast p.stand{margin-top:18px;max-width:62ch;color:oklch(74% 0.014 265);font-size:16.5px}
+
+  section{max-width:1140px;margin:0 auto;padding:64px 24px 0}
+  .list{border-top:2px solid var(--ink);margin-top:8px}
+  .story{border-bottom:1px solid var(--line);padding:26px 4px 28px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px}
+  .story .when{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-top:6px}
+  .story h2{font-weight:800;letter-spacing:-.02em;font-size:clamp(20px,2.6vw,27px);line-height:1.15;color:var(--ink)}
+  .story h2 a{text-decoration:none}
+  .story h2 a:hover{color:oklch(45% 0.11 70)}
+  .story p{margin-top:10px;font-size:15px;max-width:66ch}
+  .story .links{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:12px}
+  .story .links a{color:var(--mint-ink);text-decoration:none}
+  .story .links a:hover{text-decoration:underline}
+  @media (max-width:700px){.story{grid-template-columns:1fr;gap:8px}.story .when{padding-top:0}}
+  .fn{font-size:12.5px;color:var(--muted);margin-top:18px;max-width:75ch}
+
+  footer{background:var(--ink);color:oklch(70% 0.014 265);margin-top:92px}
+  .foot-in{max-width:1140px;margin:0 auto;padding:44px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+  footer a{color:oklch(85% 0.01 90);text-decoration:none;border-bottom:1px solid oklch(40% 0.02 265)}
+  footer a:hover{border-color:var(--mint)}
+  .foot-geo{font-family:var(--geo);color:oklch(46% 0.02 265)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <b><a href="/">Reestri</a></b>
+    <a href="/#tools">Tools</a><a href="/#coverage">Coverage</a><a href="/#agents">Agents</a><a href="/#pricing">Pricing</a><a class="on" href="/data/">Data</a><a href="/#method">Method</a><a href="/#about">About</a>
+    <span class="sp"></span>
+    <a class="run" style="text-decoration:none" href="https://apify.com/reestri">Run on Apify</a>
+  </div>
+</nav>
+
+<header class="mast">
+  <div class="ghost" aria-hidden="true">რეესტრი</div>
+  <div class="mast-in">
+    <p class="kicker">From the data</p>
+    <h1>We publish what the registers show.</h1>
+    <p class="stand">Open, reproducible analyses from the same indexes the tools serve. Every story ships with its CSVs, its one-file pipeline and its caveats. Aggregate only; companies, never private individuals.</p>
+  </div>
+</header>
+
+<section>
+  <div class="list rv">
+    <article class="story">
+      <div class="when">2 Sep 2026<br>story 1</div>
+      <div>
+        <h2><a href="/data/armenia-single-source/">Armenia cut single-source contracts from 52 percent of spend to 7. The habit stayed.</a></h2>
+        <p>236,159 signed contracts from PPCM, Armenia's procurement registry, 2018 to 2026. The value share of single-source awards fell from 52.04 to 6.83 percent while roughly four procedures in ten still skip competition. The Ministry of Health signed 486.7 billion AMD without tenders, 1,080 companies get over 90 percent of their public revenue from one buyer, and appeals fell from 142 contracts a year to 18.</p>
+        <p class="links"><a href="/data/armenia-single-source/">read the story →</a> · <a href="https://github.com/SosoPkhakadze/reestri-data/tree/main/am-contracts">CSVs and pipeline</a></p>
+      </div>
+    </article>
+    <article class="story">
+      <div class="when">2 Sep 2026<br>story 2</div>
+      <div>
+        <h2><a href="/data/armenia-money-moved/">The single-source money left the Ministry of Health. Here is where it went.</a></h2>
+        <p>The Ministry of Health's single-source share of its own spend fell from 95.70 percent in 2018 to 5.98 in 2026. The largest single-source buyers of 2024 to 2026 are now the Council of Public Broadcaster, Yerevan Municipality, the Ministry of High-Tech Industry and the Probation Service. The supplier base grew from 3,072 winners to 7,795, over a third of each year's winners are new to the registry, and the median contract shrank while billion-AMD contracts multiplied.</p>
+        <p class="links"><a href="/data/armenia-money-moved/">read the story →</a> · <a href="https://github.com/SosoPkhakadze/reestri-data/tree/main/am-contracts">CSVs and pipeline</a></p>
+      </div>
+    </article>
+  </div>
+  <p class="fn rv">Both stories rebuild from one command against the weekly index; the numbers update as the registry does. The index behind them is queryable per supplier at <a href="https://apify.com/reestri/am-supplier-contracts">apify.com/reestri/am-supplier-contracts</a>. Corrections: <a href="mailto:soso@reestri.io">soso@reestri.io</a>.</p>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div style="color:var(--paper);font-weight:700">Reestri <span class="foot-geo">· რეესტრი</span></div>
+      <div style="margin-top:6px">Georgian for "registry". Built in Kutaisi.</div>
+    </div>
+    <div style="text-align:right">
+      <div><a href="https://apify.com/reestri">apify.com/reestri</a> · <a href="https://github.com/SosoPkhakadze/reestri-data">data</a> · <a href="mailto:soso@reestri.io">soso@reestri.io</a></div>
+      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells the tools behind this data. Registry data belongs to its registries. Page updated 2026-09-02.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)document.documentElement.classList.add('no-motion');
+  if(!reduce&&'IntersectionObserver'in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  }else{document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
+})();
+</script>
+</body>
+</html>
