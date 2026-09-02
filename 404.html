@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not in the register | Reestri</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Georgian:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:oklch(16% 0.02 265);--paper:oklch(96.5% 0.007 90);--mint:oklch(87% 0.13 160);--muted:oklch(62% 0.015 265);--mono:"IBM Plex Mono",monospace;--geo:"Noto Sans Georgian",sans-serif}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--ink);color:var(--paper);font-family:"Archivo",system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding:24px;position:relative;overflow:hidden}
+  .ghost{position:absolute;right:-40px;bottom:-60px;font-family:var(--geo);font-weight:700;font-size:clamp(160px,30vw,380px);line-height:.9;color:oklch(21% 0.025 265);user-select:none;pointer-events:none}
+  main{position:relative;z-index:1;max-width:560px}
+  .rec{font-family:var(--mono);font-size:13.5px;line-height:1.8;background:oklch(19% 0.022 265);border:1px solid oklch(30% 0.02 265);border-radius:6px;padding:22px 24px;color:oklch(80% 0.01 120)}
+  .rec .k{color:oklch(58% 0.015 265)} .rec .s{color:oklch(88% 0.06 120)} .rec .hl{color:var(--mint)}
+  h1{font-weight:800;font-size:clamp(26px,5vw,40px);letter-spacing:-.02em;margin-top:26px}
+  p{color:var(--muted);margin-top:12px;max-width:46ch}
+  .links{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  .links a{font-weight:600;font-size:14.5px;text-decoration:none;padding:11px 18px;border-radius:3px}
+  .a1{background:var(--mint);color:var(--ink)}
+  .a2{color:var(--paper);border:1px solid oklch(40% 0.02 265)}
+  .a2:hover{border-color:oklch(60% 0.02 265)}
+</style>
+</head>
+<body>
+<div class="ghost" aria-hidden="true">404</div>
+<main>
+  <div class="rec">{
+  <span class="k">"resultType"</span>: <span class="hl">"not_found"</span>,
+  <span class="k">"query"</span>: <span class="s">"this page"</span>,
+  <span class="k">"note"</span>: <span class="s">"the register answered; nothing matched"</span>
+}</div>
+  <h1>Not in the register</h1>
+  <p>A trustworthy negative: this address does not exist on reestri.io. The pages that do:</p>
+  <div class="links">
+    <a class="a1" href="/">Home</a>
+    <a class="a2" href="/stories/">Data stories</a>
+    <a class="a2" href="https://apify.com/reestri">Tools on Apify</a>
+  </div>
+</main>
+</body>
+</html>
