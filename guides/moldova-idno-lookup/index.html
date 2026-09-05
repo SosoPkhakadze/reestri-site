@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to check a Moldovan company by IDNO: ASP register, open data, extracts | Reestri</title>
+<meta name="description" content="The 13-digit IDNO, the state's own lookup at date.gov.md, free mirrors like openmoney.md and idno.md, the weekly open dataset with founders and shares (302,232 companies), the certified extract from ASP at 110 to 440 lei, the diacritics trap, and what is not public in Moldova.">
+<link rel="canonical" href="https://reestri.io/guides/moldova-idno-lookup/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Georgian:wght@700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"How to check a Moldovan company by IDNO: ASP register, open data, certified extracts",
+ "description":"A practical guide to Moldova's State Register of Legal Entities: the 13-digit IDNO, the state lookup and the free mirrors, the weekly open dataset with directors and founders, the certified extract and its tariff, the diacritics trap, and what is not public.",
+ "author":{"@type":"Person","name":"Soso Pkhakadze"},
+ "publisher":{"@type":"Organization","name":"Reestri","url":"https://reestri.io/"},
+ "datePublished":"2026-09-05","dateModified":"2026-09-05",
+ "inLanguage":"en",
+ "about":[{"@type":"Thing","name":"State Register of Legal Entities of Moldova"},{"@type":"Thing","name":"IDNO"}],
+ "mainEntityOfPage":"https://reestri.io/guides/moldova-idno-lookup/"}
+</script>
+<style>
+  :root{
+    --ink: oklch(16% 0.02 265);
+    --paper: oklch(96.5% 0.007 90);
+    --paper-2: oklch(93.5% 0.009 90);
+    --line: oklch(85% 0.012 90);
+    --body: oklch(30% 0.015 265);
+    --muted: oklch(47% 0.015 265);
+    --md: oklch(50% 0.16 262);
+    --mint: oklch(87% 0.13 160);
+    --mint-ink: oklch(40% 0.09 160);
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Archivo", system-ui, sans-serif;
+    --geo: "Noto Sans Georgian", "Archivo", sans-serif;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:inherit}
+  ::selection{background:var(--mint);color:var(--ink)}
+  .num{font-variant-numeric:tabular-nums}
+  code{font-family:var(--mono);font-size:.9em;background:var(--paper-2);padding:1px 5px;border-radius:3px;color:var(--ink)}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .no-motion *{transition-duration:0s !important;animation:none !important}
+  .no-motion .rv{opacity:1;transform:none}
+  button,a{transition:color .18s var(--ease),background-color .18s var(--ease),border-color .18s var(--ease)}
+
+  .nav{position:sticky;top:0;z-index:10;background:oklch(16% 0.02 265 / .92);backdrop-filter:blur(8px);color:var(--paper);border-bottom:1px solid oklch(28% 0.02 265)}
+  .nav-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:26px;height:52px;overflow-x:auto}
+  .nav b{font-weight:800;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
+  .nav b a{text-decoration:none;border-bottom:3px solid var(--mint);color:var(--paper);font-size:16px}
+  .nav a{font-size:13.5px;font-weight:500;text-decoration:none;color:oklch(70% 0.015 265);white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+  .nav a:hover{color:var(--paper)}
+  .nav a.on{color:var(--paper);border-color:var(--mint)}
+  .nav .sp{flex:1}
+  .nav .run{background:var(--mint);color:var(--ink);font-weight:700;font-size:13px;padding:7px 14px;border-radius:3px;border:0}
+  .nav .run:hover{background:oklch(91% 0.11 160)}
+
+  .mast{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .ghost{position:absolute;right:-50px;top:-36px;font-family:var(--geo);font-weight:700;font-size:clamp(150px,26vw,320px);line-height:.9;color:oklch(23.5% 0.028 265);user-select:none;pointer-events:none;letter-spacing:-.04em}
+  .mast-in{max-width:1140px;margin:0 auto;padding:56px 24px 54px;position:relative;z-index:1}
+  .kicker{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .mast .kicker{color:oklch(62% 0.015 265)}
+  .mast .kicker i{display:inline-block;width:9px;height:9px;border-radius:1px;background:var(--md);margin-right:8px;vertical-align:0}
+  .mast h1{font-weight:800;letter-spacing:-.025em;font-size:clamp(28px,4.2vw,46px);line-height:1.08;max-width:24ch;color:oklch(93% 0.008 90);margin-top:14px}
+  .mast h1 em{font-style:normal;color:oklch(72% 0.12 262)}
+  .mast p.stand{margin-top:18px;max-width:62ch;color:oklch(74% 0.014 265);font-size:16.5px}
+  .byline{font-family:var(--mono);font-size:12.5px;color:oklch(58% 0.015 265);margin-top:24px;max-width:80ch}
+  .byline b{color:oklch(80% 0.014 265);font-weight:600}
+  .toc{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:12.5px}
+  .toc a{color:oklch(72% 0.02 160);text-decoration:none;border-bottom:1px solid oklch(34% 0.02 265)}
+  .toc a:hover{color:var(--mint);border-color:var(--mint)}
+
+  section{max-width:1140px;margin:0 auto;padding:64px 24px 0}
+  h2{font-weight:800;letter-spacing:-.02em;font-size:clamp(22px,3vw,30px);color:var(--ink);margin-top:10px}
+  .lede{max-width:64ch;margin-top:14px}
+  .prose{max-width:70ch}
+  .prose p{margin-top:14px;font-size:15.5px}
+  .prose p b{color:var(--ink);font-weight:700}
+  .prose a{color:var(--mint-ink)}
+
+  .steps{border-top:2px solid var(--ink);margin-top:26px;max-width:860px;counter-reset:s}
+  .steps li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;font-size:15px}
+  .steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:600 13px var(--mono);color:var(--muted);padding-top:3px}
+  .steps li b{color:var(--ink);font-weight:700}
+  .steps li a{color:var(--mint-ink)}
+
+  .covwrap{overflow-x:auto;margin-top:26px}
+  table.cov{border-collapse:collapse;width:100%;font-size:14px}
+  .cov caption{text-align:left;font-weight:700;color:var(--ink);font-size:15.5px;padding-bottom:10px;letter-spacing:-.01em}
+  .cov th{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 14px 10px 0;border-bottom:2px solid var(--ink)}
+  .cov td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .cov th.r,.cov td.r{text-align:right;padding-right:0;padding-left:14px}
+  .cov td.rname{font-weight:600;color:var(--ink)}
+  .cov td.mono,.cov .mono{font-family:var(--mono);font-size:12.5px}
+  .cov .y{color:var(--mint-ink);font-weight:700}
+  .cov .n{color:var(--md);font-weight:700}
+  .fn{font-size:12.5px;color:var(--muted);margin-top:12px;max-width:75ch}
+  .fn a{color:inherit}
+
+  .rules ul{margin-top:26px;border-top:2px solid var(--ink)}
+  .rules li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;font-size:15px}
+  .rules li b{font-weight:700;color:var(--ink)}
+  .rules li a{color:var(--mint-ink)}
+  @media (max-width:700px){.rules li{grid-template-columns:1fr;gap:4px}}
+
+  .tariff{margin-top:26px;border-top:2px solid var(--ink);max-width:720px}
+  .tariff .prow{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding:13px 4px;font-size:15px}
+  .tariff .prow b{font-weight:600;color:var(--ink)}
+  .tariff .prow b a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+  .tariff .prow b a:hover{border-color:var(--ink)}
+  .tariff .prow span{font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+
+  .vlinks{border-top:2px solid var(--ink);margin-top:26px;max-width:760px}
+  .vlinks li{list-style:none;border-bottom:1px solid var(--line);padding:12px 4px;font-size:14px;display:flex;justify-content:space-between;gap:14px}
+  .vlinks li a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;text-align:right}
+  .vlinks li a:hover{color:var(--ink)}
+
+  .next{margin-top:30px;border-top:2px solid var(--ink);padding-top:18px;max-width:720px}
+  .next a{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--mint)}
+  .next p{margin-top:8px;font-size:14.5px;max-width:60ch}
+
+  footer{background:var(--ink);color:oklch(70% 0.014 265);margin-top:92px}
+  .foot-in{max-width:1140px;margin:0 auto;padding:44px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+  footer a{color:oklch(85% 0.01 90);text-decoration:none;border-bottom:1px solid oklch(40% 0.02 265)}
+  footer a:hover{border-color:var(--mint)}
+  .foot-geo{font-family:var(--geo);color:oklch(46% 0.02 265)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <b><a href="/">Reestri</a></b>
+    <a href="/#tools">Tools</a><a href="/#coverage">Coverage</a><a href="/#agents">Agents</a><a href="/#pricing">Pricing</a><a href="/data/">Data</a><a class="on" href="/guides/">Guides</a><a href="/#method">Method</a><a href="/#about">About</a>
+    <span class="sp"></span>
+    <a class="run" style="text-decoration:none" href="https://apify.com/reestri">Run on Apify</a>
+  </div>
+</nav>
+
+<header class="mast">
+  <div class="ghost" aria-hidden="true">რეესტრი</div>
+  <div class="mast-in">
+    <p class="kicker"><i></i>Guide · Moldova</p>
+    <h1>How to check a <em>Moldovan</em> company by IDNO</h1>
+    <p class="stand">Moldova publishes its whole company register as an open file every Monday, founders and share sizes included. Most people never find it and pay a mirror site instead. This guide covers the 13-digit IDNO, the state's own lookup and the free mirrors, the weekly dataset, the certified extract and its exact tariff, the diacritics trap, and what stays private.</p>
+    <p class="byline">By <b>Soso Pkhakadze</b> · published 5 Sep 2026 · portal facts checked 5 Sep 2026 · Disclosure: I build and sell Reestri, the paid tool named in the last section. Every step above it works without it.</p>
+    <p class="toc"><a href="#idno">The IDNO</a><a href="#lookup">Free lookups</a><a href="#dataset">The weekly dataset</a><a href="#extract">Certified extract</a><a href="#diacritics">Diacritics</a><a href="#private">What is not public</a><a href="#scale">At scale</a></p>
+  </div>
+</header>
+
+<section id="idno">
+  <p class="kicker rv">Step one</p>
+  <h2 class="rv">Get the 13-digit IDNO</h2>
+  <div class="prose rv">
+    <p>Every legal entity in Moldova has an IDNO (<i>Identificatorul de stat al unității de drept</i>): 13 digits, for example <code>1003602023531</code>. It doubles as the fiscal code (<i>cod fiscal</i>), so there is one number for the register, the tax authority, customs and the banks. Moldovan law requires it on invoices and contracts, and most shops print it in the website footer next to the SRL name.</p>
+    <p><b>Search by IDNO whenever you have one.</b> Company names in the register are stored in Romanian with inconsistent diacritics (more on that below), older records may be in Russian, and popular words repeat across hundreds of SRLs. The IDNO resolves to exactly one record. About 37,000 of the oldest entries in the state file, mostly registrations from the 1990s, carry a short pre-IDNO code or none; a company trading today without a 13-digit IDNO is unusual enough to ask about.</p>
+  </div>
+</section>
+
+<section id="lookup">
+  <p class="kicker rv">Step two</p>
+  <h2 class="rv">Three free ways to look one up</h2>
+  <ol class="steps rv">
+    <li><span><b>The state's own lookup:</b> <a href="https://date.gov.md/open/company-details">date.gov.md/open/company-details</a> (switch to <code>?culture=en</code> for English). Type the IDNO, pass the reCAPTCHA, and read "Date de bază" (basic data) plus a field the open file does not have: <b>debts to the state budget</b>. One company at a time, and the captcha is the state's way of saying so; do not script it.</span></li>
+    <li><span><b>The weekly open dataset</b> on <a href="https://dataset.gov.md/dataset/11736-date-din-registrul-de-stat-al-unitatilor-de-drept-privind-intreprinderile-inregistrate-in-repu">dataset.gov.md</a>: one spreadsheet with every registered enterprise, directors and founders included. Download, open, filter on the IDNO column. It is the primary source for everything in the next section.</span></li>
+    <li><span><b>The mirrors:</b> <a href="https://openmoney.md">openmoney.md</a> and <a href="https://idno.md">idno.md</a> republish the same dataset with a search box. Convenient, but third-party: check the snapshot date they show, and for anything you will cite, confirm against the state file or the state lookup.</span></li>
+  </ol>
+  <p class="fn rv">The Public Services Agency (ASP, <i>Agenția Servicii Publice</i>) keeps the register itself; its website at asp.gov.md describes the services and tariffs but has no search of its own.</p>
+</section>
+
+<section id="dataset">
+  <p class="kicker rv">The primary source</p>
+  <h2 class="rv">The weekly open dataset: 302,232 companies, founders and shares included</h2>
+  <div class="prose rv">
+    <p>The dataset is titled "Date din Registrul de stat al unităților de drept privind întreprinderile înregistrate în Republica Moldova" and published by ASP on the national open-data portal. A new XLSX file, about 38 MB, appears every Monday; the file of 24 Aug 2026 holds 302,232 rows on its "Company" sheet, one per enterprise, plus two sheets with the activity-code dictionaries. The archive goes back to December 2014, monthly at first and weekly since 2019, and every old file is still downloadable, which makes it a free change history: diff two Mondays and you see new registrations, liquidations and every change of director or founder in between. A sister dataset covers non-commercial organisations.</p>
+  </div>
+  <div class="covwrap rv">
+    <table class="cov">
+      <caption>Columns of the companies file</caption>
+      <thead><tr><th>Column (Romanian)</th><th>What it is</th><th>Form</th></tr></thead>
+      <tbody>
+        <tr><td class="rname">IDNO/ Cod fiscal</td><td>The 13-digit identifier</td><td class="mono">1003602023531</td></tr>
+        <tr><td class="rname">Denumirea completă</td><td>Full registered name, legal form included</td><td class="mono">"…" S.R.L.</td></tr>
+        <tr><td class="rname">Forma org./jurid.</td><td>Legal form</td><td class="mono">Societate cu raspundere limitata</td></tr>
+        <tr><td class="rname">Data înregistrării</td><td>Registration date</td><td class="mono">Excel serial date</td></tr>
+        <tr><td class="rname">Adresa</td><td>Registered address</td><td class="mono">MD-2001, CHIȘINĂU, …</td></tr>
+        <tr><td class="rname">Codul unității administrativ-teritoriale</td><td>CUATM territory code</td><td class="mono">digits</td></tr>
+        <tr><td class="rname">Lista conducătorilor</td><td>Directors with their roles</td><td class="mono">NAME [Administrator], NAME [Lichidator]</td></tr>
+        <tr><td class="rname">Lista fondatorilor</td><td>Founders with share sizes; persons or companies</td><td class="mono">NAME (50,00%), "…" S.R.L. (50,00%)</td></tr>
+        <tr><td class="rname">Genuri de activitate (nelicențiate / licențiate)</td><td>Activity codes, CAEM</td><td class="mono">4711, 4719, 6820</td></tr>
+        <tr><td class="rname">Data lichidării</td><td>Liquidation date; empty for a live company</td><td class="mono">date or blank</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">There is no status column. "Active" is derived: liquidation date empty. Suspension and insolvency states are not in the file (they are in the captcha-gated state lookup and in the paid information services below), and a "Lichidator" among the directors is your hint that a liquidation has started. A beneficial-owners column appears in some years' files and not in others; the 24 Aug 2026 file has eleven columns and no such column. Legal-form shorthand: <b>SRL</b> limited liability company, <b>SA</b> joint-stock company, <b>II</b> individual enterprise, <b>GT</b> farming household, <b>IS</b> state enterprise.</p>
+</section>
+
+<section id="extract">
+  <p class="kicker rv">The official document</p>
+  <h2 class="rv">The certified extract: 110 to 440 lei, by speed</h2>
+  <div class="prose rv">
+    <p>When a bank, a court or a foreign registry wants proof rather than a spreadsheet row, ASP issues an <i>Extras din Registrul de stat al persoanelor juridice</i>: a stamped document with the company's registration data, current administrator and founders as of the issue date. Anyone can order one for any company. Order online through the state services portal (servicii.gov.md, which now forwards to evo.gov.md) or at any ASP office; the fee depends only on how fast you want it.</p>
+  </div>
+  <div class="tariff rv">
+    <div class="prow"><b>3 working days</b><span>110 lei</span></div>
+    <div class="prow"><b>24 hours</b><span>220 lei</span></div>
+    <div class="prow"><b>4 hours</b><span>330 lei</span></div>
+    <div class="prow"><b>1 hour</b><span>440 lei</span></div>
+  </div>
+  <p class="fn rv">Tariffs from <a href="https://www.asp.gov.md/ro/servicii/persoane-juridice/informatii-afaceri/251">asp.gov.md, service 251</a>, read on 5 Sep 2026. Related paid services on the same site: the company's full history of changes (245 lei at 3 days), information on reorganisation, suspension or removal (73 lei), a copy of the constitutive act (148 lei), and access to the registration file itself (226 lei). The history document is the one to order when the question is "who owned this before 2024", since the open file only ever shows the current founders.</p>
+</section>
+
+<section id="diacritics">
+  <p class="kicker rv">Alphabet</p>
+  <h2 class="rv">The diacritics trap, and other name problems</h2>
+  <div class="prose rv">
+    <p>Romanian has five letters with diacritics: ă, â, î, ș, ț. Moldovan records were typed over three decades on keyboards that produced two different encodings for two of them: <b>ș and ț with a comma below</b> (the correct Romanian letters) and <b>ş and ţ with a cedilla</b> (the Turkish letters that older Windows keyboards offered). To a search box they are different characters. A name typed with commas will not match a record stored with cedillas, and the same company can appear both ways across years of files. Many records also drop the diacritics entirely and shout in capitals: <code>CHISINAU</code>, <code>RISCANI</code>.</p>
+    <p>Practical habits: search the IDNO and skip the problem; if you must search a name, try it without any diacritics first, then with commas, then with cedillas; and copy the exact string from a record rather than retyping it. Foreign founders appear as they were transliterated at registration (a German founder can be spelled the Russian way), and pre-2000 records may carry Russian names, so a person search needs the same patience. The <a href="https://apify.com/reestri/company-screen">tool below</a> folds all of these forms to one before matching, which is most of what it adds over a spreadsheet filter.</p>
+  </div>
+</section>
+
+<section class="rules" id="private">
+  <p class="kicker rv">The honest map</p>
+  <h2 class="rv">What is not public in Moldova</h2>
+  <ul class="rv">
+    <li><b>Personal numbers</b><span>Directors' and founders' IDNP (the 13-digit personal number) is not in the open file and not on the free lookup. Names and roles are; nothing else about the people.</span></li>
+    <li><b>Home addresses</b><span>Not published. The address in the file is the company's registered seat.</span></li>
+    <li><b>Suspension, insolvency, court administrators</b><span>Not in the open file. The state lookup shows some of it; ASP sells the rest as separate information services (73 to 109 lei each).</span></li>
+    <li><b>Tax debts</b><span>Only the captcha-gated state lookup shows "restanțe față de bugetul de stat", debts to the state budget, and only one company at a time.</span></li>
+    <li><b>Ownership history</b><span>The current file shows current founders. History means either diffing the archived weekly files yourself or ordering ASP's history document (245 lei).</span></li>
+    <li><b>Re-use terms</b><span>The dataset's licence field on the portal reads "not specified". The data is published by the state as public information; what a commercial re-publisher may do with it has not been confirmed in writing, which is why our own Moldova tool is opt-in. See below.</span></li>
+  </ul>
+</section>
+
+<section id="scale">
+  <p class="kicker rv">At scale</p>
+  <h2 class="rv">Reestri's Moldova tool, and why it is opt-in</h2>
+  <div class="prose rv">
+    <p><b>Reestri</b> is my paid company-data service for Georgia, Armenia and Moldova on Apify. For Moldova it ingests the same weekly ASP file described above into an index of 302,232 companies, folds the diacritics, and answers an IDNO or name query with one JSON record: legal form, registration date, address, directors with roles, founders with share sizes, activity codes, a derived status, and an evidence block with the file's URL, snapshot date and hash. Lookups never touch the state website, so there is nothing to rate-limit and no captcha to respect or bypass.</p>
+    <p><b>The honest part:</b> because the dataset's licence is unspecified on the portal, I have asked ASP to confirm re-use in writing and have not yet received that confirmation. Until it arrives, the Moldova lookup is not sold on its own, and in the multi-country screen Moldova is an opt-in country that you switch on knowingly (<code>countries: ["GE","AM","MD"]</code>). If ASP says no, the Moldova index goes away and this page will say so. Everything in the sections above is the state's own publication and does not depend on that answer.</p>
+  </div>
+  <div class="tariff rv">
+    <div class="prow"><b><a href="https://apify.com/reestri/company-screen">Company screen, GE + AM, Moldova opt-in</a></b><span>$0.50 per query + $0.10 per match</span></div>
+    <div class="prow"><b>Moldova company lookup, standalone</b><span>private until ASP confirms</span></div>
+  </div>
+  <p class="fn rv">Also callable by AI agents as an MCP tool; setup is on the <a href="/#agents">front page</a>. Journalists and researchers: lookups are free on request, write to soso@reestri.io with the names.</p>
+</section>
+
+<section>
+  <p class="kicker rv">Sources</p>
+  <h2 class="rv">The pages this guide is built on</h2>
+  <ul class="vlinks rv">
+    <li><span>The weekly companies dataset (ASP, open data)</span><a href="https://dataset.gov.md/dataset/11736-date-din-registrul-de-stat-al-unitatilor-de-drept-privind-intreprinderile-inregistrate-in-repu">dataset.gov.md/dataset/11736-…</a></li>
+    <li><span>The state's per-company lookup (reCAPTCHA)</span><a href="https://date.gov.md/open/company-details">date.gov.md/open/company-details</a></li>
+    <li><span>Certified extract, tariff and ordering</span><a href="https://www.asp.gov.md/ro/servicii/persoane-juridice/informatii-afaceri/251">asp.gov.md/…/informatii-afaceri/251</a></li>
+    <li><span>Company history document</span><a href="https://www.asp.gov.md/ro/servicii/persoane-juridice/informatii-afaceri/252">asp.gov.md/…/informatii-afaceri/252</a></li>
+    <li><span>State services portal for online orders</span><a href="https://servicii.gov.md">servicii.gov.md</a></li>
+    <li><span>Free mirrors of the dataset</span><a href="https://openmoney.md">openmoney.md</a></li>
+    <li><span>Who reads this register for a living</span><a href="https://www.rise.md">rise.md</a></li>
+    <li><span>The regional OSINT list we maintain</span><a href="https://github.com/SosoPkhakadze/OSINT-Tools-Moldova">OSINT-Tools-Moldova</a></li>
+  </ul>
+  <div class="next rv">
+    <a href="/guides/check-a-georgian-company/">Guide: check a Georgian company in NAPR →</a>
+    <p>The 9-digit code, the free search, the captcha-gated detail view, the 13 GEL extract with founders and shares, the person-to-companies search, and a scam checklist.</p>
+  </div>
+  <div class="next rv">
+    <a href="/guides/armenia-beneficial-owners/">Guide: beneficial owners of an Armenian company →</a>
+    <p>Tax ID versus registration number, the English company card, where the owners' declarations sit, what they cannot tell you, and the supplier's public contracts.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div style="color:var(--paper);font-weight:700">Reestri <span class="foot-geo">· რეესტრი</span></div>
+      <div style="margin-top:6px">Georgian for "registry". Built in Kutaisi.</div>
+    </div>
+    <div style="text-align:right">
+      <div><a href="https://apify.com/reestri">apify.com/reestri</a> · <a href="/guides/">guides</a> · <a href="/data/">data</a> · <a href="mailto:soso@reestri.io">soso@reestri.io</a></div>
+      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells the tool named in the last section. Registry data belongs to its registries. Published 2026-09-05.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)document.documentElement.classList.add('no-motion');
+  if(!reduce&&'IntersectionObserver'in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  }else{document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
+})();
+</script>
+</body>
+</html>
