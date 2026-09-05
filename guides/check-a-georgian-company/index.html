@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to check a Georgian company (NAPR): status, ID code, owners | Reestri</title>
+<meta name="description" content="Step by step: search Georgia's NAPR business register at enreg.reestri.gov.ge by name or 9-digit ID code, read the status, run the person-to-companies search, order the extract with founders and shares (13 to 52 GEL), and spot the scams. What is public in Georgia and what is not.">
+<link rel="canonical" href="https://reestri.io/guides/check-a-georgian-company/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Georgian:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"How to check a Georgian company in the NAPR register: status, ID code, owners, what is public and what is not",
+ "description":"A practical guide to Georgia's business register: the 9-digit identification code, the free search at enreg.reestri.gov.ge, the captcha-gated detail view, the paid extract with founders and shares, the person-to-companies search, and a scam checklist.",
+ "author":{"@type":"Person","name":"Soso Pkhakadze"},
+ "publisher":{"@type":"Organization","name":"Reestri","url":"https://reestri.io/"},
+ "datePublished":"2026-09-05","dateModified":"2026-09-05",
+ "inLanguage":"en",
+ "about":[{"@type":"Thing","name":"National Agency of Public Registry (Georgia)"},{"@type":"Thing","name":"Company registry lookup"}],
+ "mainEntityOfPage":"https://reestri.io/guides/check-a-georgian-company/"}
+</script>
+<style>
+  :root{
+    --ink: oklch(16% 0.02 265);
+    --paper: oklch(96.5% 0.007 90);
+    --paper-2: oklch(93.5% 0.009 90);
+    --line: oklch(85% 0.012 90);
+    --body: oklch(30% 0.015 265);
+    --muted: oklch(47% 0.015 265);
+    --ge: oklch(52% 0.19 25);
+    --mint: oklch(87% 0.13 160);
+    --mint-ink: oklch(40% 0.09 160);
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Archivo", system-ui, sans-serif;
+    --geo: "Noto Sans Georgian", "Archivo", sans-serif;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:inherit}
+  ::selection{background:var(--mint);color:var(--ink)}
+  :lang(ka){font-family:var(--geo)}
+  .num{font-variant-numeric:tabular-nums}
+  code{font-family:var(--mono);font-size:.9em;background:var(--paper-2);padding:1px 5px;border-radius:3px;color:var(--ink)}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .no-motion *{transition-duration:0s !important;animation:none !important}
+  .no-motion .rv{opacity:1;transform:none}
+  button,a{transition:color .18s var(--ease),background-color .18s var(--ease),border-color .18s var(--ease)}
+
+  .nav{position:sticky;top:0;z-index:10;background:oklch(16% 0.02 265 / .92);backdrop-filter:blur(8px);color:var(--paper);border-bottom:1px solid oklch(28% 0.02 265)}
+  .nav-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:26px;height:52px;overflow-x:auto}
+  .nav b{font-weight:800;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
+  .nav b a{text-decoration:none;border-bottom:3px solid var(--mint);color:var(--paper);font-size:16px}
+  .nav a{font-size:13.5px;font-weight:500;text-decoration:none;color:oklch(70% 0.015 265);white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+  .nav a:hover{color:var(--paper)}
+  .nav a.on{color:var(--paper);border-color:var(--mint)}
+  .nav .sp{flex:1}
+  .nav .run{background:var(--mint);color:var(--ink);font-weight:700;font-size:13px;padding:7px 14px;border-radius:3px;border:0}
+  .nav .run:hover{background:oklch(91% 0.11 160)}
+
+  .mast{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .ghost{position:absolute;right:-50px;top:-36px;font-family:var(--geo);font-weight:700;font-size:clamp(150px,26vw,320px);line-height:.9;color:oklch(23.5% 0.028 265);user-select:none;pointer-events:none;letter-spacing:-.04em}
+  .mast-in{max-width:1140px;margin:0 auto;padding:56px 24px 54px;position:relative;z-index:1}
+  .kicker{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .mast .kicker{color:oklch(62% 0.015 265)}
+  .mast .kicker i{display:inline-block;width:9px;height:9px;border-radius:1px;background:var(--ge);margin-right:8px;vertical-align:0}
+  .mast h1{font-weight:800;letter-spacing:-.025em;font-size:clamp(28px,4.2vw,46px);line-height:1.08;max-width:24ch;color:oklch(93% 0.008 90);margin-top:14px}
+  .mast h1 em{font-style:normal;color:oklch(72% 0.15 25)}
+  .mast p.stand{margin-top:18px;max-width:62ch;color:oklch(74% 0.014 265);font-size:16.5px}
+  .byline{font-family:var(--mono);font-size:12.5px;color:oklch(58% 0.015 265);margin-top:24px;max-width:80ch}
+  .byline b{color:oklch(80% 0.014 265);font-weight:600}
+  .toc{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:12.5px}
+  .toc a{color:oklch(72% 0.02 160);text-decoration:none;border-bottom:1px solid oklch(34% 0.02 265)}
+  .toc a:hover{color:var(--mint);border-color:var(--mint)}
+
+  section{max-width:1140px;margin:0 auto;padding:64px 24px 0}
+  h2{font-weight:800;letter-spacing:-.02em;font-size:clamp(22px,3vw,30px);color:var(--ink);margin-top:10px}
+  .lede{max-width:64ch;margin-top:14px}
+  .prose{max-width:70ch}
+  .prose p{margin-top:14px;font-size:15.5px}
+  .prose p b{color:var(--ink);font-weight:700}
+  .prose a{color:var(--mint-ink)}
+
+  .steps{border-top:2px solid var(--ink);margin-top:26px;max-width:860px;counter-reset:s}
+  .steps li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;font-size:15px}
+  .steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:600 13px var(--mono);color:var(--muted);padding-top:3px}
+  .steps li b{color:var(--ink);font-weight:700}
+  .steps li a{color:var(--mint-ink)}
+
+  .covwrap{overflow-x:auto;margin-top:26px}
+  table.cov{border-collapse:collapse;width:100%;font-size:14px}
+  .cov caption{text-align:left;font-weight:700;color:var(--ink);font-size:15.5px;padding-bottom:10px;letter-spacing:-.01em}
+  .cov th{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 14px 10px 0;border-bottom:2px solid var(--ink)}
+  .cov td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .cov td.rname{font-weight:600;color:var(--ink)}
+  .cov td.mono,.cov .mono{font-family:var(--mono);font-size:12.5px}
+  .cov .y{color:var(--mint-ink);font-weight:700}
+  .cov .n{color:var(--ge);font-weight:700}
+  .fn{font-size:12.5px;color:var(--muted);margin-top:12px;max-width:75ch}
+  .fn a{color:inherit}
+
+  .rules ul{margin-top:26px;border-top:2px solid var(--ink)}
+  .rules li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;font-size:15px}
+  .rules li b{font-weight:700;color:var(--ink)}
+  .rules li a{color:var(--mint-ink)}
+  @media (max-width:700px){.rules li{grid-template-columns:1fr;gap:4px}}
+
+  .tariff{margin-top:26px;border-top:2px solid var(--ink);max-width:720px}
+  .tariff .prow{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding:13px 4px;font-size:15px}
+  .tariff .prow b{font-weight:600;color:var(--ink)}
+  .tariff .prow b a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+  .tariff .prow b a:hover{border-color:var(--ink)}
+  .tariff .prow span{font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+
+  .vlinks{border-top:2px solid var(--ink);margin-top:26px;max-width:760px}
+  .vlinks li{list-style:none;border-bottom:1px solid var(--line);padding:12px 4px;font-size:14px;display:flex;justify-content:space-between;gap:14px}
+  .vlinks li a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;text-align:right}
+  .vlinks li a:hover{color:var(--ink)}
+
+  .next{margin-top:30px;border-top:2px solid var(--ink);padding-top:18px;max-width:720px}
+  .next a{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--mint)}
+  .next p{margin-top:8px;font-size:14.5px;max-width:60ch}
+
+  footer{background:var(--ink);color:oklch(70% 0.014 265);margin-top:92px}
+  .foot-in{max-width:1140px;margin:0 auto;padding:44px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+  footer a{color:oklch(85% 0.01 90);text-decoration:none;border-bottom:1px solid oklch(40% 0.02 265)}
+  footer a:hover{border-color:var(--mint)}
+  .foot-geo{font-family:var(--geo);color:oklch(46% 0.02 265)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <b><a href="/">Reestri</a></b>
+    <a href="/#tools">Tools</a><a href="/#coverage">Coverage</a><a href="/#agents">Agents</a><a href="/#pricing">Pricing</a><a href="/data/">Data</a><a class="on" href="/guides/">Guides</a><a href="/#method">Method</a><a href="/#about">About</a>
+    <span class="sp"></span>
+    <a class="run" style="text-decoration:none" href="https://apify.com/reestri">Run on Apify</a>
+  </div>
+</nav>
+
+<header class="mast">
+  <div class="ghost" aria-hidden="true">რეესტრი</div>
+  <div class="mast-in">
+    <p class="kicker"><i></i>Guide · Georgia (the country)</p>
+    <h1>How to check a Georgian company in the <em>NAPR</em> register</h1>
+    <p class="stand">Status, ID code, directors and owners: which of them are free, which sit behind a captcha, which cost 13 GEL and four working days. Written for anyone who has a Georgian company name on an invoice, a contract, a job offer or a deposit request and wants the public record before the money moves.</p>
+    <p class="byline">By <b>Soso Pkhakadze</b> · published 5 Sep 2026 · portal facts checked 5 Sep 2026 · Disclosure: I build and sell Reestri, the paid lookup named in the last section. Every step above it works without it.</p>
+    <p class="toc"><a href="#id-code">The ID code</a><a href="#search">The free search</a><a href="#public">Public vs not</a><a href="#extract">The extract</a><a href="#person">Person to companies</a><a href="#scams">Scam checklist</a><a href="#names">Georgian vs Latin names</a><a href="#scale">At scale</a></p>
+  </div>
+</header>
+
+<section id="id-code">
+  <p class="kicker rv">Step one</p>
+  <h2 class="rv">Get the 9-digit identification code</h2>
+  <div class="prose rv">
+    <p>Every legal entity in Georgia has a 9-digit identification code (<span lang="ka">საიდენტიფიკაციო კოდი</span>). It is the registry number and the tax number in one; there is no separate VAT number. It appears on invoices, receipts, contracts, the footer of most company websites and the About page of most Facebook shops. Individual entrepreneurs (<span lang="ka">ი/მ</span>) are registered under the person's own name and 11-digit personal number instead.</p>
+    <p><b>Ask for the code before you ask for anything else.</b> A real company gives it instantly; it is printed on everything they issue. Names are ambiguous (the register holds many namesakes and branches, and the registered name is in Georgian script), but the code resolves to exactly one record. If a counterparty will not give you its identification code, that is already your answer.</p>
+  </div>
+</section>
+
+<section id="search">
+  <p class="kicker rv">Step two</p>
+  <h2 class="rv">The free search at enreg.reestri.gov.ge</h2>
+  <p class="lede rv">The National Agency of Public Registry (NAPR, <span lang="ka">საჯარო რეესტრი</span>) runs the register. Its public search needs no account and no captcha. The English toggle translates the labels only; the data stays Georgian.</p>
+  <ol class="steps rv">
+    <li><span><b>Open <a href="https://enreg.reestri.gov.ge/main.php">enreg.reestri.gov.ge/main.php</a></b> and choose the subject search (<span lang="ka">სუბიექტის ძებნა</span>, "Search subject"). Switch the interface to English if you prefer; it changes the form labels, nothing else.</span></li>
+    <li><span><b>Type the identification code</b> in the ID field, or a name (Georgian script matches best; a Latin fragment sometimes works) in the name field. Leave legal form on "all". Press search.</span></li>
+    <li><span><b>Read the results table.</b> Five rows per page; columns are identification code, personal number (individual entrepreneurs only), name, legal form and status. This much is enough to say whether the company exists and whether it is active.</span></li>
+    <li><span><b>Click the info icon on a row</b> to open the detail view. The site asks you to type a 3-digit number from an image. This is the captcha that stops automated reading; a person types it in two seconds.</span></li>
+    <li><span><b>In the detail view</b> read the registration date, the state registration number, the list of registry actions (applications with dates and service types) and the scanned or prepared documents attached to each action. Past extracts attached to old applications are downloadable here without paying.</span></li>
+  </ol>
+  <div class="covwrap rv">
+    <table class="cov">
+      <caption>Vocabulary you will meet in the results</caption>
+      <thead><tr><th>Georgian</th><th>Meaning</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td class="rname" lang="ka">შპს</td><td>Limited liability company (LLC)</td><td>Most companies. Full form: <span lang="ka">შეზღუდული პასუხისმგებლობის საზოგადოება</span></td></tr>
+        <tr><td class="rname" lang="ka">სს</td><td>Joint-stock company (JSC)</td><td>Banks, telecoms, larger firms</td></tr>
+        <tr><td class="rname" lang="ka">ი/მ</td><td>Individual entrepreneur</td><td>A person trading under their own name; personal number shown</td></tr>
+        <tr><td class="rname" lang="ka">ა(ა)იპ</td><td>Non-commercial legal entity</td><td>NGOs, foundations, associations</td></tr>
+        <tr><td class="rname" lang="ka">აქტიური</td><td class="y">Active</td><td>The status you want</td></tr>
+        <tr><td class="rname" lang="ka">რეგისტრაცია შეჩერებულია კანონის 254-ე მუხლის საფუძველზე</td><td class="n">Registration suspended under article 254</td><td>Usually tax non-compliance; treat as not trading</td></tr>
+        <tr><td class="rname" lang="ka">ლიკვიდირებულია</td><td class="n">Liquidated</td><td>Dissolved; the record stays searchable</td></tr>
+        <tr><td class="rname" lang="ka">რეორგანიზაცია</td><td>Reorganisation</td><td>Merger or split in progress</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">"Registered" is not the same as trading. A company can sit in the register as active for a decade without an employee or a bank account. Status tells you it has not been suspended or dissolved; the registration date and the list of registry actions tell you whether anything has happened since.</p>
+</section>
+
+<section class="rules" id="public">
+  <p class="kicker rv">The honest map</p>
+  <h2 class="rv">What is public in Georgia and what is not</h2>
+  <ul class="rv">
+    <li><b>Free, no captcha</b><span>Name, identification code, legal form, status. Plus the reverse search: every company a named person or organisation participates in, with the role. This is the layer any script, including ours, can read.</span></li>
+    <li><b>Free, after a captcha</b><span>Registration date, state registration number, the full list of registry actions with dates, and the documents attached to them: scanned filings, decisions, earlier extracts. NAPR treats the entire registration file as public. That includes founders' passport scans in older filings; if you are a founder, assume everything you filed is visible.</span></li>
+    <li><b>Paid, official</b><span>The current extract (<span lang="ka">ამონაწერი</span>): directors and representatives, partners with their share sizes, capital, liens and pledges, address, email, phone. Anyone can order it for any company. See the next section.</span></li>
+    <li><b>Not public at all</b><span>Bank accounts, revenue, tax filings, employee counts, court cases (those live at info.court.ge, by party name). Ownership chains above the first level are not in the register; you climb them one extract at a time.</span></li>
+    <li><b>No API</b><span>NAPR publishes no API, no bulk file and no open-data release of the business register. Mirrors like companyinfo.ge (Transparency International Georgia) are scrapes that went stale when the captcha arrived; OpenSanctions' Georgian snapshot is dated 13 Aug 2024. Use them for history, never as the current record.</span></li>
+  </ul>
+</section>
+
+<section id="extract">
+  <p class="kicker rv">Owners and directors</p>
+  <h2 class="rv">Order the extract: 13 to 52 GEL, any company, any person</h2>
+  <div class="prose rv">
+    <p>Georgia's Law on Public Registry says an extract "shall be given out to any person". You need no relationship with the company and no power of attorney. The extract is a signed PDF, dated on the day it is prepared, and it lists the persons authorised to manage and represent the company, the partners with their shares, the capital, and any lien, pledge or injunction on the record. It is the document banks, notaries and courts accept.</p>
+    <p><b>Online:</b> register at <a href="https://my.gov.ge">my.gov.ge</a> (a Georgian ID or a foreign passport plus a phone number), find "Preparation of extract from the Registry of Entrepreneurs", enter the identification code, pay by card. <b>In person:</b> any branch of the House of Justice (<span lang="ka">იუსტიციის სახლი</span>, the Public Service Hall) prepares the same document at the counter; bring a passport.</p>
+    <p>An English-language version is prepared together with any order for an extra 26 GEL. Older extracts attached to past applications can be downloaded free from the detail view described above; they show the record as it was on their date, which is sometimes exactly what you want.</p>
+  </div>
+  <div class="tariff rv">
+    <div class="prow"><b>Ordered online, 1 working day</b><span>13 GEL</span></div>
+    <div class="prow"><b>Ordered online, same day</b><span>52 GEL</span></div>
+    <div class="prow"><b>At the counter, 4 working days</b><span>13 GEL</span></div>
+    <div class="prow"><b>At the counter, 1 working day</b><span>26 GEL</span></div>
+    <div class="prow"><b>At the counter, same day</b><span>39 GEL</span></div>
+    <div class="prow"><b>English-language extract</b><span>+26 GEL</span></div>
+  </div>
+  <p class="fn rv">Fees as listed on <a href="https://napr.gov.ge/en/page/fees-and-terms">napr.gov.ge/en/page/fees-and-terms</a> on 5 Sep 2026. The law's own rate table (Government decree 509) is slightly lower; the portal charges what its page says.</p>
+</section>
+
+<section id="person">
+  <p class="kicker rv">The reverse search</p>
+  <h2 class="rv">From a person or a holding company to every company they are in</h2>
+  <div class="prose rv">
+    <p>The same portal has a participant search (<span lang="ka">მონაწილის ძებნა</span>) that almost nobody outside Georgia knows about. Type a first name and last name, or an organisation's name, and it returns every company where that party is a partner, director, founder or representative, with the company's identification code and the participation type. No captcha, no account.</p>
+    <p>It answers questions the forward search cannot: does the director who signed your contract run six other companies, three of them suspended? Is the "group" a real holding with registered subsidiaries or one LLC and a logo? Which Georgian entities does a foreign parent own directly?</p>
+    <p><b>Two cautions.</b> Georgian names are common and the search matches on name text, so a result set for "Giorgi Beridze" mixes several people; the personal-number column separates them only for individual entrepreneurs. And the register is a business record: use it to check companies and the people who run them, never to locate or profile a private person.</p>
+  </div>
+</section>
+
+<section class="rules" id="scams">
+  <p class="kicker rv">Before you pay</p>
+  <h2 class="rv">The scam checklist</h2>
+  <p class="lede rv">Each line is a question the register answers in under a minute. The pattern behind most complaints we read (rental deposits, surrogacy agencies, apartment developers, call-centre jobs, residency-for-a-fee offers) is a real-looking brand with no matching legal entity behind it.</p>
+  <ul class="rv">
+    <li><b>Deposit first?</b><span>Never before the registry check. A legitimate Georgian business will wait ten minutes while you look it up; a scam will not.</span></li>
+    <li><b>Invoice name vs registry name</b><span>The legal name on the invoice or contract, and the identification code next to it, must match a record in the register letter for letter. "Global Surrogacy" as a brand is meaningless; <span lang="ka">შპს</span> plus a registered name plus a code is checkable.</span></li>
+    <li><b>Status</b><span>Active. Suspended under article 254 means the company is not in good standing with the tax authority; liquidated means it does not exist.</span></li>
+    <li><b>Registration date vs claimed history</b><span>"Fifteen years in business" with a registration date last spring is a lie or a new shell; either way, ask.</span></li>
+    <li><b>Director match</b><span>The extract names the person authorised to sign. The person signing your contract or receiving your transfer should be that person or hold a written power of attorney from them.</span></li>
+    <li><b>Bank account holder</b><span>Money should go to an account in the company's name at a Georgian bank, never to a personal card or a foreign account "for convenience".</span></li>
+    <li><b>Tax standing</b><span>The Revenue Service's taxpayer registry at rs.ge shows VAT registration and tax liens by identification code. It is behind a reCAPTCHA, so it is a manual check; do it for larger deals.</span></li>
+    <li><b>Job offers and residency schemes</b><span>An employer with no legal name in the advert, or a company registered three months ago hiring fifty "sales operators" on Telegram, is answering its own question. Paying to be "signed onto" someone's company for a residence permit is fraud on both sides and grounds for refusal.</span></li>
+  </ul>
+</section>
+
+<section id="names">
+  <p class="kicker rv">Alphabet</p>
+  <h2 class="rv">Georgian names, Latin names, and why the code wins</h2>
+  <div class="prose rv">
+    <p>A Georgian company's registered name is in Mkhedruli, the Georgian script. Its trade name in Latin letters is a marketing choice and rarely a letter-for-letter transliteration: Silknet is registered as <span lang="ka">შპს სილქნეტი</span>, which the national transliteration renders as "shps silkneti". Searching "Silknet" in the name field can surface branches, holdings and namesakes before the operating company; searching the code <code>204952685</code> returns one row.</p>
+    <p>Practical habits: copy the Georgian name from the company's own website footer or its Facebook About page and paste it; search a short Georgian fragment rather than the full name (the search is a substring match); and whenever a document carries a 9-digit code, search the code and ignore the name entirely. The <a href="https://apify.com/reestri/ge-company-lookup">tool below</a> returns both the Georgian original and a transliteration on every record for the same reason: the two rarely agree and you will need both.</p>
+  </div>
+</section>
+
+<section id="scale">
+  <p class="kicker rv">At scale</p>
+  <h2 class="rv">Doing this a hundred times a month: Reestri</h2>
+  <div class="prose rv">
+    <p>Everything above is manual and free, and for one company that is the right way. If you onboard suppliers, screen counterparties from a spreadsheet, or want an AI agent to run the check, <b>Reestri</b> wraps the captcha-free layer of the register as pay-per-lookup tools on Apify. I built it and I sell it; there is no subscription and Apify's free monthly credit covers first runs.</p>
+    <p>The tools read the same public search you used in step two, live, and return English-keyed JSON with the Georgian original, a transliteration, a normalised status and an evidence block (source URL, timestamp, content hash) so any record can be re-verified. They do not type the captcha: the detail view stays with humans and the ownership extract still has to be ordered from NAPR. A tool that told you otherwise would be automating a page the registry asked people not to automate.</p>
+  </div>
+  <div class="tariff rv">
+    <div class="prow"><b><a href="https://apify.com/reestri/ge-company-lookup">Georgia company lookup</a></b><span>$0.05 per search + $0.25 per record</span></div>
+    <div class="prow"><b><a href="https://apify.com/reestri/ge-person-search">Georgia person to companies</a></b><span>$0.05 per search + $0.10 per row</span></div>
+    <div class="prow"><b><a href="https://apify.com/reestri/company-screen">Company screen, GE + AM + MD in one call</a></b><span>$0.50 per query + $0.10 per match</span></div>
+  </div>
+  <p class="fn rv">Also callable by AI agents as MCP tools; setup is on the <a href="/#agents">front page</a>. Journalists and researchers: lookups are free on request, write to soso@reestri.io with the names.</p>
+</section>
+
+<section>
+  <p class="kicker rv">Sources</p>
+  <h2 class="rv">The pages this guide is built on</h2>
+  <ul class="vlinks rv">
+    <li><span>NAPR public search (subject and participant search)</span><a href="https://enreg.reestri.gov.ge/main.php">enreg.reestri.gov.ge/main.php</a></li>
+    <li><span>NAPR fees and terms, extract prices</span><a href="https://napr.gov.ge/en/page/fees-and-terms">napr.gov.ge/en/page/fees-and-terms</a></li>
+    <li><span>Ordering an extract online</span><a href="https://my.gov.ge">my.gov.ge</a></li>
+    <li><span>Law on Public Registry (any person may receive an extract)</span><a href="https://www.matsne.gov.ge/en/document/view/20560">matsne.gov.ge/en/document/view/20560</a></li>
+    <li><span>Revenue Service taxpayer registry (manual, reCAPTCHA)</span><a href="https://www.rs.ge/TaxPayersRegistry">rs.ge/TaxPayersRegistry</a></li>
+    <li><span>Historical ownership graphs, scraped, stale since the captcha</span><a href="https://www.companyinfo.ge">companyinfo.ge</a></li>
+    <li><span>State procurement monitoring</span><a href="https://tendermonitor.ge">tendermonitor.ge</a></li>
+    <li><span>Court decisions by party</span><a href="https://info.court.ge">info.court.ge</a></li>
+    <li><span>The regional tipsheet these guides grew from</span><a href="https://github.com/SosoPkhakadze/OSINT-Tools-Georgia">OSINT-Tools-Georgia</a></li>
+  </ul>
+  <div class="next rv">
+    <a href="/guides/armenia-beneficial-owners/">Next guide: beneficial owners of an Armenian company →</a>
+    <p>Armenia publishes what Georgia charges for: the owners' declarations sit on the free company card at e-register.moj.am. How to read them, what they leave out, and where the procurement history is.</p>
+  </div>
+  <div class="next rv">
+    <a href="/guides/moldova-idno-lookup/">Also: check a Moldovan company by IDNO →</a>
+    <p>The 13-digit IDNO, the weekly open dataset with founders and shares, the 110 to 440 lei certified extract, and the diacritics trap.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div style="color:var(--paper);font-weight:700">Reestri <span class="foot-geo">· რეესტრი</span></div>
+      <div style="margin-top:6px">Georgian for "registry". Built in Kutaisi.</div>
+    </div>
+    <div style="text-align:right">
+      <div><a href="https://apify.com/reestri">apify.com/reestri</a> · <a href="/guides/">guides</a> · <a href="/data/">data</a> · <a href="mailto:soso@reestri.io">soso@reestri.io</a></div>
+      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells the tools named in the last section. Registry data belongs to its registries. Published 2026-09-05.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)document.documentElement.classList.add('no-motion');
+  if(!reduce&&'IntersectionObserver'in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  }else{document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
+})();
+</script>
+</body>
+</html>
