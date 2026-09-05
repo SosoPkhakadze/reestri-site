@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to find the beneficial owners of an Armenian company (e-register.moj.am) | Reestri</title>
+<meta name="description" content="Armenia publishes beneficial-owner declarations for free on the company card at e-register.moj.am. Tax ID vs registration number, the English interface, where the declarations sit, what they leave out, and how to pull a supplier's public contracts and single-source awards from armeps.am.">
+<link rel="canonical" href="https://reestri.io/guides/armenia-beneficial-owners/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Georgian:wght@700&family=Noto+Sans+Armenian:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"How to find the beneficial owners of an Armenian company: e-register.moj.am and the BODS declarations",
+ "description":"A practical guide to Armenia's state register: tax ID versus registration number, the English interface, where beneficial-ownership declarations live on the company card, what self-declared data can and cannot tell you, and how to read a supplier's public procurement history on armeps.am.",
+ "author":{"@type":"Person","name":"Soso Pkhakadze"},
+ "publisher":{"@type":"Organization","name":"Reestri","url":"https://reestri.io/"},
+ "datePublished":"2026-09-05","dateModified":"2026-09-05",
+ "inLanguage":"en",
+ "about":[{"@type":"Thing","name":"State Register of Legal Entities of Armenia"},{"@type":"Thing","name":"Beneficial ownership"}],
+ "mainEntityOfPage":"https://reestri.io/guides/armenia-beneficial-owners/"}
+</script>
+<style>
+  :root{
+    --ink: oklch(16% 0.02 265);
+    --paper: oklch(96.5% 0.007 90);
+    --paper-2: oklch(93.5% 0.009 90);
+    --line: oklch(85% 0.012 90);
+    --body: oklch(30% 0.015 265);
+    --muted: oklch(47% 0.015 265);
+    --am: oklch(63% 0.13 70);
+    --mint: oklch(87% 0.13 160);
+    --mint-ink: oklch(40% 0.09 160);
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Archivo", system-ui, sans-serif;
+    --geo: "Noto Sans Georgian", "Archivo", sans-serif;
+    --arm: "Noto Sans Armenian", "Archivo", sans-serif;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:inherit}
+  ::selection{background:var(--mint);color:var(--ink)}
+  :lang(hy){font-family:var(--arm)}
+  .num{font-variant-numeric:tabular-nums}
+  code{font-family:var(--mono);font-size:.9em;background:var(--paper-2);padding:1px 5px;border-radius:3px;color:var(--ink)}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .no-motion *{transition-duration:0s !important;animation:none !important}
+  .no-motion .rv{opacity:1;transform:none}
+  button,a{transition:color .18s var(--ease),background-color .18s var(--ease),border-color .18s var(--ease)}
+
+  .nav{position:sticky;top:0;z-index:10;background:oklch(16% 0.02 265 / .92);backdrop-filter:blur(8px);color:var(--paper);border-bottom:1px solid oklch(28% 0.02 265)}
+  .nav-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:26px;height:52px;overflow-x:auto}
+  .nav b{font-weight:800;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
+  .nav b a{text-decoration:none;border-bottom:3px solid var(--mint);color:var(--paper);font-size:16px}
+  .nav a{font-size:13.5px;font-weight:500;text-decoration:none;color:oklch(70% 0.015 265);white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+  .nav a:hover{color:var(--paper)}
+  .nav a.on{color:var(--paper);border-color:var(--mint)}
+  .nav .sp{flex:1}
+  .nav .run{background:var(--mint);color:var(--ink);font-weight:700;font-size:13px;padding:7px 14px;border-radius:3px;border:0}
+  .nav .run:hover{background:oklch(91% 0.11 160)}
+
+  .mast{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .ghost{position:absolute;right:-50px;top:-36px;font-family:var(--geo);font-weight:700;font-size:clamp(150px,26vw,320px);line-height:.9;color:oklch(23.5% 0.028 265);user-select:none;pointer-events:none;letter-spacing:-.04em}
+  .mast-in{max-width:1140px;margin:0 auto;padding:56px 24px 54px;position:relative;z-index:1}
+  .kicker{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .mast .kicker{color:oklch(62% 0.015 265)}
+  .mast .kicker i{display:inline-block;width:9px;height:9px;border-radius:1px;background:var(--am);margin-right:8px;vertical-align:0}
+  .mast h1{font-weight:800;letter-spacing:-.025em;font-size:clamp(28px,4.2vw,46px);line-height:1.08;max-width:24ch;color:oklch(93% 0.008 90);margin-top:14px}
+  .mast h1 em{font-style:normal;color:oklch(78% 0.13 75)}
+  .mast p.stand{margin-top:18px;max-width:62ch;color:oklch(74% 0.014 265);font-size:16.5px}
+  .byline{font-family:var(--mono);font-size:12.5px;color:oklch(58% 0.015 265);margin-top:24px;max-width:80ch}
+  .byline b{color:oklch(80% 0.014 265);font-weight:600}
+  .toc{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:12.5px}
+  .toc a{color:oklch(72% 0.02 160);text-decoration:none;border-bottom:1px solid oklch(34% 0.02 265)}
+  .toc a:hover{color:var(--mint);border-color:var(--mint)}
+
+  section{max-width:1140px;margin:0 auto;padding:64px 24px 0}
+  h2{font-weight:800;letter-spacing:-.02em;font-size:clamp(22px,3vw,30px);color:var(--ink);margin-top:10px}
+  .lede{max-width:64ch;margin-top:14px}
+  .prose{max-width:70ch}
+  .prose p{margin-top:14px;font-size:15.5px}
+  .prose p b{color:var(--ink);font-weight:700}
+  .prose a{color:var(--mint-ink)}
+
+  .steps{border-top:2px solid var(--ink);margin-top:26px;max-width:860px;counter-reset:s}
+  .steps li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;font-size:15px}
+  .steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:600 13px var(--mono);color:var(--muted);padding-top:3px}
+  .steps li b{color:var(--ink);font-weight:700}
+  .steps li a{color:var(--mint-ink)}
+
+  .covwrap{overflow-x:auto;margin-top:26px}
+  table.cov{border-collapse:collapse;width:100%;font-size:14px}
+  .cov caption{text-align:left;font-weight:700;color:var(--ink);font-size:15.5px;padding-bottom:10px;letter-spacing:-.01em}
+  .cov th{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 14px 10px 0;border-bottom:2px solid var(--ink)}
+  .cov td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .cov td.rname{font-weight:600;color:var(--ink)}
+  .cov td.mono,.cov .mono{font-family:var(--mono);font-size:12.5px}
+  .cov .y{color:var(--mint-ink);font-weight:700}
+  .cov .n{color:oklch(50% 0.12 70);font-weight:700}
+  .fn{font-size:12.5px;color:var(--muted);margin-top:12px;max-width:75ch}
+  .fn a{color:inherit}
+
+  .portal{font-size:14px;max-width:70ch;margin-top:26px;border-top:2px solid var(--ink)}
+  .portal .prow{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--line);padding:9px 4px}
+  .portal .prow b{font-weight:600;color:var(--ink);font-size:13px}
+  .portal .prow span{font-family:var(--mono);font-size:13px}
+  @media (max-width:700px){.portal .prow{grid-template-columns:1fr;gap:2px}}
+
+  .rules ul{margin-top:26px;border-top:2px solid var(--ink)}
+  .rules li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;font-size:15px}
+  .rules li b{font-weight:700;color:var(--ink)}
+  .rules li a{color:var(--mint-ink)}
+  @media (max-width:700px){.rules li{grid-template-columns:1fr;gap:4px}}
+
+  .tariff{margin-top:26px;border-top:2px solid var(--ink);max-width:720px}
+  .tariff .prow{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding:13px 4px;font-size:15px}
+  .tariff .prow b{font-weight:600;color:var(--ink)}
+  .tariff .prow b a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+  .tariff .prow b a:hover{border-color:var(--ink)}
+  .tariff .prow span{font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+
+  .vlinks{border-top:2px solid var(--ink);margin-top:26px;max-width:760px}
+  .vlinks li{list-style:none;border-bottom:1px solid var(--line);padding:12px 4px;font-size:14px;display:flex;justify-content:space-between;gap:14px}
+  .vlinks li a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;text-align:right}
+  .vlinks li a:hover{color:var(--ink)}
+
+  .next{margin-top:30px;border-top:2px solid var(--ink);padding-top:18px;max-width:720px}
+  .next a{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--mint)}
+  .next p{margin-top:8px;font-size:14.5px;max-width:60ch}
+
+  footer{background:var(--ink);color:oklch(70% 0.014 265);margin-top:92px}
+  .foot-in{max-width:1140px;margin:0 auto;padding:44px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+  footer a{color:oklch(85% 0.01 90);text-decoration:none;border-bottom:1px solid oklch(40% 0.02 265)}
+  footer a:hover{border-color:var(--mint)}
+  .foot-geo{font-family:var(--geo);color:oklch(46% 0.02 265)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <b><a href="/">Reestri</a></b>
+    <a href="/#tools">Tools</a><a href="/#coverage">Coverage</a><a href="/#agents">Agents</a><a href="/#pricing">Pricing</a><a href="/data/">Data</a><a class="on" href="/guides/">Guides</a><a href="/#method">Method</a><a href="/#about">About</a>
+    <span class="sp"></span>
+    <a class="run" style="text-decoration:none" href="https://apify.com/reestri">Run on Apify</a>
+  </div>
+</nav>
+
+<header class="mast">
+  <div class="ghost" aria-hidden="true">რეესტრი</div>
+  <div class="mast-in">
+    <p class="kicker"><i></i>Guide · Armenia</p>
+    <h1>How to find the beneficial owners of an <em>Armenian</em> company</h1>
+    <p class="stand">Armenia is the one country in the region that publishes who owns a company for free: the declarations sit on the company card at e-register.moj.am, in English, with a JSON download. This guide covers the three numbers a company carries, where the declarations are, what self-declared data cannot tell you, and where to read the same company's public contracts.</p>
+    <p class="byline">By <b>Soso Pkhakadze</b> · published 5 Sep 2026 · portal facts checked 5 Sep 2026 · Disclosure: I build and sell Reestri, the paid lookup named in the last section. Every step above it works without it.</p>
+    <p class="toc"><a href="#numbers">Three numbers</a><a href="#card">The company card</a><a href="#declarations">The declarations</a><a href="#limits">What they cannot say</a><a href="#procurement">Public contracts</a><a href="#scale">At scale</a></p>
+  </div>
+</header>
+
+<section id="numbers">
+  <p class="kicker rv">Identifiers</p>
+  <h2 class="rv">Tax ID, registration number, unique identifier: three numbers, one company</h2>
+  <div class="prose rv">
+    <p>An Armenian company carries three identifiers and people mix them up constantly. The <b>tax identification number</b> (<span lang="hy">ՀՎՀՀ</span>, HVHH, 8 digits, for example <code>02560453</code>) is the one on invoices, contracts, bank forms and the procurement registry; if a document gives you one number, it is this one. The <b>registration number</b> (format <code>211.190.00190</code>) is the state register's own serial and appears on the registration certificate. The <b>unique identifier</b> (8 digits, for example <code>39014171</code>) is the key in the register website's URLs and nowhere else.</p>
+    <p>The register's search box takes a name, not a number. So the working method is: search the name, open the card, and confirm the tax ID on the card against the tax ID on your document. Names repeat (there are many "Ararat" companies); tax IDs do not.</p>
+  </div>
+</section>
+
+<section id="card">
+  <p class="kicker rv">The free layer</p>
+  <h2 class="rv">The company card at e-register.moj.am, in English</h2>
+  <p class="lede rv">The State Register of Legal Entities is run by the Ministry of Justice. The 2025 site replaced the old VXSoft application (still online at old.e-register.am for older records) and has a full English interface, including English legal names where the company registered one.</p>
+  <ol class="steps rv">
+    <li><span><b>Open <a href="https://e-register.moj.am/en/search/companies">e-register.moj.am/en/search/companies</a></b>. The path prefix sets the language: <code>/en/</code>, <code>/hy/</code>, <code>/ru/</code>.</span></li>
+    <li><span><b>Type part of the name.</b> The search is a substring match on the registered name, in whichever script it was registered; try the Latin name first, then the Armenian one from the company's own site. Results stop at 200, so narrow a common word.</span></li>
+    <li><span><b>Open the card.</b> The URL ends in the unique identifier. Read the status sentence first, then compare the tax ID with your document.</span></li>
+    <li><span><b>Scroll to "Company BOR declarations".</b> Each dated link is one beneficial-ownership declaration. No links means the company has declared nothing, or is exempt; see the limits section before you conclude anything.</span></li>
+  </ol>
+  <div class="portal rv">
+    <div class="prow"><b>Company Status</b><span>There is no information recorded in the unified state register regarding being in the process of liquidation or the termination of activity (existence).</span></div>
+    <div class="prow"><b>Registration number</b><span>211.190.00190</span></div>
+    <div class="prow"><b>Registration date</b><span>20-11-2001</span></div>
+    <div class="prow"><b>Registration Body</b><span lang="hy">ՀՀ ԱՆ ԻԱ պետական ռեգիստր</span></div>
+    <div class="prow"><b>Tax id</b><span>02560453</span></div>
+    <div class="prow"><b>Unique identifier</b><span>39014171</span></div>
+    <div class="prow"><b>Address</b><span lang="hy">Վ.ՍԱՐԳՍՅԱՆԻ 3, ՉԿԱ, ԵՐԵՎԱՆ, 0010, ԵՐԵՎԱՆ, RA</span></div>
+    <div class="prow"><b>Company BOR declarations</b><span>(none: a listed bank, exempt from declaring)</span></div>
+  </div>
+  <p class="fn rv">A real card, read on 5 Sep 2026: Ameriabank, a public company. Two things to notice. The status is a sentence, not a word; that sentence means "active", and a company in liquidation gets a different sentence naming the process. And the address is Armenian even on the English page. What the free card does not show: founders, the director, the charter, activity codes. Those are in the paid certified extract from the register (AMD 8,000, one to three days), which is how the declarations become the practical way to see the people behind a company.</p>
+</section>
+
+<section id="declarations">
+  <p class="kicker rv">The owners</p>
+  <h2 class="rv">Reading a beneficial-ownership declaration</h2>
+  <div class="prose rv">
+    <p>Armenia adopted the Beneficial Ownership Data Standard (BODS) with Open Ownership's help. Mining companies declared first, from 2021; the obligation has since been extended sector by sector. Each declaration page renders four sections (A to D: the company, the owners, the nature of control, the indirect chain) and carries a download button that hands you the whole declaration as a BODS 0.2 JSON array, the same format used by the UK and other publishers.</p>
+    <p><b>What a declaration names:</b> each natural person behind the company in Armenian script and Latin transliteration, their nationality, the kind of interest (shareholding, voting rights, right to appoint the board, other influence or control), whether it is direct or indirect, the date it started, a politically-exposed-person flag, and the legal ground on which the person counts as an owner. Ground 3 means ownership is dispersed and the person named is the general manager, which is a director, not an owner; read the ground before you write "owned by".</p>
+    <p><b>What it does not carry:</b> the share percentage. The structured data records the interest type but not the size, and the HTML view rarely states it either. For the exact split you still need the certified extract.</p>
+    <p>A company with several declarations has a time series. Kapan Mining and Processing Company, a mining CJSC, has 18 dated declarations on its card; the newest is the current state and the older ones show when owners changed. Take the newest for "who owns it now" and keep the list for "since when".</p>
+  </div>
+</section>
+
+<section class="rules" id="limits">
+  <p class="kicker rv">The honest map</p>
+  <h2 class="rv">What the declarations cannot tell you</h2>
+  <ul class="rv">
+    <li><b>Self-declared</b><span>The company files the declaration about itself. Nobody at the register verifies the chain. A declaration is evidence of what the company chose to state on that date, and Open Ownership's own reviews of Armenian data note quality gaps.</span></li>
+    <li><b>Partial coverage</b><span>Many companies have filed nothing. In our own sample of mining and media companies, an active mining CJSC in an obligated sector had an empty row. A missing declaration is not evidence of a hidden owner; it is evidence of a missing declaration.</span></li>
+    <li><b>Listed companies exempt</b><span>Companies whose shares trade on a regulated market do not declare (the bank above). Their ownership is in their stock-exchange disclosures instead.</span></li>
+    <li><b>Possibly stale</b><span>A 2021 declaration with nothing after it may be current or may be three owners ago. The card date is the only clue; the extract is the check.</span></li>
+    <li><b>Home addresses</b><span>Some declarations include the owner's residential address. It is on a public page, and it is still personal data under Armenia's data-protection law. Do not republish it; the tools below never return it.</span></li>
+    <li><b>Older records live elsewhere</b><span>Declarations filed before the 2025 platform sit on old.e-register.am under a different company ID. If the new card looks thin for a company you know declared earlier, look there.</span></li>
+  </ul>
+</section>
+
+<section id="procurement">
+  <p class="kicker rv">Follow the contracts</p>
+  <h2 class="rv">Follow the tax ID into the procurement registry: public contracts on armeps.am</h2>
+  <div class="prose rv">
+    <p>Armenia's public procurement registry (PPCM, part of ARMEPS at <a href="https://www.armeps.am/ppcm/public/contracts">armeps.am/ppcm/public/contracts</a>) lists every signed state contract with the buying authority, the supplier, the value, the signing date, the procedure and any appeal. Every row carries the supplier's 8-digit tax ID, the same <span lang="hy">ՀՎՀՀ</span> you confirmed on the company card, so the two sources join without name matching.</p>
+    <p>Search by supplier and you get a company's whole public-sector income at a glance: who buys from it, how much, and how often the award was <b>single-source</b> (<span lang="hy">ՄԱ</span>, a contract signed without competition). That last column is where most Armenian procurement stories start. From the 236,159 contracts in our weekly index (registry as of 29 Aug 2026): single-source awards fell from 52.04 percent of contract value in 2018 to 6.83 percent in 2026, while by count roughly four procedures in ten are still awarded without competition; 1,080 companies get over 90 percent of their public revenue from a single state buyer, and 618 have exactly one buyer. The full numbers, the CSVs and the caveats are in two open analyses: <a href="/data/armenia-single-source/">single-source awards, 2018 to 2026</a> and <a href="/data/armenia-money-moved/">where the single-source money moved</a>.</p>
+    <p>Two practical notes. The registry shows supplier names in the script they registered in, so an English name search can miss a company that registered in Armenian; the tax ID does not miss. And the Ministry of Finance has contracted a new procurement platform with a launch target of 1 Jan 2027, so bookmark the tax ID, not the URL.</p>
+  </div>
+  <div class="covwrap rv">
+    <table class="cov">
+      <caption>Who publishes what, for one Armenian company</caption>
+      <thead><tr><th>Question</th><th>Source</th><th>Free</th><th>Key</th></tr></thead>
+      <tbody>
+        <tr><td class="rname">Does it exist, is it in liquidation</td><td class="mono">e-register.moj.am card</td><td class="y">yes</td><td class="mono">name, then tax ID</td></tr>
+        <tr><td class="rname">Who ultimately owns it</td><td class="mono">BOR declarations on the card</td><td class="y">yes, if declared</td><td class="mono">unique identifier</td></tr>
+        <tr><td class="rname">Founders, director, charter, shares</td><td class="mono">certified extract, AMD 8,000</td><td class="n">paid</td><td class="mono">registration number</td></tr>
+        <tr><td class="rname">State contracts, single-source awards</td><td class="mono">armeps.am PPCM</td><td class="y">yes</td><td class="mono">tax ID</td></tr>
+        <tr><td class="rname">Officials and PEP lists</td><td class="mono">hetq.am, OpenSanctions</td><td class="y">yes</td><td class="mono">person name</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">Hetq (hetq.am) works this register daily and maintains the public-officials list that OpenSanctions uses for Armenia; their archive is the first place to search a name that shows up in a declaration.</p>
+</section>
+
+<section id="scale">
+  <p class="kicker rv">At scale</p>
+  <h2 class="rv">Screening twenty companies with owners: Reestri</h2>
+  <div class="prose rv">
+    <p>For one company, the card and its declarations take five minutes by hand. For a list, or for an AI agent that needs the owners as data, <b>Reestri</b> reads the card live, parses every declaration's BODS JSON into a flat owners list (names in both scripts, nationality, interest type, since-date, PEP flag), and returns one JSON record with a source URL, timestamp and content hash. I built it and I sell it, pay per lookup on Apify, no subscription. It reads only the public pages, never the paid extract, and it drops owners' home addresses at ingest.</p>
+    <p>The contracts tool queries the same weekly PPCM index the analyses above are built from, by tax ID or name, and returns one record per contract with the buyer, value, procedure and appeals. Supplier emails, bank account numbers and staff identifiers that the registry leaks are stripped and never stored.</p>
+  </div>
+  <div class="tariff rv">
+    <div class="prow"><b><a href="https://apify.com/reestri/am-company-lookup">Armenia company + beneficial owners</a></b><span>$0.05 per search + $0.50 per record</span></div>
+    <div class="prow"><b><a href="https://apify.com/reestri/am-supplier-contracts">Armenia supplier contracts</a></b><span>$0.05 per search + $0.10 per contract</span></div>
+    <div class="prow"><b><a href="https://apify.com/reestri/company-screen">Company screen, GE + AM + MD in one call</a></b><span>$0.50 per query + $0.10 per match</span></div>
+  </div>
+  <p class="fn rv">Also callable by AI agents as MCP tools; setup is on the <a href="/#agents">front page</a>. Journalists and researchers: lookups are free on request, write to soso@reestri.io with the names.</p>
+</section>
+
+<section>
+  <p class="kicker rv">Sources</p>
+  <h2 class="rv">The pages this guide is built on</h2>
+  <ul class="vlinks rv">
+    <li><span>State register search, English</span><a href="https://e-register.moj.am/en/search/companies">e-register.moj.am/en/search/companies</a></li>
+    <li><span>The card quoted above</span><a href="https://e-register.moj.am/en/companies/39014171">e-register.moj.am/en/companies/39014171</a></li>
+    <li><span>Legacy register, older declarations</span><a href="https://old.e-register.am">old.e-register.am</a></li>
+    <li><span>Open Ownership on Armenia's implementation</span><a href="https://www.openownership.org/en/map/country/armenia/">openownership.org/en/map/country/armenia</a></li>
+    <li><span>Public contracts registry (PPCM)</span><a href="https://www.armeps.am/ppcm/public/contracts">armeps.am/ppcm/public/contracts</a></li>
+    <li><span>Investigative archive and officials list</span><a href="https://hetq.am">hetq.am</a></li>
+    <li><span>Our open analyses and CSVs</span><a href="https://github.com/SosoPkhakadze/reestri-data/tree/main/am-contracts">github.com/SosoPkhakadze/reestri-data</a></li>
+  </ul>
+  <div class="next rv">
+    <a href="/guides/check-a-georgian-company/">Previous guide: check a Georgian company in NAPR →</a>
+    <p>The 9-digit code, the free search, the captcha-gated detail view, the 13 GEL extract with founders and shares, the person-to-companies search, and a scam checklist.</p>
+  </div>
+  <div class="next rv">
+    <a href="/guides/moldova-idno-lookup/">Next guide: check a Moldovan company by IDNO →</a>
+    <p>The 13-digit IDNO, the weekly open dataset with founders and shares, the 110 to 440 lei certified extract, and the diacritics trap.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div style="color:var(--paper);font-weight:700">Reestri <span class="foot-geo">· რეესტრი</span></div>
+      <div style="margin-top:6px">Georgian for "registry". Built in Kutaisi.</div>
+    </div>
+    <div style="text-align:right">
+      <div><a href="https://apify.com/reestri">apify.com/reestri</a> · <a href="/guides/">guides</a> · <a href="/data/">data</a> · <a href="mailto:soso@reestri.io">soso@reestri.io</a></div>
+      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells the tools named in the last section. Registry data belongs to its registries. Published 2026-09-05.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)document.documentElement.classList.add('no-motion');
+  if(!reduce&&'IntersectionObserver'in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  }else{document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
+})();
+</script>
+</body>
+</html>
