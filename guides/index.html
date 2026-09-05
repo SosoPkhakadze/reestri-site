@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guides: how to check a company in Georgia, Armenia and Moldova | Reestri</title>
+<meta name="description" content="Practical, source-linked guides to the company registers of Georgia (NAPR), Armenia (e-register.moj.am, beneficial owners) and Moldova (ASP, IDNO): what is free, what is paid, what is not public, and how to do it at scale.">
+<link rel="canonical" href="https://reestri.io/guides/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Georgian:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage",
+ "name":"Reestri guides: checking companies in Georgia, Armenia and Moldova",
+ "description":"Practical guides to the company registers of Georgia, Armenia and Moldova.",
+ "publisher":{"@type":"Organization","name":"Reestri","url":"https://reestri.io/"},
+ "url":"https://reestri.io/guides/",
+ "hasPart":[
+  {"@type":"Article","headline":"How to check a Georgian company in the NAPR register","url":"https://reestri.io/guides/check-a-georgian-company/"},
+  {"@type":"Article","headline":"How to find the beneficial owners of an Armenian company","url":"https://reestri.io/guides/armenia-beneficial-owners/"},
+  {"@type":"Article","headline":"How to check a Moldovan company by IDNO","url":"https://reestri.io/guides/moldova-idno-lookup/"}]}
+</script>
+<style>
+  :root{
+    --ink: oklch(16% 0.02 265);
+    --paper: oklch(96.5% 0.007 90);
+    --paper-2: oklch(93.5% 0.009 90);
+    --line: oklch(85% 0.012 90);
+    --body: oklch(30% 0.015 265);
+    --muted: oklch(47% 0.015 265);
+    --ge: oklch(52% 0.19 25);
+    --am: oklch(63% 0.13 70);
+    --md: oklch(50% 0.16 262);
+    --mint: oklch(87% 0.13 160);
+    --mint-ink: oklch(40% 0.09 160);
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Archivo", system-ui, sans-serif;
+    --geo: "Noto Sans Georgian", "Archivo", sans-serif;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:inherit}
+  ::selection{background:var(--mint);color:var(--ink)}
+  .num{font-variant-numeric:tabular-nums}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .no-motion *{transition-duration:0s !important;animation:none !important}
+  .no-motion .rv{opacity:1;transform:none}
+  button,a{transition:color .18s var(--ease),background-color .18s var(--ease),border-color .18s var(--ease)}
+
+  .nav{position:sticky;top:0;z-index:10;background:oklch(16% 0.02 265 / .92);backdrop-filter:blur(8px);color:var(--paper);border-bottom:1px solid oklch(28% 0.02 265)}
+  .nav-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:26px;height:52px;overflow-x:auto}
+  .nav b{font-weight:800;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
+  .nav b a{text-decoration:none;border-bottom:3px solid var(--mint);color:var(--paper);font-size:16px}
+  .nav a{font-size:13.5px;font-weight:500;text-decoration:none;color:oklch(70% 0.015 265);white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+  .nav a:hover{color:var(--paper)}
+  .nav a.on{color:var(--paper);border-color:var(--mint)}
+  .nav .sp{flex:1}
+  .nav .run{background:var(--mint);color:var(--ink);font-weight:700;font-size:13px;padding:7px 14px;border-radius:3px;border:0}
+  .nav .run:hover{background:oklch(91% 0.11 160)}
+
+  .mast{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .ghost{position:absolute;right:-50px;top:-36px;font-family:var(--geo);font-weight:700;font-size:clamp(150px,26vw,320px);line-height:.9;color:oklch(23.5% 0.028 265);user-select:none;pointer-events:none;letter-spacing:-.04em}
+  .mast-in{max-width:1140px;margin:0 auto;padding:56px 24px 54px;position:relative;z-index:1}
+  .kicker{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .mast .kicker{color:oklch(62% 0.015 265)}
+  .mast h1{font-weight:800;letter-spacing:-.025em;font-size:clamp(28px,4.2vw,46px);line-height:1.08;max-width:22ch;color:oklch(93% 0.008 90);margin-top:14px}
+  .mast p.stand{margin-top:18px;max-width:62ch;color:oklch(74% 0.014 265);font-size:16.5px}
+
+  section{max-width:1140px;margin:0 auto;padding:64px 24px 0}
+  .list{border-top:2px solid var(--ink);margin-top:8px}
+  .guide{border-bottom:1px solid var(--line);padding:26px 4px 28px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px}
+  .guide .who{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-top:6px}
+  .guide .who i{display:inline-block;width:9px;height:9px;border-radius:1px;margin-right:7px;vertical-align:0}
+  .guide h2{font-weight:800;letter-spacing:-.02em;font-size:clamp(20px,2.6vw,27px);line-height:1.15;color:var(--ink)}
+  .guide h2 a{text-decoration:none}
+  .guide h2 a:hover{color:var(--mint-ink)}
+  .guide p{margin-top:10px;font-size:15px;max-width:66ch}
+  .guide .links{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:12px}
+  .guide .links a{color:var(--mint-ink);text-decoration:none}
+  .guide .links a:hover{text-decoration:underline}
+  @media (max-width:700px){.guide{grid-template-columns:1fr;gap:8px}.guide .who{padding-top:0}}
+
+  .rules ul{margin-top:26px;border-top:2px solid var(--ink)}
+  .rules li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;font-size:15px}
+  .rules li b{font-weight:700;color:var(--ink)}
+  @media (max-width:700px){.rules li{grid-template-columns:1fr;gap:4px}}
+  h2.sec{font-weight:800;letter-spacing:-.02em;font-size:clamp(22px,3vw,30px);color:var(--ink);margin-top:10px}
+  .fn{font-size:12.5px;color:var(--muted);margin-top:18px;max-width:75ch}
+  .fn a{color:inherit}
+
+  footer{background:var(--ink);color:oklch(70% 0.014 265);margin-top:92px}
+  .foot-in{max-width:1140px;margin:0 auto;padding:44px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+  footer a{color:oklch(85% 0.01 90);text-decoration:none;border-bottom:1px solid oklch(40% 0.02 265)}
+  footer a:hover{border-color:var(--mint)}
+  .foot-geo{font-family:var(--geo);color:oklch(46% 0.02 265)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <b><a href="/">Reestri</a></b>
+    <a href="/#tools">Tools</a><a href="/#coverage">Coverage</a><a href="/#agents">Agents</a><a href="/#pricing">Pricing</a><a href="/data/">Data</a><a class="on" href="/guides/">Guides</a><a href="/#method">Method</a><a href="/#about">About</a>
+    <span class="sp"></span>
+    <a class="run" style="text-decoration:none" href="https://apify.com/reestri">Run on Apify</a>
+  </div>
+</nav>
+
+<header class="mast">
+  <div class="ghost" aria-hidden="true">რეესტრი</div>
+  <div class="mast-in">
+    <p class="kicker">Guides</p>
+    <h1>How to check a company yourself, register by register.</h1>
+    <p class="stand">The questions people actually type: is this Georgian company real, who owns this Armenian one, what does this Moldovan IDNO belong to. Each guide names the official portal and the exact field, says what is free and what costs money, and states what is not public at all. Every fact links to its source page and carries the date it was checked. The paid tool appears once, at the end, labelled as ours.</p>
+  </div>
+</header>
+
+<section>
+  <div class="list rv">
+    <article class="guide">
+      <div class="who"><i style="background:var(--ge)"></i>Georgia<br>NAPR</div>
+      <div>
+        <h2><a href="/guides/check-a-georgian-company/">How to check a Georgian company in the NAPR register: status, ID code, owners, what is public and what is not</a></h2>
+        <p>The 9-digit identification code, the free search at enreg.reestri.gov.ge, the 3-digit captcha on the detail view, the extract with founders and shares (13 to 52 GEL, any company, any person), the person-to-companies search almost nobody knows about, a scam checklist for deposits and job offers, and why the Georgian name and the Latin name never match.</p>
+        <p class="links"><a href="/guides/check-a-georgian-company/">read the guide →</a> · <a href="https://apify.com/reestri/ge-company-lookup">the tool</a></p>
+      </div>
+    </article>
+    <article class="guide">
+      <div class="who"><i style="background:var(--am)"></i>Armenia<br>e-register.moj.am</div>
+      <div>
+        <h2><a href="/guides/armenia-beneficial-owners/">How to find the beneficial owners of an Armenian company: e-register.moj.am and the BODS declarations</a></h2>
+        <p>Tax ID versus registration number versus unique identifier, the English company card, where the beneficial-ownership declarations sit and how to read one (and what a "ground 3" owner really is), why a missing declaration proves nothing, and how the same tax ID pulls the company's public contracts and single-source awards from armeps.am.</p>
+        <p class="links"><a href="/guides/armenia-beneficial-owners/">read the guide →</a> · <a href="https://apify.com/reestri/am-company-lookup">the tool</a> · <a href="/data/">the procurement stories</a></p>
+      </div>
+    </article>
+    <article class="guide">
+      <div class="who"><i style="background:var(--md)"></i>Moldova<br>ASP</div>
+      <div>
+        <h2><a href="/guides/moldova-idno-lookup/">How to check a Moldovan company by IDNO: ASP register, open data, certified extracts</a></h2>
+        <p>The 13-digit IDNO, the state's captcha-gated lookup and the free mirrors, the weekly open dataset with 302,232 companies and their founders' share sizes, the certified extract at 110 to 440 lei by speed, the comma-versus-cedilla diacritics trap, and what stays private. Plus a plain statement of why our own Moldova tool is opt-in.</p>
+        <p class="links"><a href="/guides/moldova-idno-lookup/">read the guide →</a> · <a href="https://apify.com/reestri/company-screen">the screen tool</a></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="rules">
+  <p class="kicker rv">Across the three</p>
+  <h2 class="sec rv">Four rules that hold in every register</h2>
+  <ul class="rv">
+    <li><b>The identifier beats the name</b><span>Georgian 9-digit code, Armenian 8-digit tax ID, Moldovan 13-digit IDNO. All three are printed on documents and all three search cleanly; names are ambiguous in three scripts and two encodings.</span></li>
+    <li><b>Status words do not travel</b><span>"Registered" in Georgia can mean dormant for a decade; Armenia's status is a sentence about liquidation; Moldova has no status column at all and you derive it from a liquidation date. Record the original wording, not your translation.</span></li>
+    <li><b>Ownership costs differently</b><span>Public and self-declared in Armenia, public in the Moldovan state file, paid extract in Georgia. Budget for the country you are in.</span></li>
+    <li><b>Keep the evidence</b><span>Save the page or the file, the URL and the date. Registers change weekly and the version you saw may not be reproducible next month.</span></li>
+  </ul>
+  <p class="fn rv">These guides grew out of a tipsheet for journalists and the questions people ask on Reddit and in OSINT forums. Missing a question? Write to <a href="mailto:soso@reestri.io">soso@reestri.io</a>.</p>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div style="color:var(--paper);font-weight:700">Reestri <span class="foot-geo">· რეესტრი</span></div>
+      <div style="margin-top:6px">Georgian for "registry". Built in Kutaisi.</div>
+    </div>
+    <div style="text-align:right">
+      <div><a href="https://apify.com/reestri">apify.com/reestri</a> · <a href="/data/">data</a> · <a href="mailto:soso@reestri.io">soso@reestri.io</a></div>
+      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells the tools these guides mention. Registry data belongs to its registries. Page updated 2026-09-05.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)document.documentElement.classList.add('no-motion');
+  if(!reduce&&'IntersectionObserver'in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  }else{document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
+})();
+</script>
+</body>
+</html>
