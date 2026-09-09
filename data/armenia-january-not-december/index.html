@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Armenia has no December procurement rush. The money is signed in January | Reestri</title>
+<meta name="description" content="We tested the end of year spending rush in Armenian public procurement and did not find it. December holds 10.71 percent of contract value, January 16.14 percent. The median large buyer signs 7.69 percent of its money in December. Analysis of 235,570 PPCM contracts with free CSVs.">
+<link rel="canonical" href="https://reestri.io/data/armenia-january-not-december/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Georgian:wght@400;700&family=Noto+Sans+Armenian:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"Armenia has no December procurement rush. The money is signed in January.",
+ "description":"A third pass over 235,570 signed contracts in PPCM, Armenia's public procurement registry: the monthly shape of the procurement year, December against the rest of it, and the rise of the urgent procedure, 2018 to 2026.",
+ "author":{"@type":"Person","name":"Soso Pkhakadze"},
+ "publisher":{"@type":"Organization","name":"Reestri","url":"https://reestri.io/"},
+ "datePublished":"2026-09-09","dateModified":"2026-09-09",
+ "mainEntityOfPage":"https://reestri.io/data/armenia-january-not-december/"}
+</script>
+<style>
+  :root{
+    --ink: oklch(16% 0.02 265);
+    --paper: oklch(96.5% 0.007 90);
+    --paper-2: oklch(93.5% 0.009 90);
+    --line: oklch(85% 0.012 90);
+    --body: oklch(30% 0.015 265);
+    --muted: oklch(47% 0.015 265);
+    --am: oklch(63% 0.13 70);
+    --am-soft: oklch(83% 0.07 70);
+    --mint: oklch(87% 0.13 160);
+    --mint-ink: oklch(40% 0.09 160);
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Archivo", system-ui, sans-serif;
+    --geo: "Noto Sans Georgian", "Archivo", sans-serif;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:inherit}
+  ::selection{background:var(--mint);color:var(--ink)}
+  :lang(hy){font-family:"Noto Sans Armenian","Archivo",sans-serif}
+  .num{font-variant-numeric:tabular-nums}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .no-motion *{transition-duration:0s !important;animation:none !important}
+  .no-motion .rv{opacity:1;transform:none}
+  button,a{transition:color .18s var(--ease),background-color .18s var(--ease),border-color .18s var(--ease)}
+
+  .nav{position:sticky;top:0;z-index:10;background:oklch(16% 0.02 265 / .92);backdrop-filter:blur(8px);color:var(--paper);border-bottom:1px solid oklch(28% 0.02 265)}
+  .nav-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:26px;height:52px;overflow-x:auto}
+  .nav b{font-weight:800;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
+  .nav b a{text-decoration:none;border-bottom:3px solid var(--mint);color:var(--paper);font-size:16px}
+  .nav a{font-size:13.5px;font-weight:500;text-decoration:none;color:oklch(70% 0.015 265);white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+  .nav a:hover{color:var(--paper)}
+  .nav a.on{color:var(--paper);border-color:var(--mint)}
+  .nav .sp{flex:1}
+  .nav .run{background:var(--mint);color:var(--ink);font-weight:700;font-size:13px;padding:7px 14px;border-radius:3px;border:0}
+  .nav .run:hover{background:oklch(91% 0.11 160)}
+
+  .mast{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .ghost{position:absolute;right:-50px;top:-36px;font-family:var(--geo);font-weight:700;font-size:clamp(150px,26vw,320px);line-height:.9;color:oklch(23.5% 0.028 265);user-select:none;pointer-events:none;letter-spacing:-.04em}
+  .mast-in{max-width:1140px;margin:0 auto;padding:56px 24px 54px;position:relative;z-index:1}
+  .kicker{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .mast .kicker{color:oklch(62% 0.015 265)}
+  .mast h1{font-weight:800;letter-spacing:-.025em;font-size:clamp(28px,4.2vw,46px);line-height:1.08;max-width:24ch;color:oklch(93% 0.008 90);margin-top:14px}
+  .mast h1 em{font-style:normal;color:oklch(78% 0.13 75)}
+  .mast p.stand{margin-top:18px;max-width:62ch;color:oklch(74% 0.014 265);font-size:16.5px}
+  .byline{font-family:var(--mono);font-size:12.5px;color:oklch(58% 0.015 265);margin-top:24px}
+  .byline b{color:oklch(80% 0.014 265);font-weight:600}
+
+  section{max-width:1140px;margin:0 auto;padding:64px 24px 0}
+  h2{font-weight:800;letter-spacing:-.02em;font-size:clamp(22px,3vw,30px);color:var(--ink);margin-top:10px}
+  .lede{max-width:64ch;margin-top:14px}
+  .prose{max-width:70ch}
+  .prose p{margin-top:14px;font-size:15.5px}
+  .prose p b{color:var(--ink);font-weight:700}
+
+  .chartwrap{margin-top:34px;border-top:2px solid var(--ink);padding-top:22px}
+  .chartwrap figcaption{font-size:13.5px;color:var(--muted);margin-top:10px;max-width:70ch}
+  .legend{display:flex;gap:22px;flex-wrap:wrap;font:500 12.5px var(--mono);color:var(--muted);margin-bottom:8px}
+  .legend i{display:inline-block;width:16px;height:10px;vertical-align:0;margin-right:7px}
+  .legend i.ln{height:3px;vertical-align:3px}
+  .legend i.dash{height:0;border-top:2px dashed oklch(60% 0.015 265);width:18px;vertical-align:4px}
+
+  .covwrap{overflow-x:auto;margin-top:26px}
+  table.cov{border-collapse:collapse;width:100%;font-size:14px}
+  .cov caption{text-align:left;font-weight:700;color:var(--ink);font-size:15.5px;padding-bottom:10px;letter-spacing:-.01em}
+  .cov th{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 14px 10px 0;border-bottom:2px solid var(--ink)}
+  .cov td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .cov th.r,.cov td.r{text-align:right;padding-right:0;padding-left:14px}
+  .cov td.rname{font-weight:600;color:var(--ink)}
+  .cov td.mono,.cov .mono{font-family:var(--mono);font-size:12.5px}
+  .cov .hi{color:var(--am);font-weight:700}
+  .cov .lo{color:var(--mint-ink);font-weight:700}
+  .cov tr.tot td{border-top:2px solid var(--ink);border-bottom:0;font-weight:700;color:var(--ink)}
+  .fn{font-size:12.5px;color:var(--muted);margin-top:12px;max-width:75ch}
+
+  .rules ul{margin-top:26px;border-top:2px solid var(--ink)}
+  .rules li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;font-size:15px}
+  .rules li b{font-weight:700;color:var(--ink)}
+  @media (max-width:700px){.rules li{grid-template-columns:1fr;gap:4px}}
+
+  .vlinks{border-top:2px solid var(--ink);margin-top:26px;max-width:720px}
+  .vlinks li{list-style:none;border-bottom:1px solid var(--line);padding:12px 4px;font-size:14px;display:flex;justify-content:space-between;gap:14px}
+  .vlinks li a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none}
+  .vlinks li a:hover{color:var(--ink)}
+
+  .next{margin-top:30px;border-top:2px solid var(--ink);padding-top:18px;max-width:720px}
+  .next a{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--mint)}
+  .next p{margin-top:8px;font-size:14.5px;max-width:60ch}
+  .next + .next{border-top:1px solid var(--line);margin-top:22px;padding-top:16px}
+
+  footer{background:var(--ink);color:oklch(70% 0.014 265);margin-top:92px}
+  .foot-in{max-width:1140px;margin:0 auto;padding:44px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+  footer a{color:oklch(85% 0.01 90);text-decoration:none;border-bottom:1px solid oklch(40% 0.02 265)}
+  footer a:hover{border-color:var(--mint)}
+  .foot-geo{font-family:var(--geo);color:oklch(46% 0.02 265)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <b><a href="/">Reestri</a></b>
+    <a href="/#tools">Tools</a><a href="/#coverage">Coverage</a><a href="/#agents">Agents</a><a href="/#pricing">Pricing</a><a class="on" href="/data/">Data</a><a href="/guides/">Guides</a><a href="/#method">Method</a><a href="/#about">About</a>
+    <span class="sp"></span>
+    <a class="run" style="text-decoration:none" href="https://apify.com/reestri">Run on Apify</a>
+  </div>
+</nav>
+
+<header class="mast">
+  <div class="ghost" aria-hidden="true">რეესტრი</div>
+  <div class="mast-in">
+    <p class="kicker">From the data · story 3</p>
+    <h1>We went looking for Armenia's December rush. The money is signed in <em>January</em>.</h1>
+    <p class="stand">Every procurement system is supposed to have one: budget money spent in a hurry before 31 December, awarded without competition, pushed through urgent procedures. We tested it against 235,570 signed contracts in PPCM, Armenia's public contracts registry. December is the busiest month by contract count and an ordinary month by money. The peak is at the other end of the calendar, and it is not a rush at all.</p>
+    <p class="byline">By <b>Soso Pkhakadze</b> · published 9 Sep 2026 · registry index of 6 Sep 2026 · aggregate only, state buyers and companies only</p>
+  </div>
+</header>
+
+<section>
+  <p class="kicker rv">The headline</p>
+  <h2 class="rv">The procurement year is front loaded, not back loaded</h2>
+  <figure class="chartwrap rv">
+    <div class="legend">
+      <span><i style="background:var(--am-soft)"></i>share of contract value</span>
+      <span><i class="ln" style="background:oklch(45% 0.015 265)"></i>share of contract count</span>
+      <span><i class="dash"></i>an even month, 8.33 percent</span>
+    </div>
+    <svg viewBox="0 0 720 300" role="img" aria-label="Share of Armenian public contract value and count by month of signature, pooled 2018 to 2025. January holds 16.14 percent of value, February 12.88, December 10.71, October the least at 5.22. By count December is highest at 10.45 percent and January second at 10.27." style="width:100%;height:auto;font-family:var(--mono)">
+      <g stroke="oklch(88% 0.01 90)" stroke-width="1">
+        <line x1="46" y1="250" x2="700" y2="250"/><line x1="46" y1="186.1" x2="700" y2="186.1"/><line x1="46" y1="122.2" x2="700" y2="122.2"/><line x1="46" y1="58.3" x2="700" y2="58.3"/>
+      </g>
+      <g fill="oklch(47% 0.015 265)" font-size="11" text-anchor="end">
+        <text x="38" y="254">0%</text><text x="38" y="190">5%</text><text x="38" y="126">10%</text><text x="38" y="62">15%</text>
+      </g>
+      <g fill="oklch(83% 0.07 70)">
+        <rect x="112.75" y="85.4" width="30" height="164.6"/>
+        <rect x="167.25" y="158.4" width="30" height="91.6"/>
+        <rect x="221.75" y="165.2" width="30" height="84.8"/>
+        <rect x="276.25" y="147.1" width="30" height="102.9"/>
+        <rect x="330.75" y="161.7" width="30" height="88.3"/>
+        <rect x="385.25" y="153.7" width="30" height="96.3"/>
+        <rect x="439.75" y="170.1" width="30" height="79.9"/>
+        <rect x="494.25" y="165.0" width="30" height="85.0"/>
+        <rect x="548.75" y="183.3" width="30" height="66.7"/>
+        <rect x="603.25" y="175.5" width="30" height="74.5"/>
+      </g>
+      <g fill="oklch(63% 0.13 70)">
+        <rect x="58.25" y="43.8" width="30" height="206.2"/>
+        <rect x="657.75" y="113.2" width="30" height="136.8"/>
+      </g>
+      <g font-size="12.5" font-weight="700" fill="oklch(45% 0.11 70)" text-anchor="middle">
+        <text x="73.25" y="36">16.14%</text><text x="672.75" y="105">10.71%</text>
+      </g>
+      <line x1="46" y1="143.6" x2="700" y2="143.6" stroke="oklch(60% 0.015 265)" stroke-width="1.5" stroke-dasharray="6 5"/>
+      <polyline fill="none" stroke="oklch(45% 0.015 265)" stroke-width="2.5" stroke-linejoin="round"
+        points="73.25,118.8 127.75,129.2 182.25,122.9 236.75,132.2 291.25,143.6 345.75,152.9 400.25,161.2 454.75,172.6 509.25,162.9 563.75,155.4 618.25,154.1 672.75,116.5"/>
+      <g fill="oklch(45% 0.015 265)">
+        <circle cx="73.25" cy="118.8" r="3.5"/><circle cx="127.75" cy="129.2" r="3.5"/><circle cx="182.25" cy="122.9" r="3.5"/><circle cx="236.75" cy="132.2" r="3.5"/><circle cx="291.25" cy="143.6" r="3.5"/><circle cx="345.75" cy="152.9" r="3.5"/><circle cx="400.25" cy="161.2" r="3.5"/><circle cx="454.75" cy="172.6" r="3.5"/><circle cx="509.25" cy="162.9" r="3.5"/><circle cx="563.75" cy="155.4" r="3.5"/><circle cx="618.25" cy="154.1" r="3.5"/><circle cx="672.75" cy="116.5" r="3.5"/>
+      </g>
+      <g fill="oklch(47% 0.015 265)" font-size="11" text-anchor="middle">
+        <text x="73.25" y="270">Jan</text><text x="127.75" y="270">Feb</text><text x="182.25" y="270">Mar</text><text x="236.75" y="270">Apr</text><text x="291.25" y="270">May</text><text x="345.75" y="270">Jun</text><text x="400.25" y="270">Jul</text><text x="454.75" y="270">Aug</text><text x="509.25" y="270">Sep</text><text x="563.75" y="270">Oct</text><text x="618.25" y="270">Nov</text><text x="672.75" y="270">Dec</text>
+      </g>
+      <text x="700" y="291" fill="oklch(47% 0.015 265)" font-size="11" text-anchor="end">month of signature, pooled 2018 to 2025</text>
+    </svg>
+    <figcaption>All PPCM contracts signed in the eight complete years 2018 to 2025: 192,369 contracts worth 3,958,215,584,070 AMD. Bars are each month's share of the value, the line is its share of the count, the dashed line is what an even month would hold. Table 10 in the repo gives every month of every year with the same columns.</figcaption>
+  </figure>
+
+  <div class="prose rv">
+    <p><b>December is the busiest month and an unremarkable one for money.</b> It holds 20,094 contracts, 10.45 percent of the count against 8.33 percent for an even month, but its 424,043,419,447 AMD is only 10.71 percent of the value. <b>January holds 638,976,946,239 AMD, 16.14 percent, 1.94 times an even month and 1.51 times December's money.</b> January and February together take 29.02 percent of the value on 19.72 percent of the contracts. The quiet end of the year is autumn: October holds 5.22 percent of the value, November 5.83.</p>
+    <p><b>The December bump rests on two years.</b> Its share of the year's value is below an even month in four of the eight complete years: 3.46 percent in 2018, 6.74 in 2022, 7.42 in 2023, 6.10 in 2025. It clears an even month in 2019 (9.60), 2024 (9.90) and then twice by a lot, in 2020 (29.03) and 2021 (19.58). Take those two years out and there is no pattern left to explain.</p>
+    <p><b>No buyer of any size runs a December cliff.</b> Among the 129 state buyers that signed at least 50 contracts worth at least 500,000,000 AMD between 2018 and 2025, the median share of value signed in December is 7.69 percent, below what an even month would give them. One is above half, three above a third, eight above a quarter. The most concentrated buyer in the whole registry is the Migration Service of the Territorial Administration Ministry at 83.07 percent, on a lifetime total of 1,548,737,498 AMD.</p>
+    <p><b>December contracts are not bigger and are not more urgent.</b> The median December contract is 450,000 AMD against 434,850 for the rest of the year; the mean is 21,150,353 against 20,609,701. Urgent procedure forms carry 29.79 percent of December value against 29.43 percent for the other eleven months. Pooled by month, December ranks ninth of twelve on the urgent share of its own value; eight months run higher, from February at 43.68 percent down to July at 32.54. December is more single source (36.77 percent of contracts against 32.65), and by value that gap comes almost entirely from December 2020 and December 2021; in 2023 and 2024 December was less single source than the rest of its year.</p>
+    <p><b>What January really is: the state medical order.</b> In January 2018 the Ministry of Health signed 73.19 percent of the month's value and 89.24 percent of the month was awarded single source. January 2019: 71.92 and 87.82. January 2020: 68.18 and 83.55. January 2023: 56.15 and 59.20. Pooled over the eight years, 61.25 percent of January value is single source, the highest of any month, and 3.37 percent is urgent, the lowest of any month. PPCM records state-order payments to public hospitals as single-source contracts, and they are signed at the top of the budget year. That is a booking convention, not a spending sprint.</p>
+    <p><b>Since 2024 the peak moved to February, and changed character.</b> February 2024 held 14.69 percent of that year's value with 51.04 percent of the month awarded under urgent procedures and the City Planning Committee taking 46.35 percent of it. February 2025 held 27.79 percent of the year with 70.72 percent urgent and the Armenian Territorial Development Fund taking 66.08 percent. The front of the Armenian procurement year is now large accelerated construction tenders rather than annual medical contracts.</p>
+  </div>
+</section>
+
+<section>
+  <p class="kicker rv">The tables</p>
+  <h2 class="rv">Months, Decembers, buyers, urgency</h2>
+
+  <div class="covwrap rv">
+    <table class="cov num">
+      <caption>The procurement year, month by month, pooled 2018 to 2025</caption>
+      <thead><tr><th>Month</th><th class="r">Share of value</th><th class="r">Share of count</th><th class="r">Value index vs even month</th><th class="r">Single source, share of month value</th><th class="r">Urgent, share of month value</th></tr></thead>
+      <tbody>
+        <tr><td class="rname">January</td><td class="r hi">16.14%</td><td class="r">10.27%</td><td class="r mono">1.94</td><td class="r hi">61.25%</td><td class="r">3.37%</td></tr>
+        <tr><td class="rname">February</td><td class="r">12.88%</td><td class="r">9.45%</td><td class="r mono">1.55</td><td class="r">13.42%</td><td class="r hi">43.68%</td></tr>
+        <tr><td class="rname">March</td><td class="r">7.17%</td><td class="r">9.95%</td><td class="r mono">0.86</td><td class="r">14.84%</td><td class="r">34.26%</td></tr>
+        <tr><td class="rname">April</td><td class="r">6.64%</td><td class="r">9.22%</td><td class="r mono">0.80</td><td class="r">9.23%</td><td class="r">21.07%</td></tr>
+        <tr><td class="rname">May</td><td class="r">8.05%</td><td class="r">8.33%</td><td class="r mono">0.97</td><td class="r">5.41%</td><td class="r">25.70%</td></tr>
+        <tr><td class="rname">June</td><td class="r">6.91%</td><td class="r">7.60%</td><td class="r mono">0.83</td><td class="r">7.01%</td><td class="r">37.40%</td></tr>
+        <tr><td class="rname">July</td><td class="r">7.54%</td><td class="r">6.95%</td><td class="r mono">0.90</td><td class="r">10.96%</td><td class="r">32.54%</td></tr>
+        <tr><td class="rname">August</td><td class="r">6.25%</td><td class="r">6.06%</td><td class="r mono">0.75</td><td class="r">8.96%</td><td class="r">40.70%</td></tr>
+        <tr><td class="rname">September</td><td class="r">6.65%</td><td class="r">6.82%</td><td class="r mono">0.80</td><td class="r">14.82%</td><td class="r">37.18%</td></tr>
+        <tr><td class="rname">October</td><td class="r lo">5.22%</td><td class="r">7.40%</td><td class="r mono">0.63</td><td class="r">12.09%</td><td class="r">37.33%</td></tr>
+        <tr><td class="rname">November</td><td class="r">5.83%</td><td class="r">7.51%</td><td class="r mono">0.70</td><td class="r">14.01%</td><td class="r">37.35%</td></tr>
+        <tr><td class="rname">December</td><td class="r">10.71%</td><td class="r hi">10.45%</td><td class="r mono">1.29</td><td class="r">35.41%</td><td class="r">29.79%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">An even month would hold 8.33 percent of both. 2026 is left out of every pooled figure because the snapshot stops on 6 September and the year has no autumn yet. Every month of every year, with the largest buyer of each month: <a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/10-monthly-distribution.csv">10-monthly-distribution.csv</a>.</p>
+
+  <div class="covwrap rv">
+    <table class="cov num">
+      <caption>December against the other eleven months, by year</caption>
+      <thead><tr><th>Year</th><th class="r">December share of value</th><th class="r">December share of count</th><th class="r">Single source, December</th><th class="r">Single source, rest of year</th><th class="r">Signed from 22 Dec, share of December value</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">2018</td><td class="r lo">3.46%</td><td class="r">8.56%</td><td class="r">23.58%</td><td class="r">53.07%</td><td class="r">28.89%</td></tr>
+        <tr><td class="mono">2019</td><td class="r">9.60%</td><td class="r">10.92%</td><td class="r">29.97%</td><td class="r">48.19%</td><td class="r">49.51%</td></tr>
+        <tr><td class="mono">2020</td><td class="r hi">29.03%</td><td class="r">12.54%</td><td class="r hi">71.48%</td><td class="r">36.46%</td><td class="r hi">91.28%</td></tr>
+        <tr><td class="mono">2021</td><td class="r hi">19.58%</td><td class="r">13.53%</td><td class="r">46.79%</td><td class="r">14.83%</td><td class="r">54.35%</td></tr>
+        <tr><td class="mono">2022</td><td class="r lo">6.74%</td><td class="r">9.91%</td><td class="r">32.95%</td><td class="r">20.39%</td><td class="r">51.68%</td></tr>
+        <tr><td class="mono">2023</td><td class="r lo">7.42%</td><td class="r">9.46%</td><td class="r">11.41%</td><td class="r">22.10%</td><td class="r">28.39%</td></tr>
+        <tr><td class="mono">2024</td><td class="r">9.90%</td><td class="r">10.35%</td><td class="r">5.21%</td><td class="r">7.00%</td><td class="r">30.89%</td></tr>
+        <tr><td class="mono">2025</td><td class="r lo">6.10%</td><td class="r">9.35%</td><td class="r">11.87%</td><td class="r">9.08%</td><td class="r">39.28%</td></tr>
+        <tr class="tot"><td>2018 to 2025</td><td class="r">10.71%</td><td class="r">10.45%</td><td class="r">35.41%</td><td class="r">20.20%</td><td class="r">54.64%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">Single-source columns are shares of value. The last column is the only place a real end-of-year rush shows: 5,875 contracts, 29.24 percent of December's count, are signed on 22 December or later and carry 231,700,965,982 AMD. That is 54.64 percent of December but 5.85 percent of the whole year. Mean and median contract, distinct buyers and suppliers, urgent shares: <a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/11-december-vs-rest.csv">11-december-vs-rest.csv</a>.</p>
+
+  <div class="covwrap rv">
+    <table class="cov num">
+      <caption>The 10 most December-concentrated buyers, 2018 to 2025</caption>
+      <thead><tr><th>Buyer</th><th class="r">Contracts</th><th class="r">Value, AMD</th><th class="r">Share signed in December</th></tr></thead>
+      <tbody>
+        <tr><td class="rname">Migration Service of the Ministry of Territorial Administration and Infrastructure</td><td class="r mono">386</td><td class="r mono">1,548,737,498</td><td class="r hi">83.07%</td></tr>
+        <tr><td class="rname">Administration of the Council of Public Broadcaster</td><td class="r mono">248</td><td class="r mono">55,522,992,647</td><td class="r">39.37%</td></tr>
+        <tr><td class="rname">State Protocol Service of the Ministry of Foreign Affairs</td><td class="r mono">1,952</td><td class="r mono">1,591,606,902</td><td class="r">35.03%</td></tr>
+        <tr><td class="rname">Criminal Executive Service of the Ministry of Justice</td><td class="r mono">1,184</td><td class="r mono">31,010,382,135</td><td class="r">30.58%</td></tr>
+        <tr><td class="rname">Ecopatrol Service</td><td class="r mono">968</td><td class="r mono">8,797,105,523</td><td class="r">29.62%</td></tr>
+        <tr><td class="rname">Staff of Lori Marzpet</td><td class="r mono">1,446</td><td class="r mono">5,547,483,649</td><td class="r">27.66%</td></tr>
+        <tr><td class="rname">Staff of Armavir Marzpet</td><td class="r mono">1,320</td><td class="r mono">3,592,109,510</td><td class="r">26.84%</td></tr>
+        <tr><td class="rname">National Security Service</td><td class="r mono">2,408</td><td class="r mono">23,646,137,562</td><td class="r">25.76%</td></tr>
+        <tr><td class="rname">Public Radio of Armenia</td><td class="r mono">1,397</td><td class="r mono">1,221,467,985</td><td class="r">22.65%</td></tr>
+        <tr><td class="rname">Sevan Mental Health Center</td><td class="r mono">937</td><td class="r mono">1,740,634,011</td><td class="r">22.02%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">Ranked among the 129 buyers with at least 50 contracts and at least 500,000,000 AMD over 2018 to 2025, out of 313 buyers in the window. Without that floor a body with three contracts reaches 100 percent and the ranking says nothing. The median buyer on this list sits at 7.69 percent. The Ministry of Health is 16th at 17.90 percent of 560,239,553,437 AMD. Top 30 with tax IDs: <a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/12-buyer-december-concentration.csv">12-buyer-december-concentration.csv</a>.</p>
+
+  <div class="covwrap rv">
+    <table class="cov num">
+      <caption>Urgent procedures: 3.79 percent of contracts, 27.59 percent of the money</caption>
+      <thead><tr><th>Year</th><th class="r">Urgent contracts</th><th class="r">Urgent value, AMD</th><th class="r">Share of year count</th><th class="r">Share of year value</th><th class="r">Of it signed in December</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">2018</td><td class="r mono">221</td><td class="r mono">23,071,806,232</td><td class="r">1.47%</td><td class="r">10.70%</td><td class="r">6.29%</td></tr>
+        <tr><td class="mono">2019</td><td class="r mono">545</td><td class="r mono">63,471,168,621</td><td class="r">3.02%</td><td class="r">26.29%</td><td class="r">10.90%</td></tr>
+        <tr><td class="mono">2020</td><td class="r mono">1,102</td><td class="r mono">70,521,524,941</td><td class="r">6.00%</td><td class="r">17.41%</td><td class="r">32.34%</td></tr>
+        <tr><td class="mono">2021</td><td class="r mono">577</td><td class="r mono">102,393,321,300</td><td class="r">2.80%</td><td class="r">31.78%</td><td class="r">23.20%</td></tr>
+        <tr><td class="mono">2022</td><td class="r mono">800</td><td class="r mono">117,715,243,511</td><td class="r">3.23%</td><td class="r">20.20%</td><td class="r">4.95%</td></tr>
+        <tr><td class="mono">2023</td><td class="r mono">1,702</td><td class="r mono">158,189,365,753</td><td class="r">5.89%</td><td class="r">24.94%</td><td class="r">8.10%</td></tr>
+        <tr><td class="mono">2024</td><td class="r mono">1,124</td><td class="r mono">347,416,032,205</td><td class="r">3.44%</td><td class="r hi">42.07%</td><td class="r">12.71%</td></tr>
+        <tr><td class="mono">2025</td><td class="r mono">1,327</td><td class="r mono">283,579,854,809</td><td class="r">3.91%</td><td class="r">38.79%</td><td class="r">3.04%</td></tr>
+        <tr><td class="mono">2026*</td><td class="r mono">709</td><td class="r mono">80,905,079,728</td><td class="r">3.26%</td><td class="r">14.39%</td><td class="r mono">none</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fn rv">* to 6 Sep, no December yet. "Urgent" is PPCM's own two procedure forms, urgent single source and urgent open tender. The growth is entirely in urgent open tender, which went from 147 contracts worth 22,291,130,513 AMD in 2018 to 723 worth 333,983,305,637 AMD in 2024; urgent single source shrank to 13,432,726,568 AMD that year. Two buyers hold 61.40 percent of all urgent value: the Ministry of Territorial Administration and Infrastructure (925 contracts, 418,145,449,528 AMD, 58.02 percent of its own spend) and the Armenian Territorial Development Fund (764 contracts, 347,643,256,065 AMD, 64.75 percent). Add the City Planning Committee and the top three hold 73.76 percent. Full tables: <a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/13-urgent-procedures-by-year.csv">13-urgent-procedures-by-year.csv</a> and <a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/14-top-urgent-buyers.csv">14-top-urgent-buyers.csv</a>.</p>
+</section>
+
+<section class="rules">
+  <p class="kicker rv">Method and caveats</p>
+  <h2 class="rv">What was counted, and what the data cannot say</h2>
+  <ul class="rv">
+    <li><b>Signed, not spent</b><span>PPCM publishes the date a contract was signed, never the date money moved. An annual or framework contract signed in January and drawn down all year loads January. This is the main reason to read the January peak as a signing calendar rather than a spending one, and it cuts the same way against reading December as one.</span></li>
+    <li><b>What counts as urgent</b><span>PPCM's own two procedure forms, ՀՄԱ urgent single source and ՀԲՄ urgent open tender. They are the only labels in the registry whose English name begins with "urgent". The run writes out the whole procedure vocabulary and a check field that fills if a new urgent form appears. Note the overlap: urgent single source is counted both as urgent and as single source, and the two families are never added together.</span></li>
+    <li><b>Complete years only</b><span>Every December comparison uses 2018 to 2025, 192,369 contracts worth 3,958,215,584,070 AMD. The snapshot stops on 6 September 2026, so 2026 has no December and is shown as year to date or left out. February 2026 looks enormous against a partial year and is used in no finding.</span></li>
+    <li><b>Exclusions</b><span>Six records carry keyed-in totals up to 1.66 quadrillion AMD while their current value is under 1.5 billion; records above 50 billion AMD are dropped from value sums and kept in counts, and all six are listed with dates in summary3.json. 3 contracts have no usable date. 21,456 are dated outside 2018 to 2026, of which 21,390 fall in 2000 to 2017 where PPCM coverage is thin and 66 carry impossible years. 867 contracts carry no value and pull medians down slightly.</span></li>
+    <li><b>Procedure form, not legal ground</b><span>PPCM records which procedure was used, never why. An urgent award can be a real emergency, a government instruction, or a schedule that slipped. Nothing here is a finding about legality, and the Ministry of Health's January volume is state-order payments to public hospitals, an accounting convention as much as a procurement choice.</span></li>
+    <li><b>Two unusual Decembers</b><span>December 2020 held 29.03 percent of that year's value, with the Health Ministry at 64.03 percent of the month and 91.28 percent of the month's money signed from 22 December. December 2021 held 19.58 percent. Read those as events, not as a recurring pattern. Nothing here was reviewed by a lawyer or by PPCM; rerun the script against the next weekly index and the figures update.</span></li>
+    <li><b>Privacy</b><span>Aggregate only. Buyers are state and community bodies. Supplier names and tax IDs appear only for legal entities; individual entrepreneurs are counted in totals but never listed.</span></li>
+  </ul>
+</section>
+
+<section>
+  <p class="kicker rv">Reproduce it</p>
+  <h2 class="rv">The data and the pipeline are open</h2>
+  <p class="lede rv">Five CSV tables, the run metadata with every exclusion, and the one-file pipeline. <span style="font-family:var(--mono);font-size:13px">node analyze3.mjs</span> streams the weekly index and rebuilds every number on this page.</p>
+  <ul class="vlinks rv">
+    <li><span>All tables, method, pipeline</span><a href="https://github.com/SosoPkhakadze/reestri-data/tree/main/am-contracts">reestri-data/am-contracts</a></li>
+    <li><span>Every month of every year, with the largest buyer of each</span><a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/10-monthly-distribution.csv">10-monthly-distribution.csv</a></li>
+    <li><span>Query any supplier by tax ID or name, weekly refresh</span><a href="https://apify.com/reestri/am-supplier-contracts">apify.com/reestri/am-supplier-contracts</a></li>
+  </ul>
+  <div class="next rv">
+    <a href="/data/armenia-single-source/">Story 1: single-source awards, 2018 to 2026 →</a>
+    <p>Single-source awards fell from 52.04 to 6.83 percent of contract value while staying near four in ten procedures by count. The Ministry of Health signed 486.7 billion AMD without competition, and 1,080 companies get over 90 percent of their public revenue from one buyer.</p>
+  </div>
+  <div class="next rv">
+    <a href="/data/armenia-money-moved/">Story 2: where the single-source money went →</a>
+    <p>The Health Ministry's share of its own spend fell from 95.70 to 5.98 percent. The money moved to the Public Broadcaster, Yerevan Municipality, the High-Tech Industry Ministry and the Probation Service, while the supplier base grew 2.5 times.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div style="color:var(--paper);font-weight:700">Reestri <span class="foot-geo">· რეესტრი</span></div>
+      <div style="margin-top:6px">Georgian for "registry". Built in Kutaisi.</div>
+    </div>
+    <div style="text-align:right">
+      <div><a href="https://apify.com/reestri">apify.com/reestri</a> · <a href="https://github.com/SosoPkhakadze/reestri-data">data</a> · <a href="mailto:soso@reestri.io">soso@reestri.io</a></div>
+      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells the tools behind this data. Registry data belongs to its registries. Published 2026-09-09.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)document.documentElement.classList.add('no-motion');
+  if(!reduce&&'IntersectionObserver'in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  }else{document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
+})();
+</script>
+</body>
+</html>
