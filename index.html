@@ -706,12 +706,19 @@ KV  md-registry           <span class="dim">skipped (opt-in)</span></pre>
         else if(!j.records||!j.records.length){lrOut.textContent='the register returned nothing for that name';}
         else{
           lrOut.innerHTML=j.records.map(c=>{
-            if(c.resultType!=='company')return '<div class="lr-rec"><b>'+(c.resultType==='not_found'?'No company of that name':'Register unavailable')+'</b>'+esc(c.reason||'An explicit answer, never a silent empty result.')+'</div>';
+            if(c.resultType!=='company'){
+              const hint=c.resultType==='not_found'
+                ?(country==='GE'?'The Georgian register matches the registered Georgian name. Try the Georgian spelling or the 9-digit ID code, for example 204952685. <a href="/guides/check-a-georgian-company/">How this register works</a>.'
+                                :'Armenia matches the registered name or the 8-digit tax ID. <a href="/guides/armenia-beneficial-owners/">How this register works</a>.')
+                :esc(c.reason||'An explicit answer, never a silent empty result.');
+              return '<div class="lr-rec"><b>'+(c.resultType==='not_found'?'No company of that name':'Register unavailable')+'</b>'+hint+'</div>';
+            }
             const ev=c.evidence||{},own=(c.people&&c.people.length)?' · '+c.people.length+' declared owner'+(c.people.length>1?'s':''):'';
             return '<div class="lr-rec"><b>'+esc(c.nameLatin||c.nameLocal)+'</b>'+
               esc([c.country,c.companyNumber||c.taxId,c.legalForm,c.status].filter(Boolean).join(' · '))+own+
               '<br>read '+esc(String(ev.retrievedAt||'').replace('T',' ').slice(0,19))+' UTC · sha256 '+esc(String(ev.sha256||'').slice(0,12))+'… · <a href="'+esc(ev.sourceUrl||'#')+'" rel="nofollow noopener">source</a></div>';
-          }).join('')+'<span>'+(j.cached?'cached, read within the last six hours':'fetched live in '+((Date.now()-t0)/1000).toFixed(1)+' seconds')+'</span>';
+          }).join('')+'<span>'+(j.cached?'cached, read within the last six hours':'fetched live in '+((Date.now()-t0)/1000).toFixed(1)+' seconds')+
+            ' · owners, contracts and the three-country screen: <a href="https://apify.com/reestri">run it yourself</a></span>';
         }
       }catch(e){lrOut.textContent='could not reach the lookup service';}
       syncAsk();
