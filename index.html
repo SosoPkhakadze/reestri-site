@@ -726,5 +726,6 @@ KV  md-registry           <span class="dim">skipped (opt-in)</span></pre>
   }).catch(()=>{document.getElementById('hits').innerHTML='<div class="hit"><div class="h-names"><b>Demo data unavailable</b><span>run the live tools on Apify</span></div></div>';});
 })();
 </script>
+<script>try{navigator.sendBeacon("https://api.reestri.io/hit",JSON.stringify({p:location.pathname,r:document.referrer?new URL(document.referrer).hostname:""}))}catch(e){}</script>
 </body>
 </html>
