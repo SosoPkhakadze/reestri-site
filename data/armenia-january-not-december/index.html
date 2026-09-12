@@ -342,5 +342,6 @@
   }else{document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
 })();
 </script>
+<script>try{navigator.sendBeacon("https://api.reestri.io/hit",JSON.stringify({p:location.pathname,r:document.referrer?new URL(document.referrer).hostname:""}))}catch(e){}</script>
 </body>
 </html>
