@@ -16,7 +16,7 @@
  "description":"Analysis of 236,159 signed contracts in PPCM, Armenia's public procurement registry, 2018 to 2026.",
  "author":{"@type":"Person","name":"Soso Pkhakadze"},
  "publisher":{"@type":"Organization","name":"Reestri","url":"https://reestri.io/"},
- "datePublished":"2026-09-02","dateModified":"2026-09-02",
+ "datePublished":"2026-09-02","dateModified":"2026-09-13",
  "mainEntityOfPage":"https://reestri.io/data/armenia-single-source/"}
 </script>
 <style>
@@ -168,7 +168,8 @@
     <p>Between 2018 and August 2026 the registry records 214,244 contracts worth 4,547,341,742,554 AMD. Of that, 70,606 contracts (32.96 percent) worth 980,736,051,708 AMD (21.57 percent) were awarded under PPCM's two single-source procedure forms, ՄԱ and ՀՄԱ. The value share fell from <b>52.04 percent in 2018 to 6.83 percent in 2024</b>, then ticked back up to 12.54 percent in 2026 to date.</p>
     <p><b>One buyer signs almost half of all single-source money.</b> The Ministry of Health awarded 486,685,298,874 AMD without competition across 6,788 contracts: 70.04 percent of everything it spent through PPCM and 47.12 percent of all single-source value in the registry. The top 5 buyers hold 72.11 percent of it, the top 30 hold 95.02 percent.</p>
     <p><b>The biggest single-source suppliers are the state's own companies and hospitals.</b> Public Television of Armenia, Electric Networks of Armenia, HayPost and Gazprom Armenia lead the list; 11 of the top 30 are hospitals or medical institutions paid by the Ministry of Health. The top 30 together account for 44.74 percent of all single-source value.</p>
-    <p><b>1,080 companies live on one state buyer.</b> Among companies with at least 10 contracts, 1,080 get more than 90 percent of their public revenue from a single buyer, 1,675,307,582,513 AMD in total; 618 of them have exactly one buyer ever. 430 depend on the Ministry of Health, 19 road and construction contractors on the Ministry of Territorial Administration and Infrastructure. Dependence is not the same as favoritism: 268 of the 1,080 won all of it competitively, while 224 got at least 90 percent of it single-source.</p>
+    <p><b>1,017 companies live on one state buyer.</b> Among companies with at least 10 contracts, 1,017 get more than 90 percent of their public revenue from a single buyer, 1,663,049,779,650 AMD in total; 578 of them have exactly one buyer ever. 430 depend on the Ministry of Health, 19 road and construction contractors on the Ministry of Territorial Administration and Infrastructure. Dependence is not the same as favoritism: 222 of the 1,017 won all of it competitively, while 210 got at least 90 percent of it single-source.</p>
+    <p class="muted"><i>Corrected on 13 September 2026: the published table had included 63 private individuals whose personal document numbers the registry records in its tax ID field. They were removed, identifiers that are not Armenian tax IDs were cleared, and the figures here were recomputed.</i></p>
     <p><b>Appeals are almost extinct in the record.</b> 651 of 214,244 contracts (0.30 percent) carry an appeal narrative: 142 in 2018, 24 in 2023, 18 in the first eight months of 2026.</p>
   </div>
 </section>
@@ -267,7 +268,7 @@
   <p class="lede rv">Five CSV tables, the run metadata and the one-file pipeline. <span class="mono" style="font-family:var(--mono);font-size:13px">node analyze.mjs</span> streams the weekly index and rebuilds every number on this page.</p>
   <ul class="vlinks rv">
     <li><span>All tables, method, pipeline</span><a href="https://github.com/SosoPkhakadze/reestri-data/tree/main/am-contracts">reestri-data/am-contracts</a></li>
-    <li><span>Supplier dependence map, 1,080 rows</span><a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/4-supplier-dependence.csv">4-supplier-dependence.csv</a></li>
+    <li><span>Supplier dependence map, 1,017 rows</span><a href="https://github.com/SosoPkhakadze/reestri-data/blob/main/am-contracts/4-supplier-dependence.csv">4-supplier-dependence.csv</a></li>
     <li><span>Query any supplier by tax ID or name, weekly refresh</span><a href="https://apify.com/reestri/am-supplier-contracts">apify.com/reestri/am-supplier-contracts</a></li>
   </ul>
   <div class="next rv">
