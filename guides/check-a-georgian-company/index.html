@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to check a Georgian company (NAPR): status, ID code, owners | Reestri</title>
-<meta name="description" content="Step by step: search Georgia's NAPR business register at enreg.reestri.gov.ge by name or 9-digit ID code, read the status, run the person-to-companies search, order the extract with founders and shares (13 to 52 GEL), and spot the scams. What is public in Georgia and what is not.">
+<meta name="description" content="Step by step: search Georgia's NAPR business register at enreg.reestri.gov.ge by name or 9-digit ID code, read the status, run the person-to-companies search, order the extract with founders and shares (13 to 75 GEL), and spot the scams. What is public in Georgia and what is not.">
 <link rel="canonical" href="https://reestri.io/guides/check-a-georgian-company/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
  "description":"A practical guide to Georgia's business register: the 9-digit identification code, the free search at enreg.reestri.gov.ge, the captcha-gated detail view, the paid extract with founders and shares, the person-to-companies search, and a scam checklist.",
  "author":{"@type":"Person","name":"Soso Pkhakadze"},
  "publisher":{"@type":"Organization","name":"Reestri","url":"https://reestri.io/"},
- "datePublished":"2026-09-05","dateModified":"2026-09-05",
+ "datePublished":"2026-09-05","dateModified":"2026-09-13",
  "inLanguage":"en",
  "about":[{"@type":"Thing","name":"National Agency of Public Registry (Georgia)"},{"@type":"Thing","name":"Company registry lookup"}],
  "mainEntityOfPage":"https://reestri.io/guides/check-a-georgian-company/"}
@@ -119,8 +119,18 @@
 
   .vlinks{border-top:2px solid var(--ink);margin-top:26px;max-width:760px}
   .vlinks li{list-style:none;border-bottom:1px solid var(--line);padding:12px 4px;font-size:14px;display:flex;justify-content:space-between;gap:14px}
-  .vlinks li a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;text-align:right}
+  .vlinks li a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;text-align:right;overflow-wrap:anywhere;min-width:0}
+  @media (max-width:480px){.tariff .prow span{white-space:normal;text-align:right}}
   .vlinks li a:hover{color:var(--ink)}
+
+  .offer{margin-top:4px;max-width:760px;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:18px 4px 20px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px}
+  .offer .lab{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+  .offer h3{font-weight:800;font-size:19px;letter-spacing:-.01em;color:var(--ink)}
+  .offer p{margin-top:8px;font-size:15px;max-width:62ch}
+  .offer a.go{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--mint);white-space:nowrap}
+  .offer a.go:hover{border-color:var(--ink)}
+  .offer p.small{font-size:12.5px;color:var(--muted)}
+  @media (max-width:700px){.offer{grid-template-columns:1fr;gap:6px}}
 
   .next{margin-top:30px;border-top:2px solid var(--ink);padding-top:18px;max-width:720px}
   .next a{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--mint)}
@@ -149,8 +159,8 @@
   <div class="mast-in">
     <p class="kicker"><i></i>Guide · Georgia (the country)</p>
     <h1>How to check a Georgian company in the <em>NAPR</em> register</h1>
-    <p class="stand">Status, ID code, directors and owners: which of them are free, which sit behind a captcha, which cost 13 GEL and four working days. Written for anyone who has a Georgian company name on an invoice, a contract, a job offer or a deposit request and wants the public record before the money moves.</p>
-    <p class="byline">By <b>Soso Pkhakadze</b> · published 5 Sep 2026 · portal facts checked 5 Sep 2026 · Disclosure: I build and sell Reestri, the paid lookup named in the last section. Every step above it works without it.</p>
+    <p class="stand">Status, ID code, directors and owners: which of them are free, which sit behind a captcha, which cost 13 GEL and one working day. Written for anyone who has a Georgian company name on an invoice, a contract, a job offer or a deposit request and wants the public record before the money moves.</p>
+    <p class="byline">By <b>Soso Pkhakadze</b> · published 5 Sep 2026 · portal facts checked 5 Sep 2026, extract fees rechecked 13 Sep 2026 · Disclosure: I build and sell Reestri, the paid lookup named near the end, and I sell finished reports on Fiverr. Every step above those sections works without either.</p>
     <p class="toc"><a href="#id-code">The ID code</a><a href="#search">The free search</a><a href="#public">Public vs not</a><a href="#extract">The extract</a><a href="#person">Person to companies</a><a href="#scams">Scam checklist</a><a href="#names">Georgian vs Latin names</a><a href="#scale">At scale</a></p>
   </div>
 </header>
@@ -208,7 +218,7 @@
 
 <section id="extract">
   <p class="kicker rv">Owners and directors</p>
-  <h2 class="rv">Order the extract: 13 to 52 GEL, any company, any person</h2>
+  <h2 class="rv">Order the extract: 13 to 75 GEL, any company, any person</h2>
   <div class="prose rv">
     <p>Georgia's Law on Public Registry says an extract "shall be given out to any person". You need no relationship with the company and no power of attorney. The extract is a signed PDF, dated on the day it is prepared, and it lists the persons authorised to manage and represent the company, the partners with their shares, the capital, and any lien, pledge or injunction on the record. It is the document banks, notaries and courts accept.</p>
     <p><b>Online:</b> register at <a href="https://my.gov.ge">my.gov.ge</a> (a Georgian ID or a foreign passport plus a phone number), find "Preparation of extract from the Registry of Entrepreneurs", enter the identification code, pay by card. <b>In person:</b> any branch of the House of Justice (<span lang="ka">იუსტიციის სახლი</span>, the Public Service Hall) prepares the same document at the counter; bring a passport.</p>
@@ -217,12 +227,11 @@
   <div class="tariff rv">
     <div class="prow"><b>Ordered online, 1 working day</b><span>13 GEL</span></div>
     <div class="prow"><b>Ordered online, same day</b><span>52 GEL</span></div>
-    <div class="prow"><b>At the counter, 4 working days</b><span>13 GEL</span></div>
-    <div class="prow"><b>At the counter, 1 working day</b><span>26 GEL</span></div>
-    <div class="prow"><b>At the counter, same day</b><span>39 GEL</span></div>
+    <div class="prow"><b>At the counter, 1 working day</b><span>20 GEL</span></div>
+    <div class="prow"><b>At the counter, same day</b><span>75 GEL</span></div>
     <div class="prow"><b>English-language extract</b><span>+26 GEL</span></div>
   </div>
-  <p class="fn rv">Fees as listed on <a href="https://napr.gov.ge/en/page/fees-and-terms">napr.gov.ge/en/page/fees-and-terms</a> on 5 Sep 2026. The law's own rate table (Government decree 509) is slightly lower; the portal charges what its page says.</p>
+  <p class="fn rv">Fees as listed on <a href="https://napr.gov.ge/en/page/fees-and-terms">napr.gov.ge/en/page/fees-and-terms</a> on 5 Sep 2026; counter prices corrected on 13 Sep 2026 (the 13, 26 and 39 GEL figures shown here before belong to a different service, "Preparation of information from the Registry"). Need the extract in English for a bank or a visa? See <a href="/guides/georgian-company-extract-in-english/">the English extract guide</a>. The law's own rate table (Government decree 509) is slightly lower; the portal charges what its page says.</p>
 </section>
 
 <section id="person">
@@ -275,6 +284,17 @@
   <p class="fn rv">Also callable by AI agents as MCP tools; setup is on the <a href="/#agents">front page</a>. Journalists and researchers: lookups are free on request, write to soso@reestri.io with the names.</p>
 </section>
 
+<section id="report">
+  <div class="offer rv" role="note" aria-label="Disclosure: a paid service sold by the author">
+    <p class="lab">Our paid service</p>
+    <div>
+      <h3>Rather have it done?</h3>
+      <p>A finished counterparty check from the official registers, as an English PDF within a day, from $15 on Fiverr. <a class="go" href="https://www.fiverr.com/s/NeNWboa" rel="noopener">See the packages on Fiverr →</a></p>
+      <p class="small">Disclosure: sold by the author of this guide. $15 covers one company in one country; $35 checks Georgia and Armenia, with Armenia's declared owners and public contracts; $90 adds the official Georgian extract with founders and shares and takes two days. Reports cover Georgian and Armenian companies only. Everything in them comes from the public registers this page describes, which you can read yourself for free or for the NAPR fee.</p>
+    </div>
+  </div>
+</section>
+
 <section>
   <p class="kicker rv">Sources</p>
   <h2 class="rv">The pages this guide is built on</h2>
@@ -307,7 +327,7 @@
     </div>
     <div style="text-align:right">
       <div><a href="https://apify.com/reestri">apify.com/reestri</a> · <a href="/guides/">guides</a> · <a href="/data/">data</a> · <a href="mailto:soso@reestri.io">soso@reestri.io</a></div>
-      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells the tools named in the last section. Registry data belongs to its registries. Published 2026-09-05.</div>
+      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells the tools and the reports named near the end. Registry data belongs to its registries. Published 2026-09-05.</div>
     </div>
   </div>
 </footer>
