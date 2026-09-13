@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is this Armenian company real? Verify it by tax ID (HVHH) | Reestri</title>
+<meta name="description" content="Step by step: check an Armenian company by its 8-digit tax ID (HVHH, ՀՎՀՀ) in the free state register at e-register.moj.am, hold a certificate against the official card, read the declared owners, and look for signs of real trade in public contracts, the tax service and the Central Bank's licence lists. What is free, what costs AMD 3,000, and what is not public.">
+<link rel="canonical" href="https://reestri.io/guides/verify-an-armenian-company/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F1A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23F4F1EA'%3ER%3C/text%3E%3Crect x='14' y='48' width='36' height='4' rx='2' fill='%237CFFB2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Georgian:wght@700&family=Noto+Sans+Armenian:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"Is this Armenian company real? How to verify it by tax ID",
+ "description":"A practical guide to verifying an Armenian company: the 8-digit tax identification number (HVHH), the free state register search at e-register.moj.am, checking a certificate against the official card, declared beneficial owners, public contracts, tax service and Central Bank signals, and common scam patterns.",
+ "author":{"@type":"Person","name":"Soso Pkhakadze"},
+ "publisher":{"@type":"Organization","name":"Reestri","url":"https://reestri.io/"},
+ "datePublished":"2026-09-13","dateModified":"2026-09-13",
+ "inLanguage":"en",
+ "about":[{"@type":"Thing","name":"State Register of Legal Entities (Armenia)"},{"@type":"Thing","name":"Taxpayer identification number (Armenia)"},{"@type":"Thing","name":"Company verification"}],
+ "mainEntityOfPage":"https://reestri.io/guides/verify-an-armenian-company/"}
+</script>
+<style>
+  :root{
+    --ink: oklch(16% 0.02 265);
+    --paper: oklch(96.5% 0.007 90);
+    --paper-2: oklch(93.5% 0.009 90);
+    --line: oklch(85% 0.012 90);
+    --body: oklch(30% 0.015 265);
+    --muted: oklch(47% 0.015 265);
+    --am: oklch(63% 0.13 70);
+    --mint: oklch(87% 0.13 160);
+    --mint-ink: oklch(40% 0.09 160);
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Archivo", system-ui, sans-serif;
+    --geo: "Noto Sans Georgian", "Archivo", sans-serif;
+    --arm: "Noto Sans Armenian", "Archivo", sans-serif;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:inherit}
+  ::selection{background:var(--mint);color:var(--ink)}
+  :lang(hy){font-family:var(--arm)}
+  .num{font-variant-numeric:tabular-nums}
+  code{font-family:var(--mono);font-size:.9em;background:var(--paper-2);padding:1px 5px;border-radius:3px;color:var(--ink)}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .no-motion *{transition-duration:0s !important;animation:none !important}
+  .no-motion .rv{opacity:1;transform:none}
+  button,a{transition:color .18s var(--ease),background-color .18s var(--ease),border-color .18s var(--ease)}
+
+  .nav{position:sticky;top:0;z-index:10;background:oklch(16% 0.02 265 / .92);backdrop-filter:blur(8px);color:var(--paper);border-bottom:1px solid oklch(28% 0.02 265)}
+  .nav-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:26px;height:52px;overflow-x:auto}
+  .nav b{font-weight:800;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
+  .nav b a{text-decoration:none;border-bottom:3px solid var(--mint);color:var(--paper);font-size:16px}
+  .nav a{font-size:13.5px;font-weight:500;text-decoration:none;color:oklch(70% 0.015 265);white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+  .nav a:hover{color:var(--paper)}
+  .nav a.on{color:var(--paper);border-color:var(--mint)}
+  .nav .sp{flex:1}
+  .nav .run{background:var(--mint);color:var(--ink);font-weight:700;font-size:13px;padding:7px 14px;border-radius:3px;border:0}
+  .nav .run:hover{background:oklch(91% 0.11 160)}
+
+  .mast{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .ghost{position:absolute;right:-50px;top:-36px;font-family:var(--geo);font-weight:700;font-size:clamp(150px,26vw,320px);line-height:.9;color:oklch(23.5% 0.028 265);user-select:none;pointer-events:none;letter-spacing:-.04em}
+  .mast-in{max-width:1140px;margin:0 auto;padding:56px 24px 54px;position:relative;z-index:1}
+  .kicker{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .mast .kicker{color:oklch(62% 0.015 265)}
+  .mast .kicker i{display:inline-block;width:9px;height:9px;border-radius:1px;background:var(--am);margin-right:8px;vertical-align:0}
+  .mast h1{font-weight:800;letter-spacing:-.025em;font-size:clamp(28px,4.2vw,46px);line-height:1.08;max-width:24ch;color:oklch(93% 0.008 90);margin-top:14px}
+  .mast h1 em{font-style:normal;color:oklch(78% 0.13 75)}
+  .mast p.stand{margin-top:18px;max-width:62ch;color:oklch(74% 0.014 265);font-size:16.5px}
+  .byline{font-family:var(--mono);font-size:12.5px;color:oklch(58% 0.015 265);margin-top:24px;max-width:80ch}
+  .byline b{color:oklch(80% 0.014 265);font-weight:600}
+  .toc{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:12.5px}
+  .toc a{color:oklch(72% 0.02 160);text-decoration:none;border-bottom:1px solid oklch(34% 0.02 265)}
+  .toc a:hover{color:var(--mint);border-color:var(--mint)}
+
+  section{max-width:1140px;margin:0 auto;padding:64px 24px 0}
+  h2{font-weight:800;letter-spacing:-.02em;font-size:clamp(22px,3vw,30px);color:var(--ink);margin-top:10px}
+  .lede{max-width:64ch;margin-top:14px}
+  .prose{max-width:70ch}
+  .prose p{margin-top:14px;font-size:15.5px}
+  .prose p b{color:var(--ink);font-weight:700}
+  .prose a{color:var(--mint-ink)}
+
+  .steps{border-top:2px solid var(--ink);margin-top:26px;max-width:860px;counter-reset:s}
+  .steps li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;font-size:15px}
+  .steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:600 13px var(--mono);color:var(--muted);padding-top:3px}
+  .steps li b{color:var(--ink);font-weight:700}
+  .steps li a{color:var(--mint-ink)}
+
+  .covwrap{overflow-x:auto;margin-top:26px}
+  table.cov{border-collapse:collapse;width:100%;font-size:14px}
+  .cov caption{text-align:left;font-weight:700;color:var(--ink);font-size:15.5px;padding-bottom:10px;letter-spacing:-.01em}
+  .cov th{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 14px 10px 0;border-bottom:2px solid var(--ink)}
+  .cov td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .cov td.rname{font-weight:600;color:var(--ink)}
+  .cov td.mono,.cov .mono{font-family:var(--mono);font-size:12.5px}
+  .cov .y{color:var(--mint-ink);font-weight:700}
+  .cov .n{color:oklch(50% 0.12 70);font-weight:700}
+  .fn{font-size:12.5px;color:var(--muted);margin-top:12px;max-width:75ch}
+  .fn a{color:inherit}
+
+  .portal{font-size:14px;max-width:70ch;margin-top:26px;border-top:2px solid var(--ink)}
+  .portal .prow{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--line);padding:9px 4px}
+  .portal .prow b{font-weight:600;color:var(--ink);font-size:13px}
+  .portal .prow span{font-family:var(--mono);font-size:13px}
+  @media (max-width:700px){.portal .prow{grid-template-columns:1fr;gap:2px}}
+
+  .rules ul{margin-top:26px;border-top:2px solid var(--ink)}
+  .rules li{list-style:none;border-bottom:1px solid var(--line);padding:16px 4px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;font-size:15px}
+  .rules li b{font-weight:700;color:var(--ink)}
+  .rules li a{color:var(--mint-ink)}
+  @media (max-width:700px){.rules li{grid-template-columns:1fr;gap:4px}}
+
+  .tariff{margin-top:26px;border-top:2px solid var(--ink);max-width:720px}
+  .tariff .prow{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding:13px 4px;font-size:15px}
+  .tariff .prow b{font-weight:600;color:var(--ink)}
+  .tariff .prow b a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+  .tariff .prow b a:hover{border-color:var(--ink)}
+  .tariff .prow span{font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+
+  .vlinks{border-top:2px solid var(--ink);margin-top:26px;max-width:760px}
+  .vlinks li{list-style:none;border-bottom:1px solid var(--line);padding:12px 4px;font-size:14px;display:flex;justify-content:space-between;gap:14px}
+  .vlinks li a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;text-align:right;overflow-wrap:anywhere;min-width:0}
+  @media (max-width:480px){.tariff .prow span{white-space:normal;text-align:right}}
+  .vlinks li a:hover{color:var(--ink)}
+
+  .offer{margin-top:4px;max-width:760px;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:18px 4px 20px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px}
+  .offer .lab{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+  .offer h3{font-weight:800;font-size:19px;letter-spacing:-.01em;color:var(--ink)}
+  .offer p{margin-top:8px;font-size:15px;max-width:62ch}
+  .offer a.go{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--mint);white-space:nowrap}
+  .offer a.go:hover{border-color:var(--ink)}
+  .offer p.small{font-size:12.5px;color:var(--muted)}
+  @media (max-width:700px){.offer{grid-template-columns:1fr;gap:6px}}
+
+  .next{margin-top:30px;border-top:2px solid var(--ink);padding-top:18px;max-width:720px}
+  .next a{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--mint)}
+  .next p{margin-top:8px;font-size:14.5px;max-width:60ch}
+
+  footer{background:var(--ink);color:oklch(70% 0.014 265);margin-top:92px}
+  .foot-in{max-width:1140px;margin:0 auto;padding:44px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+  footer a{color:oklch(85% 0.01 90);text-decoration:none;border-bottom:1px solid oklch(40% 0.02 265)}
+  footer a:hover{border-color:var(--mint)}
+  .foot-geo{font-family:var(--geo);color:oklch(46% 0.02 265)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <b><a href="/">Reestri</a></b>
+    <a href="/#tools">Tools</a><a href="/#coverage">Coverage</a><a href="/#agents">Agents</a><a href="/#pricing">Pricing</a><a href="/data/">Data</a><a class="on" href="/guides/">Guides</a><a href="/#method">Method</a><a href="/#about">About</a>
+    <span class="sp"></span>
+    <a class="run" style="text-decoration:none" href="https://apify.com/reestri">Run on Apify</a>
+  </div>
+</nav>
+
+<header class="mast">
+  <div class="ghost" aria-hidden="true">რეესტრი</div>
+  <div class="mast-in">
+    <p class="kicker"><i></i>Guide · Armenia</p>
+    <h1>Is this <em>Armenian</em> company real? Verify it by tax ID</h1>
+    <p class="stand">Someone sent you an invoice, a contract, a "certificate of registration" or an investment offer from a company in Armenia. Ten minutes with the free state register and a few public lists will tell you whether the company exists, whether it matches the paper in front of you, who declared themselves as its owners, and whether it shows any sign of real trade. This guide is the order to do it in.</p>
+    <p class="byline">By <b>Soso Pkhakadze</b> · published 13 Sep 2026 · every portal and fee checked live on 13 Sep 2026 · Disclosure: I build and sell Reestri, the paid lookup named near the end, and I sell finished reports on Fiverr. Every step above those sections works without either.</p>
+    <p class="toc"><a href="#tin">The tax ID</a><a href="#register">Search by tax ID</a><a href="#certificate">Check the certificate</a><a href="#owners">Who is behind it</a><a href="#signals">Signs of real trade</a><a href="#scams">Scam patterns</a><a href="#map">Free, paid, not public</a><a href="#scale">At scale</a></p>
+  </div>
+</header>
+
+<section id="tin">
+  <p class="kicker rv">Start here</p>
+  <h2 class="rv">The tax ID: 8 digits and nothing else</h2>
+  <div class="prose rv">
+    <p>Every Armenian company has a taxpayer identification number, <span lang="hy">ՀՎՀՀ</span> (HVHH, sometimes written TIN or VAT number on English invoices). The State Revenue Committee describes it plainly: it "consists of 8 digits; no other symbols could be used", the first seven are a serial number and the eighth is a check digit, and the numbers carry no meaning. It is issued at registration by the State Register (for commercial banks, by the Central Bank), it never changes, and it is not reissued after a company is liquidated (<a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/armenia-tin.pdf">SRC's TIN sheet at the OECD</a>, read 13 Sep 2026).</p>
+    <p>So the first test costs nothing: <b>count the digits.</b> Ameriabank's tax ID is <code>02560453</code>; Ucom's is <code>00024873</code>. Leading zeros are part of the number. Anything with letters, dashes, nine digits or a country prefix is not an Armenian tax ID as printed by the register, however official the document looks. The SRC does not publish how the check digit is calculated, so do not trust a "validator" website; the register is the validator.</p>
+    <p>Do not confuse it with the two other numbers on an Armenian company card: the <b>registration number</b> (format <code>211.190.00190</code>, the state register's serial) and the <b>unique identifier</b> (8 digits, used in the register website's addresses). Our <a href="/guides/armenia-beneficial-owners/">beneficial-owners guide</a> explains all three.</p>
+  </div>
+</section>
+
+<section id="register">
+  <p class="kicker rv">Step one</p>
+  <h2 class="rv">Search the state register by tax ID</h2>
+  <p class="lede rv">The State Register of Legal Entities, run by the Ministry of Justice, is free, in English, and needs no account for searching. As of 13 Sep 2026 its search box resolves an exact tax ID and a registration number, not only a name.</p>
+  <ol class="steps rv">
+    <li><span><b>Open <a href="https://e-register.moj.am/en/search/companies">e-register.moj.am/en/search/companies</a></b>. The <code>/en/</code> in the address sets English; <code>/hy/</code> and <code>/ru/</code> exist too.</span></li>
+    <li><span><b>Paste the 8-digit tax ID</b>, leading zeros included. An exact tax ID returns one company: <code>02560453</code> returns AMERIABANK. A fragment returns nothing (seven digits of the same number gave 0 results when we tried), so a typo looks exactly like a company that does not exist. Check the digits before you conclude anything.</span></li>
+    <li><span><b>If you only have a name</b>, search the name, then open each candidate and compare its tax ID with your document. Names repeat; tax IDs do not.</span></li>
+    <li><span><b>Open the card and read the status sentence first.</b> An active company reads "There is no information recorded in the unified state register regarding being in the process of liquidation or the termination of activity (existence)." A company being wound up gets a different sentence naming the process. Some cards add a line such as "Attention: Restriction is applied."; the free card does not say what kind, so ask the company and consider ordering the extract.</span></li>
+    <li><span><b>Compare every field with your paper</b>: name, registration number, registration date, tax ID, address. The next section is the checklist.</span></li>
+  </ol>
+  <div class="portal rv">
+    <div class="prow"><b>Search</b><span>e-register.moj.am/en/search/companies?query=00024873</span></div>
+    <div class="prow"><b>Result</b><span>Search results (1): "UCOM" CJSC</span></div>
+    <div class="prow"><b>Registration number</b><span>286.120.1110041</span></div>
+    <div class="prow"><b>Tax id</b><span>00024873</span></div>
+    <div class="prow"><b>Unique identifier</b><span>37191802</span></div>
+    <div class="prow"><b>Company BOR declarations</b><span>2021-11-01 · 2023-02-17 · 2024-02-02 · 2025-02-17 · 2026-02-06</span></div>
+  </div>
+  <p class="fn rv">Read live on 13 Sep 2026 for a well-known telecom operator. The address on the card is in Armenian script even on the English page; do not expect it to match an English letterhead word for word. The register's own FAQ adds the caveat that frames everything else: "The Agency does not verify the accuracy of the submitted information"; the applicant answers for it (<a href="https://e-register.moj.am/en/faq">e-register.moj.am FAQ</a>, read 13 Sep 2026). A card proves the company is registered and what it filed, not that the people behind it are honest.</p>
+</section>
+
+<section class="rules" id="certificate">
+  <p class="kicker rv">Step two</p>
+  <h2 class="rv">Hold the certificate against the card</h2>
+  <p class="lede rv">A forged registration certificate rarely survives a field-by-field comparison with the official record: forgers either borrow a real company and change details, or invent a company and a number. Each line below is a mismatch we would stop at.</p>
+  <ul class="rv">
+    <li><b>Tax ID</b><span>Exactly 8 digits, and the same 8 digits on the card. A tax ID that returns another company means the document borrowed a real number.</span></li>
+    <li><b>Registration number</b><span>In the register's dotted format (three groups, like <code>211.190.00190</code>) and identical to the card, dots included.</span></li>
+    <li><b>Name and legal form</b><span>The card shows the registered name and form (LLC, CJSC, OJSC and so on). A brand, a "Group" or "Holding" that the register does not know is not the legal entity.</span></li>
+    <li><b>Registration date</b><span>A certificate claiming 2012 for a company the card shows registered last year is a forgery or a different entity. A later date on the card can also follow a reorganisation, so ask before you accuse.</span></li>
+    <li><b>Status</b><span>A certificate of good standing dated this month for a company whose card says it is in liquidation is worthless.</span></li>
+    <li><b>Issuer</b><span>Armenian companies are registered by the State Register of Legal Entities Agency of the Ministry of Justice. Applications can be handed in at some banks and Haypost branches, but the registration is the Agency's (<a href="https://e-register.moj.am/en/faq">FAQ</a>). A certificate "issued" by a chamber of commerce, an "international registry" or a law firm is not a registration document.</span></li>
+    <li><b>Ask for the official version</b><span>The register issues a certificate on the registration or liquidation of a legal entity for free, within 3 days, to Armenian citizens, foreigners and legal entities, online through the national ID login (<a href="https://e-register.moj.am/en/services/9579492a-350a-46ca-8b6a-92f2fd3a18ca">service page</a>, read 13 Sep 2026). A real counterparty can request one in its own name and send it to you.</span></li>
+  </ul>
+</section>
+
+<section id="owners">
+  <p class="kicker rv">Step three</p>
+  <h2 class="rv">Who is behind it: declarations, extract, and what is not recorded</h2>
+  <div class="prose rv">
+    <p><b>Declared beneficial owners, free.</b> On the card, "Company BOR declarations" lists each beneficial-ownership declaration with its filing time. Every legal entity must file one within 40 days of registration and within 40 days of a change, and confirm or update it every year by 20 February; the obligation was phased in from September 2021 and covered all legal entities, including LLCs owned only by individuals, from 1 January 2023 (<a href="https://mblegal.am/the-regulation-of-ultimate-beneficial-owners-in-armenia/">MB Legal</a>; <a href="https://armenian-lawyer.com/business/ubo-declaration-armenia-february-20-deadline/">Armenian Lawyer, 18 Feb 2026</a>; both law firms, secondary). The Ucom card above fits the pattern, with a declaration filed every February since 2023. A company with no declaration at all, years after registration, is a question to ask. Our <a href="/guides/armenia-beneficial-owners/">beneficial-owners guide</a> covers how to read one and what "ground 3" means.</p>
+    <p><b>The extract, AMD 3,000.</b> Founders and participants, the director, the charter and legal succession are in the "Company information request" service: extract plus articles of association, AMD 3,000, issued immediately, ordered online with the national ID login; the service page lists Armenian citizens as eligible applicants (<a href="https://e-register.moj.am/en/services/6e6aa8ad-5072-4f72-9b96-47ac690c724d">service page</a>, read 13 Sep 2026). Non-citizens without that login need someone in Armenia to order it or to ask the Agency directly; we could not confirm an in-person fee.</p>
+    <p><b>Not recorded at all.</b> The register records participants only for limited liability companies. Its FAQ states that "the Agency does not maintain the registry of joint-stock companies" and does not record members of commercial cooperatives (<a href="https://e-register.moj.am/en/faq">FAQ</a>). For a CJSC or OJSC, the declarations are the only ownership view the register offers.</p>
+  </div>
+</section>
+
+<section class="rules" id="signals">
+  <p class="kicker rv">Step four</p>
+  <h2 class="rv">Signs that the company actually trades</h2>
+  <p class="lede rv">Registration costs little and proves little. These public sources, keyed by the same tax ID, show whether a company does business with the state, pays tax at scale, or holds the licence its offer would need.</p>
+  <ul class="rv">
+    <li><b>Public contracts (PPCM)</b><span>Armenia's procurement registry at <a href="https://www.armeps.am/ppcm/public/contracts">armeps.am/ppcm/public/contracts</a> lists signed state contracts with the buyer, value, date and procedure, each row carrying the supplier's 8-digit tax ID. A supplier with years of contracts from several ministries is a going concern. No contracts proves nothing; most private firms never sell to the state. Our weekly index held 236,159 contracts as of 29 Aug 2026.</span></li>
+    <li><b>Tax service search</b><span>The State Revenue Committee's <a href="https://www.src.am/en/taxpayerSearchSystemPage/112">taxpayer search system</a> takes a tax ID or a name behind an image captcha. It is a manual cross-check that the tax authority knows the number; we have not documented which fields it returns.</span></li>
+    <li><b>Largest taxpayers list</b><span>The SRC publishes its list of the 1,000 largest taxpayers every quarter (<a href="https://www.src.am/en/getNews/136">SRC news</a>; the Q1 2026 list totalled 459.27 billion drams per <a href="https://massispost.com/2026/04/top-1000-taxpayers-paid-over-459-27-billion-drams-in-q1-2026-src/">MassisPost</a>). A company claiming to be a national leader should be on it.</span></li>
+    <li><b>Central Bank licence</b><span>Banks, credit organisations, investment firms, currency dealers and insurers need a Central Bank of Armenia licence; the Central Bank links the list for each type from its <a href="https://www.cba.am/en/fmcfininstitutions/">financial institutions page</a>, and banks are also listed at <a href="https://www.cba.am/en/licensed-banks/">cba.am/en/licensed-banks</a>. A registered LLC offering deposits, loans, trading accounts or "guaranteed returns" without a licence is not a financial institution, however real its registration.</span></li>
+    <li><b>Central Bank warning list</b><span>In January 2026 the Central Bank published a list of 72 unlicensed organisations publicly offering financial services (<a href="https://finport.am/full_news.php?id=55228&amp;lang=3">Finport, 15 Jan 2026</a>); the list itself is in Armenian at <a href="https://www.cba.am/hy/unlicensed-organizations/">cba.am/hy/unlicensed-organizations</a>. Earlier warnings named brands such as "DaoBit", "Orbis" (Orbis Exchange) and "GKGD" (<a href="https://armbanks.am/en/2025/11/24/268490/">ArmBanks, 24 Nov 2025</a>).</span></li>
+  </ul>
+</section>
+
+<section class="rules" id="scams">
+  <p class="kicker rv">Before you pay</p>
+  <h2 class="rv">Scam patterns and the check that catches each</h2>
+  <ul class="rv">
+    <li><b>"Licensed and registered in Armenia"</b><span>Common in forex, crypto and loan offers. Registration is at the Ministry of Justice; a licence is at the Central Bank. Check both. The first without the second is the pattern the Central Bank's warnings describe.</span></li>
+    <li><b>The borrowed identity</b><span>A real, well-known company's name and tax ID on a website, email or certificate that the company never issued. The register confirms the company, not the sender. Contact the company through a channel you find yourself, not the phone number or email in the offer.</span></li>
+    <li><b>The brand with no entity</b><span>A trading name that appears nowhere in the register. Ask for the legal name and tax ID; a real business sends them in a minute because they are on every invoice it issues.</span></li>
+    <li><b>New company, old story</b><span>"Fifteen years of experience" with a registration last spring and no declarations filed. Not proof of fraud, but a reason to ask for the extract.</span></li>
+    <li><b>Pay someone else</b><span>An invoice from an Armenian company asking for payment to a personal card, a crypto wallet or a company in a third country. Money for an Armenian company goes to an account in that company's name.</span></li>
+    <li><b>The forged certificate</b><span>Covered above: any field that differs from the card ends the check.</span></li>
+  </ul>
+</section>
+
+<section id="map">
+  <p class="kicker rv">The honest map</p>
+  <h2 class="rv">What is free, what is paid, what is not public</h2>
+  <div class="covwrap rv">
+    <table class="cov">
+      <caption>One Armenian company, source by source (checked 13 Sep 2026)</caption>
+      <thead><tr><th>Question</th><th>Source</th><th>Cost</th><th>Key</th></tr></thead>
+      <tbody>
+        <tr><td class="rname">Does it exist, is it winding up</td><td class="mono">e-register.moj.am card</td><td class="y">free</td><td class="mono">tax ID, reg. number or name</td></tr>
+        <tr><td class="rname">Official registration or liquidation certificate</td><td class="mono">register service, 3 days</td><td class="y">free, ID login</td><td class="mono">company</td></tr>
+        <tr><td class="rname">Declared beneficial owners</td><td class="mono">BOR declarations on the card</td><td class="y">free, if filed</td><td class="mono">card</td></tr>
+        <tr><td class="rname">Founders, participants, director, charter</td><td class="mono">company information request</td><td class="n">AMD 3,000</td><td class="mono">company</td></tr>
+        <tr><td class="rname">Shareholders of a joint-stock company</td><td class="mono">not in the register</td><td class="n">not public here</td><td class="mono">n/a</td></tr>
+        <tr><td class="rname">State contracts</td><td class="mono">armeps.am PPCM</td><td class="y">free</td><td class="mono">tax ID</td></tr>
+        <tr><td class="rname">Known to the tax authority</td><td class="mono">src.am taxpayer search</td><td class="y">free, captcha</td><td class="mono">tax ID or name</td></tr>
+        <tr><td class="rname">Financial licence, warnings</td><td class="mono">cba.am lists</td><td class="y">free</td><td class="mono">name</td></tr>
+        <tr><td class="rname">Revenue, accounts, bank details, court cases</td><td class="mono">not in these sources</td><td class="n">not public here</td><td class="mono">n/a</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="scale">
+  <p class="kicker rv">At scale</p>
+  <h2 class="rv">Checking a list of Armenian tax IDs: Reestri</h2>
+  <div class="prose rv">
+    <p>For one company, the steps above take ten minutes. For a supplier list or an AI agent, <b>Reestri</b> runs the register and procurement checks as pay-per-lookup tools on Apify. I built it and I sell it; no subscription, and Apify's free monthly credit covers first runs.</p>
+    <p>What they return, and no more: from the register, status, registration number and date, tax ID, address and the declared beneficial owners parsed from the declarations, with a source URL, timestamp and content hash per record. A tax ID passed as the query resolves the same way it does in the register's search box. From PPCM, the contracts that carry that exact tax ID, with buyer, value, date and procedure. They do not order the AMD 3,000 extract, do not query the tax service or the Central Bank lists, and drop owners' home addresses.</p>
+  </div>
+  <div class="tariff rv">
+    <div class="prow"><b><a href="https://apify.com/reestri/am-company-lookup">Armenia company + beneficial owners</a></b><span>$0.05 per search + $0.50 per record</span></div>
+    <div class="prow"><b><a href="https://apify.com/reestri/am-supplier-contracts">Armenia supplier contracts</a></b><span>$0.05 per search + $0.10 per contract</span></div>
+    <div class="prow"><b><a href="https://apify.com/reestri/company-screen">Company screen, GE + AM + MD in one call</a></b><span>$0.50 per query + $0.10 per match</span></div>
+  </div>
+  <p class="fn rv">Also callable by AI agents as MCP tools; setup is on the <a href="/#agents">front page</a>. Journalists and researchers: lookups are free on request, write to soso@reestri.io with the names.</p>
+</section>
+
+<section id="report">
+  <div class="offer rv" role="note" aria-label="Disclosure: a paid service sold by the author">
+    <p class="lab">Our paid service</p>
+    <div>
+      <h3>Rather have it done?</h3>
+      <p>A finished counterparty check from the official registers, as an English PDF within a day, from $15 on Fiverr. <a class="go" href="https://www.fiverr.com/s/NeNWboa" rel="noopener">See the packages on Fiverr →</a></p>
+      <p class="small">Disclosure: sold by the author of this guide. $15 covers one company in one country; $35 checks Georgia and Armenia, with Armenia's declared owners and public contracts; $90 adds the official Georgian extract with founders and shares and takes two days. Reports cover Georgian and Armenian companies only. Everything in them comes from the public sources this page describes, which you can read yourself for free.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="kicker rv">Sources</p>
+  <h2 class="rv">The pages this guide is built on</h2>
+  <ul class="vlinks rv">
+    <li><span>SRC on the TIN format (OECD TIN sheet)</span><a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/armenia-tin.pdf">oecd.org armenia-tin.pdf</a></li>
+    <li><span>State register search, English</span><a href="https://e-register.moj.am/en/search/companies">e-register.moj.am/en/search/companies</a></li>
+    <li><span>The card quoted above</span><a href="https://e-register.moj.am/en/companies/37191802">e-register.moj.am/en/companies/37191802</a></li>
+    <li><span>Register FAQ: no verification, participants, JSCs</span><a href="https://e-register.moj.am/en/faq">e-register.moj.am/en/faq</a></li>
+    <li><span>Company information request (AMD 3,000)</span><a href="https://e-register.moj.am/en/services/6e6aa8ad-5072-4f72-9b96-47ac690c724d">e-register.moj.am service</a></li>
+    <li><span>Registration or liquidation certificate (free)</span><a href="https://e-register.moj.am/en/services/9579492a-350a-46ca-8b6a-92f2fd3a18ca">e-register.moj.am service</a></li>
+    <li><span>Beneficial-owner filing rules (law firm)</span><a href="https://mblegal.am/the-regulation-of-ultimate-beneficial-owners-in-armenia/">mblegal.am</a></li>
+    <li><span>Annual 20 February confirmation (law firm)</span><a href="https://armenian-lawyer.com/business/ubo-declaration-armenia-february-20-deadline/">armenian-lawyer.com</a></li>
+    <li><span>Public contracts registry (PPCM)</span><a href="https://www.armeps.am/ppcm/public/contracts">armeps.am/ppcm/public/contracts</a></li>
+    <li><span>SRC taxpayer search</span><a href="https://www.src.am/en/taxpayerSearchSystemPage/112">src.am taxpayer search</a></li>
+    <li><span>SRC largest taxpayers (news)</span><a href="https://www.src.am/en/getNews/136">src.am/en/getNews/136</a></li>
+    <li><span>Central Bank licensed banks</span><a href="https://www.cba.am/en/licensed-banks/">cba.am/en/licensed-banks</a></li>
+    <li><span>Central Bank unlicensed organisations (Armenian)</span><a href="https://www.cba.am/hy/unlicensed-organizations/">cba.am/hy/unlicensed-organizations</a></li>
+    <li><span>Press: 72 unlicensed organisations</span><a href="https://finport.am/full_news.php?id=55228&amp;lang=3">finport.am</a></li>
+    <li><span>Press: named unlicensed brands</span><a href="https://armbanks.am/en/2025/11/24/268490/">armbanks.am</a></li>
+  </ul>
+  <div class="next rv">
+    <a href="/guides/armenia-beneficial-owners/">Next: read the beneficial-owner declarations →</a>
+    <p>Where the declarations sit, how to read one, what a ground 3 owner is, why a missing declaration proves nothing, and the procurement history behind the same tax ID.</p>
+  </div>
+  <div class="next rv">
+    <a href="/guides/georgian-company-extract-in-english/">Also: the Georgian company extract in English →</a>
+    <p>NAPR's own English version for 26 GEL extra, the apostille at 30 to 150 GEL, and when you still need a translation.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div style="color:var(--paper);font-weight:700">Reestri <span class="foot-geo">· რეესტრი</span></div>
+      <div style="margin-top:6px">Georgian for "registry". Built in Kutaisi.</div>
+    </div>
+    <div style="text-align:right">
+      <div><a href="https://apify.com/reestri">apify.com/reestri</a> · <a href="/guides/">guides</a> · <a href="/data/">data</a> · <a href="mailto:soso@reestri.io">soso@reestri.io</a></div>
+      <div style="margin-top:6px;font-size:12.5px;font-family:var(--mono);color:oklch(52% 0.015 265)">The author sells the tools and the reports named near the end. Registry data belongs to its registries. Published 2026-09-13.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)document.documentElement.classList.add('no-motion');
+  if(!reduce&&'IntersectionObserver'in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  }else{document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
+})();
+</script>
+<script>try{navigator.sendBeacon("https://api.reestri.io/hit",JSON.stringify({p:location.pathname,r:document.referrer?new URL(document.referrer).hostname:""}))}catch(e){}</script>
+</body>
+</html>
