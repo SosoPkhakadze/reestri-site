@@ -1,0 +1,40 @@
+/* Fixed header geometry keeps navigation responsive without moving the page. */
+.forest-theme .site-header{background:#132f22;backdrop-filter:none;transition:background-color .2s var(--ease-out),box-shadow .2s var(--ease-out)}
+.forest-theme .site-header.scrolled{background:#173525;box-shadow:0 5px 20px #10261718}
+.forest-theme .header-inner{min-height:82px;position:relative;gap:62px}
+.forest-theme .header-action{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 19px;box-sizing:border-box;border:1px solid #a8c2a766;border-radius:6px;color:#fff9ed;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;background:#254b34;transition:background-color .16s var(--ease-out),border-color .16s var(--ease-out),transform .12s var(--ease-out)}
+.forest-theme .header-action:hover{background:#315e41;border-color:#efa34e}
+.forest-theme .header-action:active{transform:scale(.98)}
+.forest-theme .nav-links{position:relative;gap:35px}
+.forest-theme .nav-links a{transition:color .16s var(--ease-out);padding-block:18px}
+.forest-theme .nav-links a:hover,.forest-theme .nav-links a[aria-current=page]{text-decoration:none;color:#fff9ed}
+.nav-indicator{position:absolute;left:0;bottom:9px;width:1px;height:2px;border-radius:2px;background:var(--amber);transform-origin:left;opacity:0;pointer-events:none;transition:transform .2s var(--ease-out),opacity .15s var(--ease-out)}
+.nav-indicator.is-visible{opacity:1}
+.simple-request-layout{gap:85px;align-items:start}
+.simple-next{padding-top:8px}
+.request-prices{border:1px solid #d8d5c7;border-radius:8px;background:#efecdf;margin:0 0 32px;padding:0;overflow:hidden;scroll-margin-top:105px}
+.request-prices>summary{list-style:none;cursor:pointer;min-height:62px;padding:21px 22px;position:relative;display:flex;flex-direction:column;gap:7px;color:var(--ink)}
+.request-prices>summary::-webkit-details-marker{display:none}
+.request-prices>summary::after{content:"+";position:absolute;top:19px;right:20px;font-size:23px;font-weight:400;line-height:1}
+.request-prices[open]>summary::after{content:"−"}
+.price-guide-title{font-size:22px;font-weight:720;line-height:1.25;letter-spacing:-.04em;padding-right:25px}
+#price-preview{font-size:13px;line-height:1.55;font-weight:500;padding-right:18px;color:#4a5d4d}
+.price-guide-body{padding:0 22px 21px;animation:prices-open .2s var(--ease-out)}
+@keyframes prices-open{from{opacity:.4;transform:translateY(-3px)}to{opacity:1;transform:none}}
+.price-guide-country{font-size:15px!important;font-weight:650;margin:0 0 13px!important;display:flex;justify-content:space-between;gap:15px}
+.price-guide-country span{font-size:12px;font-weight:400;color:var(--muted);align-self:center}
+.request-fees{margin:0;display:grid;gap:14px;font-size:13px;line-height:1.5}
+.request-fees>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:start}
+.request-fees dt{font-weight:450;min-width:0}.request-fees dt span{display:block;font-size:11px;color:var(--muted)}
+.request-fees dd{margin:0;font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink)}
+.request-prices .price-cost-note{font-size:12px;line-height:1.6;color:#526452;margin:18px 0 14px}
+.price-details-link{font-size:13px;font-weight:550;text-underline-offset:4px;display:inline-block;padding:3px 0}
+.request-prices .price-guide-assurance{font-size:12px;font-weight:550;margin:12px 0 0}
+.request-prices .free-note-price{font-size:13px;margin:0 0 18px;background:#dfead7;padding:11px;border-radius:4px}
+.request-next-steps>h2{font-size:23px;margin-bottom:17px}.request-next-steps>p{font-size:14px;margin-bottom:14px}
+.request-next-steps .request-direct{font-size:15px;margin-top:23px;gap:9px}
+@media(max-width:1100px) and (min-width:761px){.forest-theme .header-inner{gap:35px}.forest-theme .nav-links{gap:25px}.simple-request-layout{gap:38px}.request-prices>summary{padding:20px 17px}.price-guide-body{padding-inline:17px}.request-fees{font-size:12px;gap:12px}.request-fees>div{gap:10px}}
+@media(max-width:900px){.simple-request-layout{display:flex;flex-direction:column;gap:0;max-width:620px}.simple-request-main,.simple-next{display:contents}.request-title-block{order:1}.request-prices{order:2;width:100%;box-sizing:border-box;margin:0 0 24px}.simple-request-main>#form-error{order:3;width:100%;box-sizing:border-box}#simple-request-form{order:4;width:100%}.request-next-steps{order:5;margin-top:32px;width:100%}.request-title-block .open-intro{margin-bottom:22px}.request-prices>summary{padding:15px 18px;min-height:64px;box-sizing:border-box;gap:5px}.price-guide-title{font-size:17px}#price-preview{font-size:12px}.request-prices>summary::after{top:20px;right:17px;font-size:22px}.price-guide-body{padding:4px 18px 19px}.request-fees{font-size:13px}.request-next-steps>h2{font-size:21px}.simple-request-layout>.simple-next{margin:0;padding:0}.request-prices .price-cost-note{font-size:12px}.simple-request-main h1{font-size:clamp(33px,6vw,48px)}}
+@media(max-width:760px){.forest-theme .header-inner{min-height:74px;flex-wrap:nowrap;gap:0}.forest-theme .header-action{display:none}.forest-theme .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:2px;background:#173525;border-radius:0 0 9px 9px;padding:10px 22px 18px;box-shadow:0 12px 24px #11281924;z-index:32;max-height:calc(100dvh - 90px);overflow:auto;flex-basis:auto;margin:0}.forest-theme .nav-links a{padding:12px 3px;min-height:46px;box-sizing:border-box;font-size:17px}.forest-theme .nav-links a[aria-current=page]{color:#f6c27c}.nav-indicator{display:none}.forest-theme .nav-links.open{animation:menu-open .18s var(--ease-out)}.forest-theme .nav-links.closing{transition:opacity .12s var(--ease-out),transform .12s var(--ease-out)}.simple-request-main h1{font-size:36px}.request-next-steps{margin-top:27px}.request-prices{margin-bottom:22px}.simple-request-main .open-intro{font-size:17px}}
+@media(max-width:360px){.simple-request-main h1{font-size:32px}.request-prices>summary{padding-inline:15px}.price-guide-body{padding-inline:15px}#price-preview{padding-right:13px}.request-fees{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.nav-indicator,.header-action,.request-prices *,.price-guide-body{transition:none!important;animation:none!important}}

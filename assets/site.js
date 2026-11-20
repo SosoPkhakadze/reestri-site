@@ -21,6 +21,30 @@ document.addEventListener('keydown', e => {
     setMenu(false); menuToggle.focus();
   }
 });
+const navIndicator = $('.nav-indicator', menu);
+const navItems = $$('a', menu);
+let navTarget;
+function indicateNav(target, instant = false) {
+  navTarget = target;
+  if (!navIndicator) return;
+  navIndicator.style.transitionDuration = instant ? '0ms' : '';
+  if (!target) { navIndicator.classList.remove('is-visible'); return; }
+  const item = target.getBoundingClientRect(), parent = menu.getBoundingClientRect();
+  navIndicator.style.transform = `translateX(${item.left - parent.left}px) scaleX(${item.width})`;
+  navIndicator.classList.add('is-visible');
+}
+function activeNav() { return navItems.find(item => item.getAttribute('aria-current') === 'page'); }
+navItems.forEach(item => {
+  item.addEventListener('pointerenter', () => indicateNav(item));
+  item.addEventListener('focus', () => indicateNav(item, true));
+  item.addEventListener('click', () => { if (menuToggle.getAttribute('aria-expanded') === 'true') setMenu(false); });
+});
+menu.addEventListener('pointerleave', () => indicateNav(menu.contains(document.activeElement) ? document.activeElement.closest('a') : activeNav()));
+menu.addEventListener('focusout', e => { if (!menu.contains(e.relatedTarget)) indicateNav(activeNav(), true); });
+new ResizeObserver(() => indicateNav(navTarget || activeNav(), true)).observe(menu);
+document.fonts.ready.then(() => indicateNav(activeNav(), true));
+document.addEventListener('pointerdown', e => { if (menuToggle.getAttribute('aria-expanded') === 'true' && !e.target.closest('.site-header')) setMenu(false); });
+matchMedia('(min-width: 761px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
 $$('[data-tabset]').forEach(group => {
   const buttons = $$(':scope > .tabs > [role=tab]', group);
   const select = button => {
@@ -48,6 +72,11 @@ function openLinkedDetail() {
 }
 openLinkedDetail();
 window.addEventListener('hashchange', openLinkedDetail);
+$$('a[href="#request-prices"]').forEach(link => link.addEventListener('click', () => {
+  if (link.getAttribute('href') !== '#request-prices') return;
+  const detail = $('#request-prices');
+  if (detail) { detail.open = true; $('summary', detail)?.focus({ preventScroll: true }); }
+}));
 $$('[data-country-selector]').forEach(group => {
   $$('button', group).forEach(button => button.addEventListener('click', () => {
     $$('button', group).forEach(b => b.setAttribute('aria-pressed', String(b === button)));

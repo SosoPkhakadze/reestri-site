@@ -19,6 +19,28 @@ if (mode === 'note') {
   $('#send-request').textContent = 'Ask for the free note';
   $('#deadline-field').hidden = true;
 }
+const prices = $('#request-prices');
+const priceSidebar = prices.parentElement;
+const requestTitle = $('.request-title-block');
+const priceLayout = matchMedia('(min-width: 901px)');
+function setPriceLayout() {
+  const focused = prices.contains(document.activeElement) ? document.activeElement : null;
+  if (priceLayout.matches) { if (prices.parentElement !== priceSidebar) priceSidebar.prepend(prices); }
+  else if (prices.parentElement !== requestTitle.parentElement) requestTitle.after(prices);
+  prices.open = priceLayout.matches || location.hash === '#request-prices';
+  focused?.focus();
+}
+setPriceLayout();
+priceLayout.addEventListener('change', setPriceLayout);
+function showCountryPrices() {
+  const country = el('country').value;
+  document.querySelectorAll('[data-request-price-country]').forEach(block => { block.hidden = block.dataset.requestPriceCountry !== country; });
+  $('#price-preview').textContent = mode === 'note' ? 'Free first note: USD 0. Paid records are separate.' : country === 'GE' ? 'Georgia extract: USD 49, state fee included' : 'Armenia extracts from USD 200 + costs';
+  $('#price-details-link').href = '/pricing/?country=' + country;
+  $('#free-note-price').hidden = mode !== 'note';
+}
+showCountryPrices();
+document.querySelectorAll('input[name=country]').forEach(input => input.addEventListener('change', showCountryPrices));
 const errorBox = $('#form-error');
 function showError(message, target) {
   errorBox.textContent = message; errorBox.hidden = false;
@@ -61,6 +83,8 @@ form.addEventListener('submit', async e => {
     const result = await response.json().catch(() => ({}));
     if (!response.ok || !result.ok || !result.id) throw new Error(result.message || 'The request could not be saved.');
     $('#request-layout').hidden = true; $('#request-done').hidden = false;
+    const priceAction = $('.header-action');
+    if (priceAction) priceAction.href = '/pricing/?country=' + values.country;
     $('#done-reference').textContent = 'Reference: ' + result.id;
     $('#done-confirmation').textContent = local ? 'Local preview only. No request or email was sent.' : result.confirmationStatus === 'unavailable' ? 'Your request is saved. Soso will reply to ' + payload.email + '. An automatic confirmation is unavailable, so please keep this reference.' : 'Reestri will email a confirmation to ' + payload.email + ' from orders@reestri.io.';
     if (mode === 'note') { $('#done-title').textContent = 'Free-note request received.'; $('#done-next').textContent = 'Soso will review what the public registers show and reply personally. Paid official documents are quoted separately.'; }
