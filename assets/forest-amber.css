@@ -14,3 +14,5 @@ body.forest-theme{background:var(--paper)}.forest-theme .site-header{background:
 @media(min-width:761px) and (max-width:1100px){.forest-dossier figcaption{bottom:145px}}
 @media(max-width:760px){.forest-dossier figcaption{display:none}}
 @media(max-width:360px){.forest-hero h1{font-size:30px}}
+
+.forest-dossier figcaption{color:#173c29;text-shadow:0 1px 2px #fff8}
