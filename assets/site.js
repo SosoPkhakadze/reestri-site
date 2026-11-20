@@ -53,6 +53,8 @@ $$('[data-country-selector]').forEach(group => {
     $$('button', group).forEach(b => b.setAttribute('aria-pressed', String(b === button)));
     $$('[data-country-price]').forEach(p => { p.hidden = p.dataset.countryPrice !== button.dataset.country; });
   }));
+  const requestedCountry = new URLSearchParams(location.search).get('country');
+  if (requestedCountry === 'GE') $('button[data-country="GE"]', group)?.click();
 });
 const search = $('#guide-search');
 let country = 'all';
