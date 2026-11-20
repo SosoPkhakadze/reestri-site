@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://reestri.io/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://reestri.io/data/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://reestri.io/data/armenia-january-not-december/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://reestri.io/data/armenia-money-moved/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://reestri.io/data/armenia-single-source/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://reestri.io/records/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://reestri.io/guides/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://reestri.io/guides/armenia-beneficial-owners/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://reestri.io/guides/check-a-georgian-company/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://reestri.io/guides/check-a-property-developer-georgia-armenia/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://reestri.io/guides/georgian-company-extract-in-english/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://reestri.io/guides/moldova-idno-lookup/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://reestri.io/guides/verify-an-armenian-company/</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-</urlset>
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://reestri.io/</loc></url><url><loc>https://reestri.io/about/</loc></url><url><loc>https://reestri.io/coverage/</loc></url><url><loc>https://reestri.io/data/</loc></url><url><loc>https://reestri.io/data/armenia-january-not-december/</loc></url><url><loc>https://reestri.io/data/armenia-money-moved/</loc></url><url><loc>https://reestri.io/data/armenia-single-source/</loc></url><url><loc>https://reestri.io/guides/</loc></url><url><loc>https://reestri.io/guides/armenia-beneficial-owners/</loc></url><url><loc>https://reestri.io/guides/check-a-georgian-company/</loc></url><url><loc>https://reestri.io/guides/check-a-property-developer-georgia-armenia/</loc></url><url><loc>https://reestri.io/guides/georgian-company-extract-in-english/</loc></url><url><loc>https://reestri.io/guides/moldova-idno-lookup/</loc></url><url><loc>https://reestri.io/guides/verify-an-armenian-company/</loc></url><url><loc>https://reestri.io/pricing/</loc></url><url><loc>https://reestri.io/privacy/</loc></url><url><loc>https://reestri.io/records/</loc></url><url><loc>https://reestri.io/requests/</loc></url><url><loc>https://reestri.io/stories/</loc></url><url><loc>https://reestri.io/stories/armenia-money-moved/</loc></url><url><loc>https://reestri.io/stories/armenia-single-source/</loc></url><url><loc>https://reestri.io/tools/</loc></url></urlset>
