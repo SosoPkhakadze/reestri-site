@@ -1,14 +1,24 @@
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const menu = $('#site-menu'), menuToggle = $('#menu-toggle');
+let menuTimer;
+function setMenu(open) {
+  clearTimeout(menuTimer);
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menu.classList.remove('closing');
+  if (open) menu.classList.add('open');
+  else if (!matchMedia('(prefers-reduced-motion: reduce)').matches && menu.classList.contains('open')) {
+    menu.classList.add('closing');
+    menuTimer = setTimeout(() => menu.classList.remove('open', 'closing'), 150);
+  } else menu.classList.remove('open');
+}
 menuToggle?.addEventListener('click', () => {
   const open = menuToggle.getAttribute('aria-expanded') !== 'true';
-  menuToggle.setAttribute('aria-expanded', String(open));
-  menu.classList.toggle('open', open);
+  setMenu(open);
 });
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && menuToggle?.getAttribute('aria-expanded') === 'true') {
-    menu.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.focus();
+    setMenu(false); menuToggle.focus();
   }
 });
 $$('[data-tabset]').forEach(group => {
@@ -89,7 +99,12 @@ function listFaqs() {
   const found = FAQ.filter(item => (item.q + ' ' + item.terms).toLocaleLowerCase().includes(q));
   found.forEach(item => {
     const b = document.createElement('button'); b.type = 'button'; b.textContent = item.q + ' →';
+    b.setAttribute('aria-controls', 'faq-answer'); b.setAttribute('aria-expanded', 'false');
     b.addEventListener('click', () => {
+      $$('button', faqList).forEach(button => {
+        button.classList.toggle('is-selected', button === b);
+        button.setAttribute('aria-expanded', String(button === b));
+      });
       answer.replaceChildren();
       const title = document.createElement('h3'); title.textContent = item.q;
       const text = document.createElement('p'); text.textContent = item.a;
@@ -109,7 +124,37 @@ $('#help-close')?.addEventListener('click', () => help.close());
 help?.addEventListener('click', e => { if (e.target === help) { const r = help.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) help.close(); } });
 help?.addEventListener('close', () => opener?.focus());
 faqSearch?.addEventListener('input', () => { answer.hidden = true; listFaqs(); });
+faqSearch?.addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); $('button', faqList)?.click(); }
+});
 listFaqs();
+const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+let revealObserver;
+function setupMotion() {
+  revealObserver?.disconnect();
+  const reduce = motionPreference.matches;
+  document.body.classList.toggle('js-motion', !reduce);
+  const elements = $$('main .band, main .steps-inline > li, .guide-row, .tools-row, .page-top, .plain-sections > section');
+  if (reduce || !('IntersectionObserver' in window)) { elements.forEach(el => el.classList.add('is-visible')); return; }
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
+    });
+  }, { threshold: .08, rootMargin: '0px 0px 24px 0px' });
+  elements.forEach(el => {
+    el.classList.add('reveal');
+    if (el.getBoundingClientRect().top < innerHeight) el.classList.add('is-visible');
+    else revealObserver.observe(el);
+  });
+}
+setupMotion();
+motionPreference.addEventListener('change', setupMotion);
+document.addEventListener('focusin', e => e.target.closest?.('.reveal')?.classList.add('is-visible'));
+const siteHeader = $('.site-header');
+let scrollFrame = false;
+function updateHeader() { siteHeader?.classList.toggle('scrolled', scrollY > 24); scrollFrame = false; }
+window.addEventListener('scroll', () => { if (!scrollFrame) { scrollFrame = true; requestAnimationFrame(updateHeader); } }, { passive: true });
+updateHeader();
 $$('[data-print]').forEach(b => b.addEventListener('click', () => window.print()));
 if (/^(www\.)?reestri\.io$/.test(location.hostname)) {
   try { navigator.sendBeacon('https://api.reestri.io/hit', JSON.stringify({ p: location.pathname, r: document.referrer ? new URL(document.referrer).hostname : '' })); } catch {}
