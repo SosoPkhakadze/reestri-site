@@ -127,7 +127,7 @@ function listFaqs() {
   if (!faqList) return;
   faqList.replaceChildren();
   const q = faqSearch.value.trim().toLocaleLowerCase();
-  const found = FAQ.filter(item => (item.q + ' ' + item.terms).toLocaleLowerCase().includes(q));
+  const found = FAQ.filter(item => (item.q + ' ' + item.terms + ' ' + item.a).toLocaleLowerCase().includes(q));
   found.forEach(item => {
     const b = document.createElement('button'); b.type = 'button'; b.textContent = item.q + ' →';
     b.setAttribute('aria-controls', 'faq-answer'); b.setAttribute('aria-expanded', 'false');
